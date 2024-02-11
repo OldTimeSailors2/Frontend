@@ -6,7 +6,6 @@ const nextConfig = {
             {
               protocol: 'https',
               hostname: 'res.cloudinary.com',
-              // The pathname '**' is a wildcard that allows any path
               pathname: '/**',
             },
           ],
