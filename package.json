@@ -25,6 +25,7 @@
     "sharp": "0.33.1"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "autoprefixer": "^10",
     "postcss": "^8",
     "tailwindcss": "^3"

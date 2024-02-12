@@ -47,5 +47,8 @@ module.exports = {
 
     },
   },
-  plugins: [nextui()],
+  plugins: [nextui(), require('@tailwindcss/aspect-ratio')],
+  corePlugins: {
+    aspectRatio: false,
+  },
 }

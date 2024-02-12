@@ -43,24 +43,26 @@ const LandingDisplay = ({ images }) => {
 
   return (
     <>
-      <div className="md1:px-3 md:px-14 md2:px-14 min-[1024px]:px-28 xl:p-0">
-        <div className=" grid grid-cols-2 xl:grid-cols-4 gap-[5px] xl:gap-4">
-          {images &&
-            images.map((image) => (
-              <div key={image.id} className="flex justify-center items-center ">
-                <Image
-                  src={image.urls.large.url}
-                  alt={`Image ${image.id}`}
-                  priority={true}
-                  width={160}
-                  height={160}
-                  onClick={() => handleClick(image.urls.XL.url)}
-                  className="rounded-sm cursor-pointer h-[160px] xs:w-[170px] xs:h-[170px] min-[390px]:w-[175px] min-[390px]:h-[175px] xs2:w-[180px] xs2:h-[180px] min-[410px]:w-[186px] min-[410px]:h-[186px] min-[420px]:w-[192px] min-[420px]:h-[192px] min-[430px]:w-[195px] min-[430px]:h-[195px] md1:w-[270px] md1:h-[270px] md:w-[310px] md:h-[310px]   min-[810px]:w-[329px] min-[810px]:h-[329px]   min-[820px]:w-[334px] min-[820px]:h-[334px]     min-[1024px]:w-[375px] min-[1024px]:h-[375px]    xl:w-[294px] xl:h-[294px] 1xl:w-[315.5px] 1xl:h-[315.5px] 1xxl:w-[334px] 1xxl:h-[334px] fullHD:w-[454px] fullHD:h-[454px] 2k:w-[602px] 2k:h-[602px] 4k:w-[916px] 4k:h-[916px]"
-                />
-              </div>
-            ))}
-        </div>
-      </div>
+      <div className="md1:px-3 md:px-14 md2:px-14 lg:px-28 xl:p-0">
+    <div className="grid grid-cols-2 xl:grid-cols-4 gap-[5px] xl:gap-4">
+        {images && images.map((image) => (
+            <div key={image.id} className="flex justify-center items-center w-full h-auto" onClick={() => handleClick(image.urls.XL.url)}>
+                <div className="aspect-w-1 aspect-h-1 w-full h-full flex justify-center items-center">
+                    {/* Using Next.js Image component, ensure the layout is responsive */}
+                    <Image
+                        src={image.urls.large.url}
+                        alt={`Image ${image.id}`}
+                        priority={true}
+                        fill={true} // This makes the image fill the container while maintaining aspect ratio
+                        style={{objectFit: 'contain'}} // Adjust as needed to 'contain' for no cropping
+                        className="rounded-sm cursor-pointer"
+                        
+                    />
+                </div>
+            </div>
+        ))}
+    </div>
+</div>
 
       {/*PHOTOS DISPLAY */}
       <Modal
