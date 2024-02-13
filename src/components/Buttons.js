@@ -71,7 +71,7 @@ const BlurbButton = () => {
           className="mirror xs2:w-[44px] md1:w-[28px] min-[820px]:w-[35px] lg:w-[54px]  xl:w-[40px] xl:h-auto  1xl:w-[40px] 1xxl:w-[45px] fullHD:w-[55px] 2k:w-[75px] 4k:w-[120px]"
         />
         <Link
-          className=" text-darkBlue bg-lightRed font-bold xl:font-medium font-titles rounded-md 1xxl:rounded-lg  xs2:text-xl md1:text-lg min-[820px]:text-xl lg:text-3xl xl:text-base 1xl:text-lg 1xxl:text-2xl fullHD:text-3xl 2k:text-4xl 4k:text-6xl  text-center px-1 xs2:px-1.5 md1:px-1 xl:px-2 4k:px-3"
+          className=" text-darkBlue bg-lightRed font-medium font-titles rounded-md 1xxl:rounded-lg  xs2:text-xl md1:text-lg min-[820px]:text-xl lg:text-3xl xl:text-base 1xl:text-lg 1xxl:text-2xl fullHD:text-3xl 2k:text-4xl 4k:text-6xl  text-center px-1 xs2:px-1.5 md1:px-1 xl:px-2 4k:px-3"
           href="/"
         >
           blurb
