@@ -58,7 +58,7 @@ const Home = async () => {
                 src={textImg}
                 width={120}
                 height={120}
-                alt="cuadro"
+                alt="Frame"
                 className="self-center  xs:w-[130px] xs2:w-[150px] md1:w-[115px]  min-[810px]:w-[125px] min-[820px]:w-[150px] lg:w-[190px] xl:w-[140px] xl:h-auto 1xxl:w-[180px]  fullHD:w-[210px] 2k:w-[280px] 4k:w-[410px]"
               />
               <BlurbButton />

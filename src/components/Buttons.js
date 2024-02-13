@@ -91,7 +91,7 @@ const BlurbButton = () => {
 const Icons = () => {
   return (
     <>
-      <div className="grid grid-cols-2 gap-2 xs2:gap-2.5 min-[820px]:gap-3.5 xl:gap-2.5 fullHD:gap-5 2k:gap-6 4k:gap-9 mt-10 xs:mt-14 xs2:mt-[60px] min-[425px]:mt-20 md1:mt-8 md:mt-3 min-[820px]:mt-7 lg:mt-6 xl:mt-3 1xl:mt-4 1xxl:mt-10 fullHD:mt-7 2k:mt-8 4k:mt-20">
+      <div className="grid grid-cols-2 gap-2 xs2:gap-2.5 min-[820px]:gap-3.5 xl:gap-2.5 fullHD:gap-5 2k:gap-6 4k:gap-9 mt-6 xs:mt-8 xs2:mt-10 min-[425px]:mt-11 md1:mt-8 md:mt-3 min-[820px]:mt-7 lg:mt-6 xl:mt-3 1xl:mt-4 1xxl:mt-10 fullHD:mt-7 2k:mt-8 4k:mt-20">
         <Link
           className="bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5  xl:p-1 xl:text-[20px] 1xl:text-[25px] 1xl:p-1.5 1xxl:text-[30px] 1xxl:p-2 fullHD:text-[35px] fullHD:p-2.5 2k:text-[45px] 2k:p-3 4k:text-[75px] 4k:p-5"
           href="https://www.instagram.com/oldtimesailors"
