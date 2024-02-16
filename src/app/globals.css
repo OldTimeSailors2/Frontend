@@ -347,7 +347,7 @@
 
 .progress-input::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: #253142; /* Custom thumb color */
+  background: #253142; /* Thumb color */
   height: 17px;
   width: 17px;
   border-radius: 100%;
