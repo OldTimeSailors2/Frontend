@@ -359,7 +359,7 @@ const ServicesDisplay = ({ services }) => {
             base: "flex items-center justify-center w-full",
             wrapper: "z-[110] overflow-y-hidden",
             backdrop: "z-[109] ",
-            closeButton: "z-[108]",
+            closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
           }}
           backdrop="blur"
         >

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import ala from "../../public/assets/alita.svg";
+import wing from "../../public/assets/wing.svg";
 import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 
@@ -62,27 +62,31 @@ const Buttons = () => {
 const BlurbButton = () => {
   return (
     <>
-      <div className="mt-1 xs:mt-2 1xxl:mt-2 2k:mt-3 4k:mt-4 flex justify-center xl:justify-between w-full">
+      <div className="mt-1 xs:mt-2 xl:mt-1 1xxl:mt-2 2k:mt-3 4k:mt-4 flex justify-center xl:justify-between w-full">
+      <div className="w-full h-auto relative">
         <Image
-          src={ala}
-          width={35}
-          height={35}
-          alt="ala"
-          className="mirror xs2:w-[44px] md1:w-[28px] min-[820px]:w-[35px] lg:w-[54px]  xl:w-[40px] xl:h-auto  1xl:w-[40px] 1xxl:w-[45px] fullHD:w-[55px] 2k:w-[75px] 4k:w-[120px]"
+          src={wing}
+          fill={true}
+          alt="Left wing"
+          className="mirror "
+          style={{objectFit:'contain'}}
         />
+        </div>
         <Link
-          className=" text-darkBlue bg-lightRed font-medium font-titles rounded-md 1xxl:rounded-lg  xs2:text-xl md1:text-lg min-[820px]:text-xl lg:text-3xl xl:text-base 1xl:text-lg 1xxl:text-2xl fullHD:text-3xl 2k:text-4xl 4k:text-6xl  text-center px-1 xs2:px-1.5 md1:px-1 xl:px-2 4k:px-3"
+          className=" text-darkBlue bg-lightRed font-semibold font-titles rounded-md 1xxl:rounded-lg  xs2:text-xl md1:text-lg min-[820px]:text-xl lg:text-3xl xl:text-[14px] xl:leading-6 1xxl:text-base  fullHD:text-xl 2k:text-4xl 4k:text-5xl  text-center px-1 xs2:px-1.5 md1:px-1 xl:px-1 2k:px-2 2k:py-1 4k:py-1 4k:px-3"
           href="/"
         >
           blurb
         </Link>
+        <div className="w-full h-auto relative">
         <Image
-          src={ala}
-          width={35}
-          height={35}
-          alt="ala"
-          className="xs2:w-[44px] md1:w-[28px] min-[820px]:w-[35px] lg:w-[54px]   xl:w-[40px] xl:h-auto 1xl:w-[40px]  1xxl:w-[45px] fullHD:w-[55px] 2k:w-[75px] 4k:w-[120px]"
+          src={wing}
+          style={{objectFit:'contain'}}
+          alt="Right wing"
+          fill={true}
+          
         />
+        </div>
       </div>
     </>
   );
@@ -91,28 +95,28 @@ const BlurbButton = () => {
 const Icons = () => {
   return (
     <>
-      <div className="grid grid-cols-2 gap-2 xs2:gap-2.5 min-[820px]:gap-3.5 xl:gap-2.5 fullHD:gap-5 2k:gap-6 4k:gap-9 mt-6 xs:mt-8 xs2:mt-10 min-[425px]:mt-11 md1:mt-8 md:mt-3 min-[820px]:mt-7 lg:mt-6 xl:mt-3 1xl:mt-4 1xxl:mt-10 fullHD:mt-7 2k:mt-8 4k:mt-20">
+      <div className="grid grid-cols-2 gap-2 xs2:gap-2.5 min-[820px]:gap-3.5 xl:gap-2 fullHD:gap-4 2k:gap-6 4k:gap-9 mt-6 xs:mt-8 xs2:mt-10 min-[425px]:mt-11 md1:mt-8 md:mt-3 min-[820px]:mt-7 lg:mt-6 xl:mt-7 1xl:mt-3 1xxl:mt-7  fullHD:mt-4 2k:mt-8 4k:mt-14">
         <Link
-          className="bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5  xl:p-1 xl:text-[20px] 1xl:text-[25px] 1xl:p-1.5 1xxl:text-[30px] 1xxl:p-2 fullHD:text-[35px] fullHD:p-2.5 2k:text-[45px] 2k:p-3 4k:text-[75px] 4k:p-5"
-          href="https://www.instagram.com/oldtimesailors"
+          className="bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5  xl:p-1 xl:text-[20px] 1xxl:text-[25px] 1xxl:p-1.5  fullHD:text-[30px] 2k:text-[45px] 2k:p-3 4k:text-[70px] 4k:p-4"
+          href="https://www.instagram.com/oldtimesailors" target="_blank"
         >
           <FaInstagram />
         </Link>
         <Link
-          className="bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5  xl:p-1 xl:text-[20px] 1xl:text-[25px] 1xl:p-1.5 1xxl:text-[30px] 1xxl:p-2 fullHD:text-[35px] fullHD:p-2.5 2k:text-[45px] 2k:p-3 4k:text-[75px] 4k:p-5"
-          href="https://www.facebook.com/oldtimesailors/"
+          className="bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5  xl:p-1 xl:text-[20px] 1xxl:text-[25px] 1xxl:p-1.5  fullHD:text-[30px] 2k:text-[45px] 2k:p-3 4k:text-[70px] 4k:p-4"
+          href="https://www.facebook.com/oldtimesailors/" target="_blank"
         >
           <FaFacebookF />
         </Link>
         <Link
-          className="bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 xl:p-1 xl:text-[20px] 1xl:text-[25px] 1xl:p-1.5 1xxl:text-[30px] 1xxl:p-2 fullHD:text-[35px] fullHD:p-2.5 2k:text-[45px] 2k:p-3 4k:text-[75px] 4k:p-5"
-          href="https://wa.me/447539045312"
+          className="bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 xl:p-1 xl:text-[20px] 1xxl:text-[25px] 1xxl:p-1.5  fullHD:text-[30px] 2k:text-[45px] 2k:p-3 4k:text-[70px] 4k:p-4"
+          href="https://wa.me/447539045312" target="_blank"
         >
           <FaWhatsapp />
         </Link>
         <Link
-          className="bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 xl:p-1 xl:text-[20px] 1xl:text-[25px] 1xl:p-1.5 1xxl:text-[30px] 1xxl:p-2 fullHD:text-[35px] fullHD:p-2.5 2k:text-[45px] 2k:p-3 4k:text-[75px] 4k:p-5"
-          href="mailto:captainnicholasmoffat@oldtimesailors.com"
+          className="bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center text-[25px] p-1.5 xs2:text-[28px] xs2:p-2 md1:text-[25px] md1:p-1.5  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 xl:p-1 xl:text-[20px] 1xxl:text-[25px] 1xxl:p-1.5  fullHD:text-[30px] 2k:text-[45px] 2k:p-3 4k:text-[70px] 4k:p-4"
+          href="mailto:captainnicholasmoffat@oldtimesailors.com" target="_blank"
         >
           <TfiEmail />
         </Link>

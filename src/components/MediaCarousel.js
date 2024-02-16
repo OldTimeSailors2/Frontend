@@ -20,7 +20,7 @@ const MediaCarousel = ({ mediaType }) => {
       content = videoList.map((v) => <Video key={v.id} video={v} />);
       break;
     case "photo":
-      content = photoList.map((p) => <Photo key={p.id} photo={p} />);
+      content = photoList.map((p, index) => <Photo key={p.id} photo={p} index={index} />);
       break;
     default:
       content = (

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
 /*Animation*/
 
 @keyframes rotate-spring {
@@ -343,7 +347,7 @@
 
 .progress-input::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: #253142; /* Customize thumb color */
+  background: #253142; /* Custom thumb color */
   height: 17px;
   width: 17px;
   border-radius: 100%;
@@ -1017,4 +1021,9 @@
     width: calc(100% - 5px);
     height: 100.5px;
   }
+}
+
+
+.blur-photo{
+  filter: blur(50px);
 }

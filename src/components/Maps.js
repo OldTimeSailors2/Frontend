@@ -217,20 +217,21 @@ const Maps = ({ markersList }) => {
     setOverlayLoaded(true);
   }, [apiIsLoaded, map, coreLibrary, mapsLibrary, southWest, northEast]);
 
-  const handleMarkerClick = (id) => {
+  const handleMarkerClick = (id, markerPosition) => {
     if (activeMarkerId && activeMarkerId !== id) {
       setIsTransitioning(true);
-
       setActiveMarkerId(id);
+      setTimeout(() => map.panTo(markerPosition), 200)
     } else {
       setIsTransitioning(false);
       setActiveMarkerId(id);
+      map.panTo(markerPosition)
     }
   };
 
   const createPopupContent = (markerData) => (
     <div className="popup-bubble">
-      <div className="flex items-center justify-center py-4 px-2 border-r-3 border-dashed border-[#354557]">
+      <div className="flex items-center justify-center px-2 border-r-3 border-dashed border-[#354557]">
         <Image
           src={windowLogo}
           height={50}
@@ -270,7 +271,7 @@ const Maps = ({ markersList }) => {
         </ul>
         <Link
           className="octagon-tickets flex items-center justify-center bg-darkBlue"
-          href={markerData.ticketsURL}
+          href={markerData.ticketsURL} target="_blank"
         >
           <p className="text-center text-4xl md:text-[42px] font-titles text-lightRed">
             tickets
@@ -281,7 +282,7 @@ const Maps = ({ markersList }) => {
   );
 
   return (
-    <div className="h-screen">
+    <div className="h-dvh">
       <Map
         zoom={mapZoom}
         center={mapCenter}
@@ -294,7 +295,7 @@ const Maps = ({ markersList }) => {
             <Fragment key={m.id}>
               <Marker
                 position={m.markerPosition}
-                onClick={() => handleMarkerClick(m.id)}
+                onClick={() => handleMarkerClick(m.id, m.markerPosition)}
                 icon={{
                   path: coreLibrary.SymbolPath.CIRCLE,
                   fillColor: "#dd3254",

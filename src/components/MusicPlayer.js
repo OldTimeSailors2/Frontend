@@ -97,7 +97,7 @@ const MusicPlayer = () => {
         base: 'bg-[url("/assets/backgrounds/bg-music-player.webp")] bg-contain min-w-[45%] max-w-[95%] sm:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%] 1xxl:max-w-[45%] 2xl:min-w-[40%] 2xl:max-w-[40%] 2k:min-w-[35%] 2k:max-w-[35%] 4k:min-w-[30%] 4k:max-w-[30%] rounded-[26px]',
         wrapper: "z-[110]",
         backdrop: "z-[109]",
-        closeButton: "text-[25px] text-musicColor font-bold  z-[108]",
+        closeButton: "text-[25px] text-musicColor font-bold z-[108] hover:bg-[#BFA98C] active:bg-[#B69E7C]",
       }}
     >
       <ModalContent>

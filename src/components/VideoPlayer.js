@@ -55,7 +55,7 @@ const VideoPlayer = () => {
         classNames={{
           wrapper: "z-[110]",
           backdrop: "z-[109]",
-          closeButton: "z-[108]",
+          closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
           base: "max-w-[82%] max-h-[58vh] sm:max-w-[70%] sm:max-h-[80vh] w-auto h-auto",
         }}
       >

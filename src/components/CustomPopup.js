@@ -24,8 +24,6 @@ const CustomPopup = ({ position, children, isVisible, isTransitioning }) => {
 
     overlay.onAdd = function () {
       this.getPanes().floatPane.appendChild(containerDiv);
-
-      console.log(addingDuration);
       setTimeout(() => {
         bubbleAnchor.firstChild.classList.add("seeable");
         bubbleAnchor.classList.add("seeable");

@@ -13,7 +13,7 @@ export const metadata = {
 
 const Reviews = () => {
   return (
-    <main className="w-screen h-screen bg-redPatternMobile md1:bg-redPatternTablet xl:bg-redPattern bg-contain pt-[77px] xs:pt-[92px] sm:pt-[140px] 2xl:pt-[172px] 2k:pt-[204px] 4k:pt-[268px] pb-[36px] 2k:pb-[52px] 4k:pb-[64px]">
+    <main className="w-screen h-dvh bg-redPatternMobile md1:bg-redPatternTablet xl:bg-redPattern bg-contain pt-[77px] xs:pt-[92px] sm:pt-[140px] 2xl:pt-[172px] 2k:pt-[204px] 4k:pt-[268px] pb-[36px] 2k:pb-[52px] 4k:pb-[64px]">
       <div className="w-full h-full flex justify-between items-stretch font-txt text-beige text-justify pt-2 xl:pt-1 1xl:pt-2 px-1 1xxl:p-4 max-w-screen-xl:overflow-auto">
         <div className="relative hidden xl:block xl:mx-2">
           <Image
@@ -46,7 +46,7 @@ const Reviews = () => {
             <div className="flex max-xl:flex-shrink-0 w-full h-44 xs:h-48 min-[420px]:h-[200px] md1:h-72 md:h-96 md2:h-[430px] lg:h-[530px]  xl:h-56 fullHD:h-80 2k:h-[420px] 4k:h-[620px] relative rounded-sm">
               <Image
                 src="/assets/reviews.svg"
-                fill
+                fill={true}
                 style={{ objectFit: "cover" }}
                 priority={true}
                 alt="Reviews photo"

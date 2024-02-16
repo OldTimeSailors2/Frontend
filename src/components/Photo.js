@@ -3,11 +3,11 @@
 import Image from "next/image";
 import useMedia from "@/hooks/useMedia";
 
-const Photo = ({ photo }) => {
+const Photo = ({ photo, index }) => {
   const { selectPhoto, openPhotoModal, isCarouselMoving } = useMedia();
 
   const handleClick = () => {
-    selectPhoto(photo.urls.XL.url);
+    selectPhoto(index);
     openPhotoModal();
   };
 

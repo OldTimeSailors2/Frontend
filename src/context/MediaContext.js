@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const MediaContext = createContext();
 
@@ -20,7 +20,7 @@ export const MediaProvider = ({ children, playlist, videoList, photoList }) => {
     /*Photo States*/
   }
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
-  const [currentPhoto, setCurrentPhoto] = useState(null);
+  const [clickedPhotoIndex, setClickedPhotoIndex] = useState(null)
 
   {
     /*Carousel*/
@@ -55,12 +55,12 @@ export const MediaProvider = ({ children, playlist, videoList, photoList }) => {
     /*Photo Functions*/
   }
 
-  const selectPhoto = (photoUrl) => {
-    setCurrentPhoto(photoUrl);
+  const selectPhoto = (index) => {
+    setClickedPhotoIndex(index)
   };
 
   const deselectPhoto = () => {
-    setCurrentPhoto(null);
+    setClickedPhotoIndex(null)
   };
 
   const openPhotoModal = () => setIsPhotoModalOpen(true);
@@ -81,7 +81,7 @@ export const MediaProvider = ({ children, playlist, videoList, photoList }) => {
         openVideoModal,
         closeVideoModal,
         photoList,
-        currentPhoto,
+        clickedPhotoIndex,
         selectPhoto,
         deselectPhoto,
         isPhotoModalOpen,

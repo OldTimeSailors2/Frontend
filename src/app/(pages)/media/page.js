@@ -80,7 +80,7 @@ const Media = async () => {
   return (
     <>
       <main
-        className="bg-bluePatternMobile md1:bg-bluePatternTablet xl:bg-bluePattern  bg-contain  w-screen h-screen flex flex-col pt-[77px] xs:pt-[92px] sm:pt-[140px] 2xl:pt-[172px] 2k:pt-[204px] 4k:pt-[268px]
+        className="bg-bluePatternMobile md1:bg-bluePatternTablet xl:bg-bluePattern  bg-contain  w-screen h-dvh flex flex-col pt-[77px] xs:pt-[92px] sm:pt-[140px] 2xl:pt-[172px] 2k:pt-[204px] 4k:pt-[268px]
           pb-[36px] md:pb-[44px] 2k:pb-[52px] 4k:pb-[64px] max-xs:justify-evenly justify-around xl:justify-evenly 1xl:justify-start 1xl:gap-3 1xxl:gap-8 2k:gap-0 2k:justify-around"
       >
         <MediaWrapper
