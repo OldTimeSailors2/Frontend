@@ -17,7 +17,7 @@ const Footer = () => {
       className={`fixed bottom-0 w-screen flex justify-center items-center  ${pathname === "/" ? "py-0.5 xl:p-0.5 2k:py-2" : "py-2"}`}
     >
       <p
-        className={`${isFooterBlack ? "text-black" : "text-beige"} font-txt ${pathname === "/" ? "text-[9px] xl:text-base" : "text-sm sm:text-xl"}  2k:text-3xl 4k:text-5xl uppercase `}
+        className={`${isFooterBlack ? "text-black" : "text-beige"} font-txt text-[9px] md1:text-lg md:text-xl xl:text-base 2k:text-3xl 4k:text-5xl uppercase `}
       >
         OLD TIME SAILORS LTD.®
       </p>

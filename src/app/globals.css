@@ -35,89 +35,121 @@
 /*Animation End*/
 
 .image-border {
-  border: 47px solid;
-  border-image-source: url("../../public/assets/marco-pc.svg");
-  border-image-slice: 6;
+  border: 49px solid;
+  border-image-source: url("../../public/assets/landing-frame-mobile.svg");
+  border-image-slice: 17;
+}
+
+@media (min-width: 380px) {
+  .image-border {
+    border-width: 44px;
+  }
 }
 
 @media (min-width: 390px) {
   .image-border {
-    border-width: 35px;
-    border-image-slice: 4;
-    border-left-width: 30px;
-    border-right-width: 26px;
+    border-width: 48px;
   }
 }
 
-@media (min-width: 410px) {
+@media (min-width: 393px) {
   .image-border {
-    border-width: 44.5px;
-    border-bottom-width: 47.5px;
-    border-image-slice: 6;
+    border-width: 44px;
   }
 }
 
-@media (min-width: 425px) {
+@media (min-width: 412px) {
   .image-border {
-    border-width: 38px;
+    border-width: 42px;
+
+  }
+}
+@media (min-width: 414px) {
+  .image-border {
+    border-width: 44px;
+
   }
 }
 
 @media (min-width: 430px) {
   .image-border {
-    border-width: 35px;
-    border-image-slice: 4;
-    border-left-width: 27px;
-    border-right-width: 21.5px;
+    border-width: 42px;
   }
 }
 
 @media (min-width: 600px) {
   .image-border {
-    border-width: 45px;
-    border-image-slice: 10;
+    border-width: 58px;
   }
 }
 
+@media (min-width: 744px) {
+  .image-border {
+    border-left-width: 30px;
+    border-right-width: 30px;
+  }
+}
 @media (min-width: 768px) {
   .image-border {
-    border-width: 36px;
+    border-width: 58px;
+  }
+}
+
+@media (min-width: 820px) {
+  .image-border {
+    border-width: 59px;
   }
 }
 
 @media (min-width: 1024px) {
   .image-border {
-    border-width: 28px;
+    border-width: 50px;
   }
 }
 
 @media (min-width: 1280px) {
   .image-border {
-    border-width: 100px;
+    border-width: 125px;
     border-image-slice: 27;
+  }
+}
+
+@media (min-width: 1366px) {
+  .image-border {
+    border-width: 130px;
   }
 }
 
 @media (min-width: 1440px) {
   .image-border {
-    border-width: 90px;
+    border-width: 110px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .image-border {
+    border-width: 120px;
   }
 }
 @media (min-width: 1920px) {
   .image-border {
-    border-width: 75px;
+    border-width: 90px;
   }
 }
 
 @media (min-width: 2560px) {
   .image-border {
-    border-width: 105px;
+    border-image-source: url("../../public/assets/landing-frame-desktop.svg");
+    border-image-slice: 36;
+    border-width: 140px;
   }
 }
 
 @media (min-width: 3840px) {
   .image-border {
-    border-width: 85px;
+    border-width: 142px;
+    border-image-slice: 42;
+
   }
 }
 
@@ -155,10 +187,17 @@
   }
 }
 
-@media (min-width: 810px) {
+@media (min-width: 600px) {
   .octagon {
     width: 190px;
     height: 45px;
+  }
+}
+
+@media (min-width: 810px) {
+  .octagon {
+    width: 210px;
+    height: 50px;
   }
 }
 
@@ -171,7 +210,7 @@
 
 @media (min-width: 1024px) {
   .octagon {
-    width: 285px;
+    width: 310px;
     height: 70px;
   }
 }
@@ -1021,9 +1060,4 @@
     width: calc(100% - 5px);
     height: 100.5px;
   }
-}
-
-
-.blur-photo{
-  filter: blur(50px);
 }

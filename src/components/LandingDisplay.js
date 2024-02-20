@@ -44,10 +44,10 @@ const LandingDisplay = ({ images }) => {
   return (
     <>
       <div className="md1:px-3 md:px-14 md2:px-14 lg:px-28 xl:p-0">
-    <div className="grid grid-cols-2 xl:grid-cols-4 gap-[5px] xl:gap-4">
+    <div className="grid grid-cols-2 md1:px-8 md1:pb-4 xl:p-0 min-[1536px]:max-fullHD:px-40 xl:grid-cols-4 gap-[5px] xl:gap-4">
         {images && images.map((image) => (
-            <div key={image.id} className="flex justify-center items-center w-full h-auto" onClick={() => handleClick(image.urls.XL.url)}>
-                <div className="aspect-w-1 aspect-h-1 w-full h-full flex justify-center items-center">
+
+                <div key={image.id} onClick={() => handleClick(image.urls.XL.url)} className="aspect-w-1 aspect-h-1 w-full h-full flex justify-center items-center">
                     {/* Using Next.js Image component, ensure the layout is responsive */}
                     <Image
                         src={image.urls.large.url}
@@ -59,7 +59,6 @@ const LandingDisplay = ({ images }) => {
                         
                     />
                 </div>
-            </div>
         ))}
     </div>
 </div>

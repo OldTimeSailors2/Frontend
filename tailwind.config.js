@@ -35,6 +35,7 @@ module.exports = {
       screens:{
         'xs': '380px',
         'xs2': '400px',
+        'xs3': '410px',
         'md1' : '600px',
         'md2': '790px',
         'md3': '820px',
@@ -42,7 +43,11 @@ module.exports = {
         '1xxl': '1440px',
         'fullHD': '1920px',
         '2k': '2560px',
-        '4k': '3840px'
+        '4k': '3840px',
+        'iphone-1': '390px',
+        'iphone-2': '414px',
+        'iphone-3': '428px',
+        
       }
 
     },
