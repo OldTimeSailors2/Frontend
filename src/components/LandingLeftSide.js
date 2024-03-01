@@ -68,7 +68,7 @@ const LandingLeftSide = () => {
              
              : "text-sm xs2:text-base md1:text-lg min-[820px]:text-xl lg:text-3xl   px-1 xs2:px-1.5 md1:px-1"}`}
           
-             onClick={() => handleClick}
+             onClick={() => handleClick()}
         >
           blurb
         </button>
