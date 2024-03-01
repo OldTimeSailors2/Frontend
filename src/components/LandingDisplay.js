@@ -2,11 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Modal, ModalContent } from "@nextui-org/modal";
 
 const LandingDisplay = ({ images }) => {
-  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
-  const [currentPhoto, setCurrentPhoto] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+
+// States to hold dynamically loaded components
+const [Modal, setModal] = useState(null);
+const [ModalContent, setModalContent] = useState(null);
 
   {
     /*PHOTOS DISPLAY */
@@ -16,27 +19,32 @@ const LandingDisplay = ({ images }) => {
     /*Photo Functions*/
   }
 
-  const selectPhoto = (photoUrl) => {
-    setCurrentPhoto(photoUrl);
+  const selectImage = (image) => {
+    setCurrentImage(image);
   };
 
-  const deselectPhoto = () => {
-    setCurrentPhoto(null);
+  const deselectImage = () => {
+    setCurrentImage(null);
   };
 
-  const openPhotoModal = () => setIsPhotoModalOpen(true);
-  const closePhotoModal = () => setIsPhotoModalOpen(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const handleClose = () => {
-    closePhotoModal();
-    deselectPhoto();
+    closeModal();
+    deselectImage();
   };
 
-  const handleClick = (imageUrl) => {
-    selectPhoto(imageUrl);
-    openPhotoModal();
-  };
+  const handleClick = async (image) => {
 
+    if (!Modal || !ModalContent) {
+      const modalModule = await import('@nextui-org/modal');
+      setModal(() => modalModule.Modal);
+      setModalContent(() => modalModule.ModalContent);
+    }
+    selectImage(image);
+    openModal();
+  }
   {
     /*PHOTOS DISPLAY END*/
   }
@@ -44,17 +52,25 @@ const LandingDisplay = ({ images }) => {
   return (
     <>
       <div className="md1:px-3 md:px-14 md2:px-14 lg:px-28 xl:p-0">
-    <div className="grid grid-cols-2 md1:px-8 md1:pb-4 xl:p-0 min-[1536px]:max-fullHD:px-40 xl:grid-cols-4 gap-[5px] xl:gap-4">
+    <div className="grid grid-cols-2 md1:px-28 md1:pb-4 xl:p-0 min-[1536px]:max-fullHD:px-40 xl:grid-cols-4 gap-[5px] xl:gap-4">
         {images && images.map((image) => (
 
-                <div key={image.id} onClick={() => handleClick(image.urls.XL.url)} className="aspect-w-1 aspect-h-1 w-full h-full flex justify-center items-center">
-                    {/* Using Next.js Image component, ensure the layout is responsive */}
+                <div key={image.id}
+                      onClick={() => handleClick({
+                        url: image.attributes.formats.xl ? image.attributes.formats.xl.url : image.attributes.url,
+                        blurDataURL: image.blurDataURL
+                      })}
+                      className="aspect-w-1 aspect-h-1 w-full h-full flex justify-center items-center">
+                    
                     <Image
-                        src={image.urls.large.url}
+                        src={image.attributes.formats.small.url}
                         alt={`Image ${image.id}`}
                         priority={true}
-                        fill={true} // This makes the image fill the container while maintaining aspect ratio
-                        style={{objectFit: 'contain'}} // Adjust as needed to 'contain' for no cropping
+                        fill={true}
+                        sizes="(max-width: 600px) 40vw, (max-width: 1280px) 35vw, 25vw"
+                        style={{objectFit: 'contain'}}
+                        placeholder="blur"
+                        blurDataURL={image.blurDataURL}
                         className="rounded-sm cursor-pointer"
                         
                     />
@@ -64,8 +80,10 @@ const LandingDisplay = ({ images }) => {
 </div>
 
       {/*PHOTOS DISPLAY */}
+
+      { isModalOpen && Modal && ModalContent &&
       <Modal
-        isOpen={isPhotoModalOpen}
+        isOpen={isModalOpen}
         onClose={handleClose}
         placement="center"
         style={{ maxWidth: "95vh" }}
@@ -78,18 +96,22 @@ const LandingDisplay = ({ images }) => {
         backdrop="blur"
       >
         <ModalContent>
-          {currentPhoto && (
+          {currentImage && (
             <Image
-              src={currentPhoto}
+              src={currentImage.url}
               alt="Selected Photo"
               width={1024}
               height={1024}
               className="xl:w-[95vh] xl:h-[95vh]"
               style={{ objectFit: "contain" }}
+              placeholder="blur"
+              blurDataURL={currentImage.blurDataURL}
             />
           )}
         </ModalContent>
       </Modal>
+
+          }
       {/*PHOTOS DISPLAY END*/}
     </>
   );

@@ -4,8 +4,6 @@
 
 
 
-
-
 /*Animation*/
 
 @keyframes rotate-spring {
@@ -34,225 +32,20 @@
 }
 /*Animation End*/
 
-.image-border {
-  border: 49px solid;
-  border-image-source: url("../../public/assets/landing-frame-mobile.svg");
-  border-image-slice: 17;
+
+
+/* Remove map's bottom btns */
+
+.gmnoprint {
+  display: none;
+}
+.gm-style > div > div > a > div > img {
+  display: none;
 }
 
-@media (min-width: 380px) {
-  .image-border {
-    border-width: 44px;
-  }
-}
+/* Remove map's bottom btns end */
 
-@media (min-width: 390px) {
-  .image-border {
-    border-width: 48px;
-  }
-}
 
-@media (min-width: 393px) {
-  .image-border {
-    border-width: 44px;
-  }
-}
-
-@media (min-width: 412px) {
-  .image-border {
-    border-width: 42px;
-
-  }
-}
-@media (min-width: 414px) {
-  .image-border {
-    border-width: 44px;
-
-  }
-}
-
-@media (min-width: 430px) {
-  .image-border {
-    border-width: 42px;
-  }
-}
-
-@media (min-width: 600px) {
-  .image-border {
-    border-width: 58px;
-  }
-}
-
-@media (min-width: 744px) {
-  .image-border {
-    border-left-width: 30px;
-    border-right-width: 30px;
-  }
-}
-@media (min-width: 768px) {
-  .image-border {
-    border-width: 58px;
-  }
-}
-
-@media (min-width: 820px) {
-  .image-border {
-    border-width: 59px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .image-border {
-    border-width: 50px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .image-border {
-    border-width: 125px;
-    border-image-slice: 27;
-  }
-}
-
-@media (min-width: 1366px) {
-  .image-border {
-    border-width: 130px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .image-border {
-    border-width: 110px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .image-border {
-    border-width: 120px;
-  }
-}
-@media (min-width: 1920px) {
-  .image-border {
-    border-width: 90px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .image-border {
-    border-image-source: url("../../public/assets/landing-frame-desktop.svg");
-    border-image-slice: 36;
-    border-width: 140px;
-  }
-}
-
-@media (min-width: 3840px) {
-  .image-border {
-    border-width: 142px;
-    border-image-slice: 42;
-
-  }
-}
-
-.octagon {
-  width: 120px;
-  height: 30px;
-  clip-path: polygon(
-    5% 0%,
-    95% 0%,
-    100% 25%,
-    100% 75%,
-    95% 95%,
-    5% 95%,
-    0% 75%,
-    0% 25%
-  );
-}
-
-@media (min-width: 380px) {
-  .octagon {
-    width: 140px;
-    height: 35px;
-  }
-}
-
-@media (min-width: 400px) {
-  .octagon {
-    width: 150px;
-  }
-}
-
-@media (min-width: 420px) {
-  .octagon {
-    width: 160px;
-  }
-}
-
-@media (min-width: 600px) {
-  .octagon {
-    width: 190px;
-    height: 45px;
-  }
-}
-
-@media (min-width: 810px) {
-  .octagon {
-    width: 210px;
-    height: 50px;
-  }
-}
-
-@media (min-width: 820px) {
-  .octagon {
-    width: 230px;
-    height: 55px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .octagon {
-    width: 310px;
-    height: 70px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .octagon {
-    width: 180px;
-    height: 40px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .octagon {
-    width: 230px;
-    height: 50px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .octagon {
-    width: 300px;
-    height: 68px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .octagon {
-    width: 380px;
-    height: 82px;
-  }
-}
-
-@media (min-width: 3840px) {
-  .octagon {
-    width: 580px;
-    height: 120px;
-  }
-}
-
-.mirror {
-  transform: scaleX(-1);
-}
 
 .octagon-navbar {
   width: 140px;
@@ -305,8 +98,8 @@
 }
 
 .octagon-tickets {
-  width: 210px;
-  height: 40px;
+  width: 190px;
+  height: 35px;
   clip-path: polygon(
     5% 0%,
     95% 0%,
@@ -326,55 +119,7 @@
   }
 }
 
-.carousel-container {
-  @apply w-full;
-}
 
-.item-carousel {
-  @apply flex items-end justify-center;
-}
-
-.items-overlay {
-  @apply absolute inset-0 flex backdrop-blur-[2px] z-10 ease-in duration-150;
-}
-
-.react-multi-carousel-item--active .items-overlay {
-  @apply backdrop-filter-none;
-}
-
-.items-overlay-song {
-  @apply text-beige blur-[2px] ease-in duration-150;
-}
-
-.react-multi-carousel-item--active .items-overlay-song {
-  @apply filter-none;
-}
-
-.items-overlay-video {
-  @apply absolute inset-0 flex backdrop-blur-[2px] z-10 ease-in duration-150;
-}
-
-.react-multi-carousel-item--active .items-overlay-video {
-  @apply backdrop-filter-none;
-}
-
-.react-multiple-carousel__arrow:hover {
-  background: transparent;
-}
-
-.react-multiple-carousel__arrow {
-  @apply z-40 h-full rounded-none;
-}
-
-.react-multiple-carousel__arrow--left {
-  left: 0;
-  width: calc(5% + 1px);
-}
-
-.react-multiple-carousel__arrow--right {
-  right: 0;
-  width: calc(5% + 1px);
-}
 
 .progress-input {
   -webkit-appearance: none;
@@ -479,7 +224,7 @@
 }
 
 .popup-bubble {
-  @apply flex absolute top-0 left-0 bg-[#dcccb5] rounded-xl shadow-lg border-4 border-lightRed min-w-[200px] md:min-w-[400px];
+  @apply flex absolute top-0 left-0 bg-[#dcccb5] rounded-xl shadow-lg border-4 border-lightRed min-w-[100px] md:min-w-[400px];
   transform: translate(-50%, -100%) scale(0.8); /* Start scaled down */
   opacity: 0;
   transition:
@@ -492,55 +237,8 @@
   transform: translate(-50%, -100%) scale(1); /* Scale to normal size */
 }
 
-.spinner {
-  width: 40px;
-  height: 40px;
 
-  position: relative;
-  margin: 100px auto;
-}
 
-.double-bounce1,
-.double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #333;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  -webkit-animation: sk-bounce 2s infinite ease-in-out;
-  animation: sk-bounce 2s infinite ease-in-out;
-}
-
-.double-bounce2 {
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-
-@-webkit-keyframes sk-bounce {
-  0%,
-  100% {
-    -webkit-transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes sk-bounce {
-  0%,
-  100% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-}
 
 /*Services Display Layout*/
 
@@ -549,16 +247,15 @@
   position: relative;
   background-color: #dd3254;
   width: var(--hexagon-width, 105px); /* Fallback to 105px */
-  height: var(--hexagon-height, 80px); /* Fallback to 80px */
+  height: var(--hexagon-height, 70.5px); /* Fallback to 70.5px */
   left: 1px;
 }
 
 .services-hexagon::before {
   content: "";
   position: absolute;
-
   width: var(--hexagon-before-width, 103px); /* Fallback to 103px */
-  height: var(--hexagon-before-height, 79px); /* Fallback to 79px */
+  height: var(--hexagon-before-height, 69px); /* Fallback to 69px */
   clip-path: polygon(0 20%, 13% 0, 100% 0, 100% 100%, 13% 100%, 0 80%);
 }
 
@@ -566,17 +263,16 @@
   clip-path: polygon(0 20%, 13% 0, 100% 0, 100% 100%, 13% 100%, 0 80%);
   position: relative;
   background-color: #dd3254;
-  width: var(--hexagon-2-width, 105px); /* Fallback to  235.2px */
-  height: var(--hexagon-2-height, 80px); /* Fallback to 69.3px */
+  width: var(--hexagon-2-width, 105px); /* Fallback to 105px */
+  height: var(--hexagon-2-height, 70.5px); /* Fallback to 70.5px */
   left: 1px;
 }
 
 .services-hexagon-2::before {
   content: "";
   position: absolute;
-
   width: var(--hexagon-2-before-width, 103px); /* Fallback to 103px */
-  height: var(--hexagon-2-before-height, 79px); /* Fallback to 79px */
+  height: var(--hexagon-2-before-height, 69px); /* Fallback to 69px */
   clip-path: polygon(0 20%, 13% 0, 100% 0, 100% 100%, 13% 100%, 0 80%);
 }
 
@@ -585,22 +281,21 @@
   position: relative;
   background-color: #dd3254;
   width: var(--hexagon-3-width, 105px); /* Fallback to 105px */
-  height: var(--hexagon-3-height, 80px); /* Fallback to 80px */
+  height: var(--hexagon-3-height, 70.5px); /* Fallback to 70.5px */
   left: 1px;
 }
 
 .services-hexagon-3::before {
   content: "";
   position: absolute;
-
   width: var(--hexagon-3-before-width, 103px); /* Fallback to 103px */
-  height: var(--hexagon-3-before-height, 79px); /* Fallback to vpx */
+  height: var(--hexagon-3-before-height, 69px); /* Fallback to 69px */
   clip-path: polygon(0 20%, 13% 0, 100% 0, 100% 100%, 13% 100%, 0 80%);
 }
 
 .services-octagon {
   width: var(--octagon-width, 250px); /* Fallback to 250px */
-  height: var(--octagon-height, 550px); /* Fallback to 550px */
+  height: var(--octagon-height, 450px); /* Fallback to 450px */
   clip-path: polygon(90% 0, 100% 4%, 100% 96%, 90% 100%, 0 100%, 0 0);
 }
 
@@ -785,7 +480,7 @@
   border-radius: 9999px;
 }
 
-.grid-photo:nth-child(4n) {
+.services-images-grid:nth-child(4n) {
   clip-path: polygon(0 0, 87% 0, 100% 11%, 100% 89%, 87% 100%, 0 100%);
 }
 

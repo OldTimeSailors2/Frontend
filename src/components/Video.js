@@ -13,7 +13,7 @@ const Video = ({ video }) => {
   };
   return (
     <div
-      className={`${video.thumbnailStory ? "w-16 h-32 xs:w-16 xs:h-36 md:w-24 md:h-52 min-[900px]:w-32 min-[900px]:h-72 xl:w-16 xl:h-32 1xl:w-[75px] 1xl:h-36 1xxl:w-20 1xxl:h-44 2xl:w-24 2xl:h-52 2k:w-28 2k:h-64 4k:w-44 4k:h-96" : "w-44 h-28 2k:w-60 2k:h-36 4k:w-72 4k:h-44"} cursor-pointer relative`}
+      className={`${video.thumbnailStory ? "w-16 h-32 xs:w-16 xs:h-36 md:w-24 md:h-52 min-[900px]:w-32 min-[900px]:h-72 xl:w-16 xl:h-32 1xxl:w-[75px] 1xxl:h-36  2xl:w-24 2xl:h-52 2k:w-28 2k:h-64 4k:w-44 4k:h-96" : "w-44 h-28 2k:w-60 2k:h-36 4k:w-72 4k:h-44"} cursor-pointer relative`}
       onClick={(e) => {
         if (isCarouselMoving) {
           e.preventDefault();

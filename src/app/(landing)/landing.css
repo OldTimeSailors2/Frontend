@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+/*Animation*/
+
+@keyframes rotate-spring {
+    0% {
+      transform: rotate(0deg);
+    }
+    80% {
+      transform: rotate(368deg);
+    }
+    85% {
+      transform: rotate(370deg); /* Slight overshoot */
+    }
+    90% {
+      transform: rotate(340deg); /* Reverse a bit */
+    }
+    95% {
+      transform: rotate(360deg); /* Approach final position */
+    }
+    100% {
+      transform: rotate(355deg); /* Settle back a bit slowly */
+    }
+  }
+  
+  .spring-rotate {
+    animation: rotate-spring 1s ease-in-out infinite;
+  }
+  /*Animation End*/
+
+.image-border {
+    border: 49px solid;
+    border-image-source: url("../../../public/assets/landing-frame-mobile.svg");
+    border-image-slice: 17;
+  }
+  
+  @media (min-width: 380px) {
+    .image-border {
+      border-width: 44px;
+    }
+  }
+  
+  @media (min-width: 390px) {
+    .image-border {
+      border-width: 48px;
+    }
+  }
+  
+  @media (min-width: 393px) {
+    .image-border {
+      border-width: 44px;
+    }
+  }
+  
+  @media (min-width: 412px) {
+    .image-border {
+      border-width: 42px;
+  
+    }
+  }
+  @media (min-width: 414px) {
+    .image-border {
+      border-width: 44px;
+  
+    }
+  }
+  
+  @media (min-width: 430px) {
+    .image-border {
+      border-width: 42px;
+    }
+  }
+  
+  @media (min-width: 600px) {
+    .image-border {
+      border-width: 58px;
+    }
+  }
+  
+  @media (min-width: 744px) {
+    .image-border {
+      border-left-width: 30px;
+      border-right-width: 30px;
+    }
+  }
+  @media (min-width: 768px) {
+    .image-border {
+      border-width: 58px;
+    }
+  }
+  
+  @media (min-width: 820px) {
+    .image-border {
+      border-width: 59px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .image-border {
+      border-width: 50px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .image-border {
+      border-width: 125px;
+      border-image-slice: 27;
+    }
+  }
+  
+  @media (min-width: 1366px) {
+    .image-border {
+      border-width: 130px;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .image-border {
+      border-width: 110px;
+    }
+  }
+  
+  @media (min-width: 1536px) {
+    .image-border {
+      border-width: 120px;
+    }
+  }
+  @media (min-width: 1920px) {
+    .image-border {
+      border-width: 85px;
+      border-right-width: 94px;
+    }
+  }
+  
+  @media (min-width: 2560px) {
+    .image-border {
+      border-image-source: url("../../../public/assets/landing-frame-desktop.svg");
+      border-image-slice: 36;
+      border-width: 140px;
+    }
+  }
+  
+  @media (min-width: 3840px) {
+    .image-border {
+      border-width: 142px;
+      border-image-slice: 42;
+  
+    }
+  }
+
+  .octagon {
+    width: 120px;
+    height: 25px;
+    clip-path: polygon(
+      5% 0%,
+      95% 0%,
+      100% 25%,
+      100% 75%,
+      95% 95%,
+      5% 95%,
+      0% 75%,
+      0% 25%
+    );
+  }
+  
+  @media (min-width: 375px) {
+    .octagon {
+      width: 110px;
+      height: 20px;
+    }
+  }
+  
+  @media (min-width: 380px) {
+    .octagon {
+      width: 140px;
+      height: 30px;
+    }
+  }
+  @media (min-width: 390px) and (max-width: 393px) {
+    .octagon {
+      width: 125px;
+      height: 25px;
+    }
+  }
+  
+  
+  @media (min-width: 400px) {
+    .octagon {
+      width: 150px;
+    }
+  }
+  @media (min-width: 414px) and (max-width: 419px) {
+    .octagon {
+      width: 125px;
+      height: 25px;
+    }
+  }
+  
+  @media (min-width: 420px) {
+    .octagon {
+      width: 160px;
+    }
+  }
+  
+  @media (min-width: 427px) {
+    .octagon {
+      width: 125px;
+      height: 26px;
+    }
+  }
+  
+  @media (min-width: 600px) {
+    .octagon {
+      width: 190px;
+      height: 36px;
+    }
+  }
+  
+  @media (min-width: 810px) {
+    .octagon {
+      width: 210px;
+      height: 38px;
+    }
+  }
+  
+  @media (min-width: 820px) {
+    .octagon {
+      width: 230px;
+      height: 40px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .octagon {
+      width: 310px;
+      height: 50px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .octagon {
+      width: 190px;
+      height: 40px;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .octagon {
+      width: 230px;
+      height: 50px;
+    }
+  }
+  
+  @media (min-width: 1920px) {
+    .octagon {
+      width: 300px;
+      height: 68px;
+    }
+  }
+  
+  @media (min-width: 2560px) {
+    .octagon {
+      width: 380px;
+      height: 82px;
+    }
+  }
+  
+  @media (min-width: 3840px) {
+    .octagon {
+      width: 580px;
+      height: 120px;
+    }
+  }
+  
+  .mirror {
+    transform: scaleX(-1);
+  }

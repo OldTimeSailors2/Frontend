@@ -1,10 +1,9 @@
 import MediaWrapper from "@/wrappers/MediaWrapper";
 import Image from "next/image";
 import MediaCarousel from "@/components/MediaCarousel";
-import PhotosDisplay from "@/components/PhotosDisplay";
-import VideoPlayer from "@/components/VideoPlayer";
-import MusicPlayer from "@/components/MusicPlayer";
 import DynamicDecoMedia from "@/components/DynamicDecoMedia";
+import dynamic from 'next/dynamic';
+import { formatPhotos, formatVideos, formatSongs } from "@/helpers/formatApiResponses";
 
 export const metadata = {
   title: "Media",
@@ -14,6 +13,10 @@ export const metadata = {
     description: "Get to know us",
   },
 };
+
+const PhotosDisplay = dynamic(() => import('@/components/PhotosDisplay'), { ssr: false });
+const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), { ssr: false });
+const MusicPlayer = dynamic(() => import('@/components/MusicPlayer'), { ssr: false })
 
 const fetchMediaData = async () => {
   try {
@@ -35,35 +38,10 @@ const fetchMediaData = async () => {
     const videos = await videosRes.json();
     const songs = await songsRes.json();
 
-    const formatPhotos = (photosApiResponse) => {
-      return photosApiResponse.data.attributes.photos.data.map((photo) => ({
-        id: photo.id,
-
-        urls: photo.attributes.formats,
-      }));
-    };
-
-    const formatVideos = (videosApiResponse) => {
-      return videosApiResponse.data.map((video) => ({
-        id: video.id,
-        url: video.attributes.video.data.attributes.url,
-        thumbnail:
-          video.attributes.thumbnail.data.attributes.formats.thumbnail.url,
-        thumbnailStory: video.attributes.thumbnailStory,
-      }));
-    };
-
-    const formatSongs = (songsApiResponse) => {
-      return songsApiResponse.data.map((song) => ({
-        id: song.id,
-        title: song.attributes.title,
-        url: song.attributes.song.data.attributes.url,
-      }));
-    };
-
+   
+    const formattedVideos = await formatVideos(videos);
+    const formattedPhotos = await formatPhotos(photos);
     const formattedSongs = formatSongs(songs);
-    const formattedVideos = formatVideos(videos);
-    const formattedPhotos = formatPhotos(photos);
 
     return { formattedSongs, formattedVideos, formattedPhotos };
   } catch (error) {
@@ -81,15 +59,15 @@ const Media = async () => {
     <>
       <main
         className="bg-bluePatternMobile md1:bg-bluePatternTablet xl:bg-bluePattern  bg-contain  w-screen h-dvh flex flex-col pt-[77px] xs:pt-[92px] sm:pt-[140px] 2xl:pt-[172px] 2k:pt-[204px] 4k:pt-[268px]
-          pb-[36px] md:pb-[44px] 2k:pb-[52px] 4k:pb-[64px] max-xs:justify-evenly justify-around xl:justify-evenly 1xl:justify-start 1xl:gap-3 1xxl:gap-8 2k:gap-0 2k:justify-around"
+          pb-[36px] md:pb-[44px] 2k:pb-[52px] 4k:pb-[64px]  justify-around xl:justify-evenly 1xl:justify-center 1xl:gap-1 1xxl:gap-6 2k:gap-0 2k:justify-around"
       >
         <MediaWrapper
           songs={formattedSongs}
           videos={formattedVideos}
           photos={formattedPhotos}
         >
-          <section className="w-full flex flex-col gap-2 1xl:mt-3 1xxl:mt-5 2k:mt-0">
-            <div className="flex gap-2 items-center px-2 sm:px-6 2k:mb-3">
+          <section className="w-full flex flex-col 1xl:mt-3 1xxl:mt-5 2k:mt-0">
+            <div className="flex items-center px-2 sm:px-6 mb-1 2k:mb-3">
               <Image
                 src="/assets/media-deco-1.svg"
                 width={35}
@@ -97,7 +75,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="font-titles text-lightRed text-3xl sm:text-4xl min-[900px]:text-5xl xl:text-3xl 1xxl:text-4xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 music
               </h1>
               <DynamicDecoMedia />
@@ -106,8 +84,8 @@ const Media = async () => {
             <MusicPlayer />
           </section>
 
-          <section className="w-full flex flex-col gap-3">
-            <div className="flex gap-2 items-center px-2 sm:px-6 2k:mb-3">
+          <section className="w-full flex flex-col">
+            <div className="flex items-center px-2 sm:px-6 mb-2 2k:mb-5">
               <Image
                 src="/assets/media-deco-1.svg"
                 width={35}
@@ -115,7 +93,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="font-titles text-lightRed text-3xl sm:text-4xl min-[900px]:text-5xl xl:text-3xl 1xxl:text-4xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 videos
               </h1>
               <DynamicDecoMedia />
@@ -125,8 +103,8 @@ const Media = async () => {
             <VideoPlayer />
           </section>
 
-          <section className="w-full flex flex-col gap-3">
-            <div className="flex gap-2 items-center px-2 sm:px-6 2k:mb-3">
+          <section className="w-full flex flex-col">
+            <div className="flex items-center px-2 sm:px-6 mb-2 2k:mb-5">
               <Image
                 src="/assets/media-deco-1.svg"
                 width={35}
@@ -134,7 +112,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="font-titles text-lightRed text-3xl sm:text-4xl min-[900px]:text-5xl xl:text-3xl 1xxl:text-4xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 photos
               </h1>
               <DynamicDecoMedia />

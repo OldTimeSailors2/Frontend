@@ -1,13 +1,12 @@
 "use client";
 
-import { createContext, useState, useEffect } from "react";
-import { Howl } from "howler";
+import { createContext, useState, useEffect, useRef } from "react";
 import useMedia from "@/hooks/useMedia";
 
 export const MusicPlayerContext = createContext();
 
 export const MusicPlayerProvider = ({ children }) => {
-  const { playlist, closeModal } = useMedia();
+  const { playlist, closeModal, isModalOpen } = useMedia();
 
   const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -21,7 +20,27 @@ export const MusicPlayerProvider = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [isSeeking, setIsSeeking] = useState(false);
 
-  const playSong = (songId) => {
+
+  const HowlRef = useRef(null); // Ref to hold the Howl constructor
+
+  const loadHowl = async () => {
+    if (!HowlRef.current) {
+      const { Howl } = await import("howler");
+      HowlRef.current = Howl;
+    }
+  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      loadHowl();
+    }
+  }, [isModalOpen]);
+
+  const playSong = async (songId) => {
+    if (!HowlRef.current) {
+      await loadHowl();
+    }
+
     // Find the song in the playlist
     const songToPlay = playlist.find((song) => song.id === songId);
     if (!songToPlay) {
@@ -39,7 +58,7 @@ export const MusicPlayerProvider = ({ children }) => {
       setPlayedSongs((prev) => [...prev, songId]);
     }
 
-    const newSound = new Howl({
+    const newSound = new HowlRef.current({
       src: [songToPlay.url],
       onload: () => setDuration(newSound.duration()), // Set duration on load
     });

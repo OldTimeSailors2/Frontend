@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carousel-container {
+    @apply w-full;
+  }
+  
+  .item-carousel {
+    @apply flex items-end justify-center;
+  }
+  
+  .items-overlay {
+    @apply absolute inset-0 flex backdrop-blur-[2px] z-10 ease-in duration-100;
+  }
+  
+  .react-multi-carousel-item--active .items-overlay {
+    @apply backdrop-filter-none;
+  }
+  
+  .items-overlay-song {
+    @apply text-beige blur-[2px] ease-in duration-100;
+  }
+  
+  .react-multi-carousel-item--active .items-overlay-song {
+    @apply filter-none;
+  }
+  
+  .items-overlay-video {
+    @apply absolute inset-0 flex backdrop-blur-[2px] z-10 ease-in duration-100;
+  }
+  
+  .react-multi-carousel-item--active .items-overlay-video {
+    @apply backdrop-filter-none;
+  }
+  
+  .react-multiple-carousel__arrow:hover {
+    background: transparent;
+  }
+  
+  .react-multiple-carousel__arrow {
+    @apply z-40 h-full rounded-none bg-transparent;
+  }
+  
+  .react-multiple-carousel__arrow--left {
+    left: 0;
+    width: calc(5% + 1px);
+  }
+  
+  .react-multiple-carousel__arrow--right {
+    right: 0;
+    width: calc(5% + 1px);
+  }

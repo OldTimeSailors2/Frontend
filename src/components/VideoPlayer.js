@@ -1,8 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
-import ReactPlayer from "react-player";
-import { Modal, ModalContent } from "@nextui-org/modal";
+import { useState, useRef, useEffect } from "react";
 import useMedia from "@/hooks/useMedia";
 
 const VideoPlayer = () => {
@@ -16,6 +14,26 @@ const VideoPlayer = () => {
   const playerRef = useRef();
   const [videoStyle, setVideoStyle] = useState({});
   const [isVerticalVideo, setIsVerticalVideo] = useState(false);
+
+
+  const [loaded, setLoaded] = useState(false);
+  const Modal = useRef(null);
+  const ModalContent = useRef(null);
+  const ReactPlayer = useRef(null);
+
+  useEffect(() => {
+    if (isVideoModalOpen && !loaded) {
+      Promise.all([
+        import("react-player/file").then((mod) => { ReactPlayer.current = mod.default; }),
+        import("@nextui-org/modal").then((mod) => {
+          Modal.current = mod.Modal;
+          ModalContent.current = mod.ModalContent;
+        })
+      ]).then(() => setLoaded(true));
+    }
+  }, [isVideoModalOpen, loaded]);
+
+
 
   const onVideoLoad = () => {
     // Access the internal player after it's ready
@@ -45,9 +63,17 @@ const VideoPlayer = () => {
 
     setVideoStyle(styles);
   };
+
+
+  if (!loaded) return null;
+
+  const DynamicReactPlayer = ReactPlayer.current;
+  const DynamicModal = Modal.current;
+  const DynamicModalContent = ModalContent.current;
+
   return (
     <>
-      <Modal
+      <DynamicModal
         isOpen={isVideoModalOpen}
         onClose={handleClose}
         placement="center"
@@ -58,11 +84,12 @@ const VideoPlayer = () => {
           closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
           base: "max-w-[82%] max-h-[58vh] sm:max-w-[70%] sm:max-h-[80vh] w-auto h-auto",
         }}
+        backdrop="blur"
       >
-        <ModalContent
+        <DynamicModalContent
           className={`flex justify-center items-center ${isVerticalVideo ? "h-[95%]" : ""}`}
         >
-          <ReactPlayer
+          <DynamicReactPlayer
             url={currentVideo}
             controls={true}
             width="100%"
@@ -79,8 +106,8 @@ const VideoPlayer = () => {
             style={videoStyle}
             ref={playerRef}
           />
-        </ModalContent>
-      </Modal>
+        </DynamicModalContent>
+      </DynamicModal>
     </>
   );
 };

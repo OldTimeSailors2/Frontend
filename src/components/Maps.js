@@ -202,7 +202,7 @@ const Maps = ({ markersList }) => {
       southWestLatLng,
       northEastLatLng,
     );
-    const imageUrl = "/assets/MapaNuevo12.png";
+    const imageUrl = "/assets/MapaNuevo17.png";
     const overlayOptions = { clickable: false };
     console.log("Bounds", southWestLatLng, northEastLatLng);
 
@@ -241,30 +241,30 @@ const Maps = ({ markersList }) => {
         />
       </div>
 
-      <div className="flex flex-col mt-3 mb-2 px-4 items-center gap-3 w-full">
+      <div className="flex flex-col mt-2.5 md1:mt-3 mb-2 px-2 md1:px-4 items-center gap-1.5 md1:gap-3 w-full">
         <button
           className="absolute top-0 right-0 pt-0.5 pr-0.5"
           onClick={() => setActiveMarkerId(null)}
         >
-          <CgClose className="text-[20px] text-[#232f3f] " />
+          <CgClose className=" text-[15px] md1:text-[20px] text-[#232f3f] " />
         </button>
 
         <ul className="self-start -space-y-1">
-          <li className="text-2xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
+          <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
             event:
-            <p className="text-[22px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
+            <p className="text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
               {markerData.event}
             </p>
           </li>
-          <li className="text-2xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
+          <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
             location:
-            <p className="text-[22px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
+            <p className="text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
               {markerData.location}
             </p>
           </li>
-          <li className="text-2xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
+          <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
             date:
-            <p className="text-[22px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
+            <p className="text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
               {markerData.date}
             </p>
           </li>
@@ -273,7 +273,7 @@ const Maps = ({ markersList }) => {
           className="octagon-tickets flex items-center justify-center bg-darkBlue"
           href={markerData.ticketsURL} target="_blank"
         >
-          <p className="text-center text-4xl md:text-[42px] font-titles text-lightRed">
+          <p className="text-center text-3xl md:text-[42px] font-titles text-lightRed">
             tickets
           </p>
         </Link>

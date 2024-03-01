@@ -1,6 +1,7 @@
-import ServicesDisplay from "@/components/ServicesDisplay";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import { formatServices } from "@/helpers/formatApiResponses";
 
 export const metadata = {
   title: "Services",
@@ -11,15 +12,10 @@ export const metadata = {
   },
 };
 
-const formatServices = (servicesApiResponse) => {
-  return servicesApiResponse.data.map((service) => ({
-    id: service.attributes.serviceId,
-    images: service.attributes.images.data.map((image) => {
-      return image.attributes.formats;
-    }),
-    paragraph: service.attributes.paragraph,
-  }));
-};
+
+const ServicesDisplay = dynamic(() => import('@/components/ServicesDisplay'), { ssr: false });
+
+
 
 const fetchServices = async () => {
   try {
@@ -30,7 +26,7 @@ const fetchServices = async () => {
       );
     }
     const services = await res.json();
-    const formattedServices = formatServices(services);
+    const formattedServices = await formatServices(services);
 
     return formattedServices;
   } catch (error) {
@@ -43,7 +39,7 @@ const Services = async () => {
   const services = await fetchServices();
 
   return (
-    <main className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain flex flex-col justify-center gap-8 md1:max-xl:gap-24 md:max-md2:gap-14  1xl:items-center 1xl:justify-evenly pt-[77px] xs:pt-[92px] sm:pt-[140px] 2xl:pt-[172px] 2k:pt-[204px] 4k:pt-[268px] pb-[44px] 2k:pb-[52px] 4k:pb-[64px]">
+    <main className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain flex flex-col justify-center gap-4 md1:max-xl:gap-24 md:gap-8 1xl:max-1xxl:gap-2  1xl:items-center 1xl:justify-evenly pt-[77px] xs:pt-[92px] sm:pt-[140px] 2xl:pt-[172px] 2k:pt-[204px] 4k:pt-[268px] pb-[44px] 2k:pb-[52px] 4k:pb-[64px]">
       <ServicesDisplay services={services} />
 
       <div className="w-full relative flex mt-4 md:max-md3:mt-0">

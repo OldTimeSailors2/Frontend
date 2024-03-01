@@ -6,7 +6,7 @@ const Loading = () => {
     <div className="relative w-screen h-screen">
       {/* Background Image */}
       <Image
-        src="/assets/fondo-01.png"
+        src="/assets/backgrounds/fondo-01.webp"
         fill
         style={{ objectFit: "cover", objectPosition: "center" }}
         priority={true}

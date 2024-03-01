@@ -6,7 +6,7 @@ import Song from "./Song";
 import Video from "./Video";
 import Photo from "./Photo";
 import useMedia from "@/hooks/useMedia";
-import "../app/globals.css";
+import "./carousel-styles.css";
 
 const MediaCarousel = ({ mediaType }) => {
   const { playlist, videoList, photoList, setIsCarouselMoving } = useMedia();
@@ -81,7 +81,8 @@ const MediaCarousel = ({ mediaType }) => {
       infinite={true}
       autoPlay={false}
       keyBoardControl={true}
-      draggable={false}
+      draggable={false} // for desktop
+      minimumTouchDrag={25}
       containerClass="carousel-container"
       itemClass="item-carousel"
       removeArrowOnDeviceType={["tablet", "mobile"]}

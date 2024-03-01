@@ -1,10 +1,13 @@
 "use client";
 
+import useBrowserDetection from "@/hooks/useBrowserDetection";
 import { useRef, useState, useEffect } from "react";
+
 
 const MobileSeparator = ({ children }) => {
   const contentRef = useRef(null);
   const [separatorHeight, setSeparatorHeight] = useState("auto");
+  const { isSafari } = useBrowserDetection()
 
   useEffect(() => {
     if (contentRef.current) {
@@ -16,7 +19,7 @@ const MobileSeparator = ({ children }) => {
     <>
       <img
         src="/assets/reviews-line-mobile.svg"
-        style={{ height: separatorHeight }}
+        style={{ height: `calc(${separatorHeight} + ${isSafari ? "1.85rem" : "0px"})` }}
         className="w-auto object-cover mx-0.5 xl:hidden"
         alt="Reviews decoration"
       />
@@ -27,7 +30,7 @@ const MobileSeparator = ({ children }) => {
 
       <img
         src="/assets/reviews-line-mobile.svg"
-        style={{ height: separatorHeight }}
+        style={{ height: `calc(${separatorHeight} + ${isSafari ? "1.85rem" : "0px"})` }}
         className="w-auto object-cover mx-0.5 xl:hidden"
         alt="Reviews decoration"
       />

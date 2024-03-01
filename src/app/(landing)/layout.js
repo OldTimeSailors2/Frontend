@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import "../globals.css";
+import "./landing.css";
 import LandingWrapper from "@/wrappers/LandingWrapper";
 
 const khmer_mn = localFont({
