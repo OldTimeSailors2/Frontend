@@ -50,7 +50,7 @@ const formatSongs = (songsApiResponse) => {
 const formatLandingImages = async (landingImagesApiResponse) => {
 
 
-  const placeholderUrls = await landingImagesApiResponse.data.attributes.photos.data.map(photo => photo.attributes.formats.placeholder.url);
+  const placeholderUrls = landingImagesApiResponse.data.attributes.photos.data.map(photo => photo.attributes.formats?.placeholder?.url);
   const base64Strings = await fetchAndConvertToBase64(placeholderUrls);
 
   return landingImagesApiResponse.data.attributes.photos.data.map((photo, index) => ({
