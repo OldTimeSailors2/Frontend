@@ -6,7 +6,7 @@ import LandingDisplay from "@/components/LandingDisplay";
 
 import { formatLandingImages } from "@/helpers/formatApiResponses";
 
-const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), { ssr: true });
+const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), { ssr: false });
 const LandingDynamicBg = dynamic(() => import("@/components/LandingDynamicBg"), { ssr: false });
 
 
@@ -26,6 +26,7 @@ const fetchLandingImages = async () => {
     }
     const landingImages = await res.json()
     const formattedLandingImages = await formatLandingImages(landingImages);
+
 
     return formattedLandingImages;
   } catch (error) {

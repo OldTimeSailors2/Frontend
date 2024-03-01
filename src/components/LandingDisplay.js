@@ -5,7 +5,6 @@ import { useState } from "react";
 
 const LandingDisplay = ({ images }) => {
 
-  console.log(images)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
 
