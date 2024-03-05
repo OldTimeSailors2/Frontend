@@ -1,11 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import desktopImage from "public/assets/clients-desktop.svg";
-import mobileImage from "public/assets/clients-mobile.svg";
 import { useEffect, useState } from "react";
 
-const ResponsiveImage = () => {
+const ResponsiveImage = ({images}) => {
   const [isDesktopOrLaptop, setIsDesktopOrLaptop] = useState(false);
 
   useEffect(() => {
@@ -24,23 +22,27 @@ const ResponsiveImage = () => {
     <div className="relative w-full h-full">
       {isDesktopOrLaptop ? (
         <Image
-          src={desktopImage}
+          src={images.desktop.formats.xl ? images.desktop.formats.xl.url : images.desktop.formats.large.url}
           quality={100}
           priority={true}
           alt="our clients"
-          sizes="100vw"
+          sizes="70vw"
           fill
           className="object-contain flex items-center justify-center py-3"
+          placeholder="blur"
+          blurDataURL={images.desktop.blurDataURL}
         />
       ) : (
         <Image
-          src={mobileImage}
+          src={images.mobile.formats.medium ? images.mobile.formats.medium.url : images.mobile.formats.small.url}
           quality={100}
           priority={true}
           alt="our clients"
           sizes="100vw"
           fill
           className="object-contain flex items-center justify-center px-2"
+          placeholder="blur"
+          blurDataURL={images.mobile.blurDataURL}
         />
       )}
     </div>

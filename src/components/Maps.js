@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef, Fragment } from "react";
+import { useEffect, useState, useMemo, useCallback, Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -16,13 +16,28 @@ import CustomPopup from "./CustomPopup";
 import { CgClose } from "react-icons/cg";
 
 const Maps = ({ markersList }) => {
+
+  const overlayData = useMemo(() => ({
+    mobile: {
+      imageUrl: "/assets/map-mobile.webp",
+      sw: { lat: 48.15101962663997, lng: -14.624391892254629 }, // SW coordinates A
+      ne: { lat: 63.41423162171008, lng: 7.880460478192122 }, // NE coordinates A
+    },
+    desktop: {
+      imageUrl: "/assets/map-desktop.webp",
+      sw: { lat: 48.54530012368014 , lng: -25.21521220475463 }, // SW coordinates B
+      ne: { lat: 63.433892030361925, lng:  17.88900540006712 }, // NE coordinates B
+    },
+  }), []);
+
+  const [currentOverlay, setCurrentOverlay] = useState(overlayData.desktop)
   const [overlayLoaded, setOverlayLoaded] = useState(false);
   const [activeMarkerId, setActiveMarkerId] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const coreLibrary = useMapsLibrary("core");
   const mapsLibrary = useMapsLibrary("maps");
-  const map = useMap("Map");
+  const map = useMap("MapOTS");
   const apiIsLoaded = useApiIsLoaded();
 
   const [mapCenter, setMapCenter] = useState({ lat: 55.97, lng: -3.699966 });
@@ -30,14 +45,36 @@ const Maps = ({ markersList }) => {
   const [markerIconScale, setMarkerIconScale] = useState(6);
   const southWest = { lat: 49.68145071046583, lng: -11.130739548504629 };
   const northEast = { lat: 63.335455022149226, lng: 3.2662026656921217 };
+ 
+ 
 
-  const breakpoints = [
+  const restrictions = useMemo(() => ({
+    latLngBounds: {
+      north: currentOverlay.ne.lat,
+      south: currentOverlay.sw.lat,
+      west: currentOverlay.sw.lng,
+      east: currentOverlay.ne.lng,
+    },
+    strictBounds: true,
+  }), [currentOverlay]);
+
+
+  const breakpoints = useMemo(() => ([
     {
       min: 0,
+      max: 369,
+      action: () => {
+        setMapCenter({ lat: 54.75, lng: -2.199966 });
+        setMapZoom(4);
+        setMarkerIconScale(4);
+      },
+    },
+    {
+      min: 370,
       max: 379,
       action: () => {
-        setMapCenter({ lat: 56.65, lng: -3.499966 });
-        setMapZoom(5.5);
+        setMapCenter({ lat: 55, lng: -2.499966 });
+        setMapZoom(4);
         setMarkerIconScale(4);
       },
     },
@@ -166,56 +203,72 @@ const Maps = ({ markersList }) => {
     },
 
     // Add more breakpoints as needed
-  ];
+  ]), []);
 
-  const updateMapSettings = () => {
+  const updateMapSettings = useCallback(() => {
     const width = window.innerWidth;
     const breakpoint = breakpoints.find(
       (bp) => width >= bp.min && width <= bp.max,
     );
     if (breakpoint) breakpoint.action();
-  };
+  }, []);
+
+
 
   // Set up resize listener and initial settings
   useEffect(() => {
-    updateMapSettings(); // Set initial values on component mount
-    window.addEventListener("resize", updateMapSettings);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("resize", updateMapSettings);
+    const checkDeviceAndAdjustMap = () => {
+      const width = window.innerWidth;
+      const isMobile = window.matchMedia("(max-width: 1280px)").matches;
+  
+      // Determine current overlay based on device type
+      const currentOverlay = isMobile ? overlayData.mobile : overlayData.desktop;
+      setCurrentOverlay(currentOverlay); // Assuming setCurrentOverlay updates the overlay state
+  
+      // Find and apply the appropriate breakpoint action
+      const breakpoint = breakpoints.find(bp => width >= bp.min && width <= bp.max);
+      if (breakpoint) breakpoint.action();
     };
+  
+    checkDeviceAndAdjustMap(); // Call once on mount
+    window.addEventListener("resize", checkDeviceAndAdjustMap); // Adjust on resize
+  
+    // Cleanup
+    return () => window.removeEventListener("resize", checkDeviceAndAdjustMap);
   }, []);
 
+
+  //Overlay useEffect
   useEffect(() => {
     if (!apiIsLoaded || !map || !coreLibrary || !mapsLibrary) return;
 
     const southWestLatLng = new coreLibrary.LatLng(
-      southWest.lat,
-      southWest.lng,
+      currentOverlay.sw.lat,
+      currentOverlay.sw.lng,
     );
     const northEastLatLng = new coreLibrary.LatLng(
-      northEast.lat,
-      northEast.lng,
+      currentOverlay.ne.lat,
+      currentOverlay.ne.lng,
     );
     const bounds = new coreLibrary.LatLngBounds(
       southWestLatLng,
       northEastLatLng,
     );
-    const imageUrl = "/assets/MapaNuevo17.png";
+
+
     const overlayOptions = { clickable: false };
     console.log("Bounds", southWestLatLng, northEastLatLng);
 
     const overlay = new mapsLibrary.GroundOverlay(
-      imageUrl,
+      currentOverlay.imageUrl,
       bounds,
       overlayOptions,
     );
     overlay.setMap(map);
 
-    overlay.setOpacity(1);
+    overlay.setOpacity(0.3);
     setOverlayLoaded(true);
-  }, [apiIsLoaded, map, coreLibrary, mapsLibrary, southWest, northEast]);
+  }, [apiIsLoaded, map, coreLibrary, mapsLibrary, southWest, northEast, currentOverlay]);
 
   const handleMarkerClick = (id, markerPosition) => {
     if (activeMarkerId && activeMarkerId !== id) {
@@ -229,7 +282,7 @@ const Maps = ({ markersList }) => {
     }
   };
 
-  const createPopupContent = (markerData) => (
+  const createPopupContent = useCallback((markerData) => (
     <div className="popup-bubble">
       <div className="flex items-center justify-center px-2 border-r-3 border-dashed border-[#354557]">
         <Image
@@ -279,7 +332,7 @@ const Maps = ({ markersList }) => {
         </Link>
       </div>
     </div>
-  );
+  ),[]);
 
   return (
     <div className="h-dvh">
@@ -288,7 +341,8 @@ const Maps = ({ markersList }) => {
         center={mapCenter}
         gestureHandling={"greedy"}
         disableDefaultUI={true}
-        id={"Map"}
+        id={"MapOTS"}
+        restriction={restrictions}
       >
         {coreLibrary &&
           markersList.map((m) => (

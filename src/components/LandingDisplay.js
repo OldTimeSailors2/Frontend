@@ -58,13 +58,13 @@ const [ModalContent, setModalContent] = useState(null);
 
                 <div key={image.id}
                       onClick={() => handleClick({
-                        url: image.attributes.formats?.xl ? image.attributes.formats?.xl?.url : image.attributes.url,
+                        url: image.attributes.formats.xl ? image.attributes.formats.xl.url : image.attributes.url,
                         blurDataURL: image.blurDataURL
                       })}
                       className="aspect-w-1 aspect-h-1 w-full h-full flex justify-center items-center">
                     
                     <Image
-                        src={image.attributes.formats?.small?.url}
+                        src={image.attributes.formats.small.url}
                         alt={`Image ${image.id}`}
                         priority={true}
                         fill={true}

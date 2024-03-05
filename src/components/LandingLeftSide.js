@@ -157,13 +157,14 @@ const LandingLeftSide = () => {
 
 {isModalOpen && ModalComponent && (
 <ModalComponent.Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}
-       size="xl" classNames={{base: "bg-beigePattern bg-center bg-contain rounded-3xl xl:rounded-[40px]", 
-                              closeButton: "text-[2.5rem] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]"}}
+       size="xl" classNames={{base: "bg-beigePattern bg-center bg-contain rounded-3xl xl:rounded-[35px]", 
+                              closeButton: "text-[2.5rem] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
+                            header: "border-none"}}
       backdrop="blur" placement="center"
       >
-        <ModalComponent.ModalContent className="">
+        <ModalComponent.ModalContent>
               <ModalComponent.ModalHeader className="pb-0 iphone-3:px-7 xl:px-8">
-                <Image src="/assets/blurb-title.png" width={130} height={130} alt="Blurb title" />
+                <Image src="/assets/blurb-title.webp" width={130} height={130} alt="Blurb title" />
               </ModalComponent.ModalHeader>
               <ModalComponent.ModalBody className="pt-0 pb-6 iphone-3:px-7 xl:px-8">
                 <p className=" text-darkBlue font-txt font-bold text-justify text-lg leading-[1.35rem] iphone-3:text-xl iphone-3:leading-6 md1:text-xl md2:text-2xl lg:text-3xl xl:text-xl fullHD:text-2xl 2k:text-4xl 4k:text-6xl"> 

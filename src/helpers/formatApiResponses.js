@@ -50,7 +50,7 @@ const formatSongs = (songsApiResponse) => {
 const formatLandingImages = async (landingImagesApiResponse) => {
 
 
-  const placeholderUrls = landingImagesApiResponse.data.attributes.photos.data.map(photo => photo.attributes.formats?.placeholder?.url);
+  const placeholderUrls = landingImagesApiResponse.data.attributes.photos.data.map(photo => photo.attributes.formats.placeholder.url);
   const base64Strings = await fetchAndConvertToBase64(placeholderUrls);
 
   return landingImagesApiResponse.data.attributes.photos.data.map((photo, index) => ({
@@ -85,5 +85,26 @@ const formatServices = async (servicesApiResponse) => {
   return servicesWithBlurredImages;
 };
 
+const formatClientsImages = async (clientsImagesApiResponse) => {
 
-export { formatPhotos, formatVideos, formatSongs, formatLandingImages, formatServices }
+
+  const placeholderUrls = [clientsImagesApiResponse.data.attributes.desktop.data.attributes.formats.placeholder.url,
+     clientsImagesApiResponse.data.attributes.mobile.data.attributes.formats.placeholder.url];
+  const base64Strings = await fetchAndConvertToBase64(placeholderUrls);
+
+  const result = {
+   desktop: {
+      ...clientsImagesApiResponse.data.attributes.desktop.data.attributes,
+      blurDataURL: base64Strings[0],
+    },
+
+   mobile: {
+      ...clientsImagesApiResponse.data.attributes.mobile.data.attributes,
+         blurDataURL: base64Strings[1],
+     }
+    };
+  
+  return result
+};
+
+export { formatPhotos, formatVideos, formatSongs, formatLandingImages, formatServices, formatClientsImages }

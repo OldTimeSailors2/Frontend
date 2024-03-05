@@ -2,10 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/assets/logo.svg";
 import dynamic from "next/dynamic";
-import LandingDisplay from "@/components/LandingDisplay";
+
 
 import { formatLandingImages } from "@/helpers/formatApiResponses";
 
+const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), { ssr: true });
 const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), { ssr: false });
 const LandingDynamicBg = dynamic(() => import("@/components/LandingDynamicBg"), { ssr: false });
 
