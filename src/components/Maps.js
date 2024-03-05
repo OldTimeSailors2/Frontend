@@ -266,7 +266,7 @@ const Maps = ({ markersList }) => {
     );
     overlay.setMap(map);
 
-    overlay.setOpacity(0.3);
+    overlay.setOpacity(1);
     setOverlayLoaded(true);
   }, [apiIsLoaded, map, coreLibrary, mapsLibrary, southWest, northEast, currentOverlay]);
 
