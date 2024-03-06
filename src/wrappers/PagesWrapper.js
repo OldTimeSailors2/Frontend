@@ -7,7 +7,7 @@ import { NextUIProvider } from "@nextui-org/system";
 const PagesWrapper = ({ children }) => {
   return (
     <NextUIProvider>
-      <Navbar />
+
       {children}
       <Footer />
     </NextUIProvider>

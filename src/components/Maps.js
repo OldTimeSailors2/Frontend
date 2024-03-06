@@ -25,8 +25,8 @@ const Maps = ({ markersList }) => {
     },
     desktop: {
       imageUrl: "/assets/map-desktop.webp",
-      sw: { lat: 48.54530012368014 , lng: -25.21521220475463 }, // SW coordinates B
-      ne: { lat: 63.433892030361925, lng:  17.88900540006712 }, // NE coordinates B
+      sw: { lat: 48.16567701912835, lng: -25.34704814225463 }, // SW coordinates B
+      ne: { lat: 63.41423162170996, lng:  18.06478665006712 }, // NE coordinates B
     },
   }), []);
 
@@ -41,7 +41,8 @@ const Maps = ({ markersList }) => {
   const apiIsLoaded = useApiIsLoaded();
 
   const [mapCenter, setMapCenter] = useState({ lat: 55.97, lng: -3.699966 });
-  const [mapZoom, setMapZoom] = useState(6);
+  const [mapZoom, setMapZoom] = useState();
+  const [maxZoom, setMaxZoom] = useState();
   const [markerIconScale, setMarkerIconScale] = useState(6);
   const southWest = { lat: 49.68145071046583, lng: -11.130739548504629 };
   const northEast = { lat: 63.335455022149226, lng: 3.2662026656921217 };
@@ -62,19 +63,9 @@ const Maps = ({ markersList }) => {
   const breakpoints = useMemo(() => ([
     {
       min: 0,
-      max: 369,
-      action: () => {
-        setMapCenter({ lat: 54.75, lng: -2.199966 });
-        setMapZoom(4);
-        setMarkerIconScale(4);
-      },
-    },
-    {
-      min: 370,
       max: 379,
       action: () => {
-        setMapCenter({ lat: 55, lng: -2.499966 });
-        setMapZoom(4);
+        setMapCenter({ lat: 56.65, lng: -3.499966 });
         setMarkerIconScale(4);
       },
     },
@@ -83,7 +74,6 @@ const Maps = ({ markersList }) => {
       max: 389,
       action: () => {
         setMapCenter({ lat: 56.35, lng: -3.499966 });
-        setMapZoom(5.8);
         setMarkerIconScale(4);
       },
     },
@@ -92,7 +82,6 @@ const Maps = ({ markersList }) => {
       max: 399,
       action: () => {
         setMapCenter({ lat: 56.15, lng: -2.899966 });
-        setMapZoom(5.8);
         setMarkerIconScale(5);
       },
     },
@@ -101,7 +90,6 @@ const Maps = ({ markersList }) => {
       max: 419,
       action: () => {
         setMapCenter({ lat: 55.7, lng: -2.499966 });
-        setMapZoom(6);
         setMarkerIconScale(5);
       },
     },
@@ -110,7 +98,6 @@ const Maps = ({ markersList }) => {
       max: 559,
       action: () => {
         setMapCenter({ lat: 55.9, lng: -2.499966 });
-        setMapZoom(6);
         setMarkerIconScale(5);
       },
     },
@@ -119,7 +106,6 @@ const Maps = ({ markersList }) => {
       max: 767,
       action: () => {
         setMapCenter({ lat: 56.3, lng: -3.699966 });
-        setMapZoom(6);
         setMarkerIconScale(5);
       },
     },
@@ -128,7 +114,7 @@ const Maps = ({ markersList }) => {
       max: 819,
       action: () => {
         setMapCenter({ lat: 55.3, lng: -3.999966 });
-        setMapZoom(6.3);
+
       },
     },
     {
@@ -136,7 +122,7 @@ const Maps = ({ markersList }) => {
       max: 1023,
       action: () => {
         setMapCenter({ lat: 55, lng: -3.699966 });
-        setMapZoom(6.6);
+
       },
     },
     {
@@ -144,7 +130,6 @@ const Maps = ({ markersList }) => {
       max: 1279,
       action: () => {
         setMapCenter({ lat: 55, lng: -3.699966 });
-        setMapZoom(6.8);
         setMarkerIconScale(8);
       },
     },
@@ -153,7 +138,6 @@ const Maps = ({ markersList }) => {
       max: 1365,
       action: () => {
         setMapCenter({ lat: 54.88, lng: -3.799966 });
-        setMapZoom(5.9);
         setMarkerIconScale(4);
       },
     },
@@ -162,7 +146,6 @@ const Maps = ({ markersList }) => {
       max: 1439,
       action: () => {
         setMapCenter({ lat: 54.9, lng: -3.799966 });
-        setMapZoom(6);
         setMarkerIconScale(5);
       },
     },
@@ -171,7 +154,6 @@ const Maps = ({ markersList }) => {
       max: 1919,
       action: () => {
         setMapCenter({ lat: 54.93, lng: -3.799966 });
-        setMapZoom(6.2);
         setMarkerIconScale(5);
       },
     },
@@ -188,7 +170,6 @@ const Maps = ({ markersList }) => {
       max: 2999,
       action: () => {
         setMapCenter({ lat: 54.85, lng: -3.799966 });
-        setMapZoom(6.9);
         setMarkerIconScale(8);
       },
     },
@@ -197,7 +178,6 @@ const Maps = ({ markersList }) => {
       max: Infinity,
       action: () => {
         setMapCenter({ lat: 54.85, lng: -3.799966 });
-        setMapZoom(7.5);
         setMarkerIconScale(13);
       },
     },
@@ -205,25 +185,26 @@ const Maps = ({ markersList }) => {
     // Add more breakpoints as needed
   ]), []);
 
-  const updateMapSettings = useCallback(() => {
-    const width = window.innerWidth;
-    const breakpoint = breakpoints.find(
-      (bp) => width >= bp.min && width <= bp.max,
-    );
-    if (breakpoint) breakpoint.action();
-  }, []);
-
-
 
   // Set up resize listener and initial settings
   useEffect(() => {
     const checkDeviceAndAdjustMap = () => {
       const width = window.innerWidth;
-      const isMobile = window.matchMedia("(max-width: 1280px)").matches;
+      const isMobile = window.matchMedia("(max-width: 1279px)").matches;
   
       // Determine current overlay based on device type
       const currentOverlay = isMobile ? overlayData.mobile : overlayData.desktop;
       setCurrentOverlay(currentOverlay); // Assuming setCurrentOverlay updates the overlay state
+
+      // Set mapZoom and maxZoom based on device type
+    if (isMobile) {
+      setMapZoom(5);
+      setMaxZoom(6); 
+    } else {
+      setMapZoom(6); 
+      setMaxZoom(7);
+    }
+
   
       // Find and apply the appropriate breakpoint action
       const breakpoint = breakpoints.find(bp => width >= bp.min && width <= bp.max);
@@ -268,7 +249,7 @@ const Maps = ({ markersList }) => {
 
     overlay.setOpacity(1);
     setOverlayLoaded(true);
-  }, [apiIsLoaded, map, coreLibrary, mapsLibrary, southWest, northEast, currentOverlay]);
+  }, [apiIsLoaded, map, coreLibrary, mapsLibrary, currentOverlay]);
 
   const handleMarkerClick = (id, markerPosition) => {
     if (activeMarkerId && activeMarkerId !== id) {
@@ -338,6 +319,7 @@ const Maps = ({ markersList }) => {
     <div className="h-dvh">
       <Map
         zoom={mapZoom}
+        maxZoom={maxZoom}
         center={mapCenter}
         gestureHandling={"greedy"}
         disableDefaultUI={true}
