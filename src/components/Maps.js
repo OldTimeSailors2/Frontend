@@ -44,10 +44,40 @@ const Maps = ({ markersList }) => {
   const [mapZoom, setMapZoom] = useState();
   const [maxZoom, setMaxZoom] = useState();
   const [markerIconScale, setMarkerIconScale] = useState(6);
-  const southWest = { lat: 49.68145071046583, lng: -11.130739548504629 };
-  const northEast = { lat: 63.335455022149226, lng: 3.2662026656921217 };
  
  
+  //Overlay useEffect
+  useEffect(() => {
+    if (!apiIsLoaded || !map || !coreLibrary || !mapsLibrary || overlayLoaded) return;
+  
+    // Define a solid color map type
+    const solidColorMapType = new mapsLibrary.ImageMapType({
+      getTileUrl: function(coord, zoom) {
+        // Return a solid color image; replace the Base64 URL with your desired solid color
+        return "data:image/png;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZGVkNWM2O308L3N0eWxlPjwvZGVmcz48ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiI+PGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PC9nPjwvZz48L3N2Zz4=";
+      },
+      tileSize: new coreLibrary.Size(256, 256),
+      maxZoom: 20,
+    });
+  
+    // Set the custom map type to the map
+    map.mapTypes.set('solidColor', solidColorMapType);
+    map.setMapTypeId('solidColor');
+  
+    const southWestLatLng = new coreLibrary.LatLng(currentOverlay.sw.lat, currentOverlay.sw.lng);
+    const northEastLatLng = new coreLibrary.LatLng(currentOverlay.ne.lat, currentOverlay.ne.lng);
+    const bounds = new coreLibrary.LatLngBounds(southWestLatLng, northEastLatLng);
+  
+    const overlayOptions = { clickable: false };
+    const overlay = new mapsLibrary.GroundOverlay(currentOverlay.imageUrl, bounds, overlayOptions);
+    overlay.setMap(map);
+  
+    
+  
+    setOverlayLoaded(true);
+  }, [apiIsLoaded, map, coreLibrary, mapsLibrary, currentOverlay, overlayLoaded]);
+  
+
 
   const restrictions = useMemo(() => ({
     latLngBounds: {
@@ -198,8 +228,8 @@ const Maps = ({ markersList }) => {
 
       // Set mapZoom and maxZoom based on device type
     if (isMobile) {
-      setMapZoom(5);
-      setMaxZoom(6); 
+      setMapZoom(4);
+      setMaxZoom(7); 
     } else {
       setMapZoom(6); 
       setMaxZoom(7);
@@ -219,37 +249,7 @@ const Maps = ({ markersList }) => {
   }, []);
 
 
-  //Overlay useEffect
-  useEffect(() => {
-    if (!apiIsLoaded || !map || !coreLibrary || !mapsLibrary) return;
 
-    const southWestLatLng = new coreLibrary.LatLng(
-      currentOverlay.sw.lat,
-      currentOverlay.sw.lng,
-    );
-    const northEastLatLng = new coreLibrary.LatLng(
-      currentOverlay.ne.lat,
-      currentOverlay.ne.lng,
-    );
-    const bounds = new coreLibrary.LatLngBounds(
-      southWestLatLng,
-      northEastLatLng,
-    );
-
-
-    const overlayOptions = { clickable: false };
-    console.log("Bounds", southWestLatLng, northEastLatLng);
-
-    const overlay = new mapsLibrary.GroundOverlay(
-      currentOverlay.imageUrl,
-      bounds,
-      overlayOptions,
-    );
-    overlay.setMap(map);
-
-    overlay.setOpacity(1);
-    setOverlayLoaded(true);
-  }, [apiIsLoaded, map, coreLibrary, mapsLibrary, currentOverlay]);
 
   const handleMarkerClick = (id, markerPosition) => {
     if (activeMarkerId && activeMarkerId !== id) {
