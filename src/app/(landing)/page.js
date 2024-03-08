@@ -10,11 +10,6 @@ const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), { ss
 const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), { ssr: false });
 const LandingDynamicBg = dynamic(() => import("@/components/LandingDynamicBg"), { ssr: false });
 
-
-
-
-
-
 const fetchLandingImages = async () => {
   try {
     const res = await fetch(

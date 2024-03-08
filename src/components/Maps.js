@@ -9,7 +9,6 @@ import {
   useMap,
   useMapsLibrary,
   Marker,
-  useMarkerRef,
 } from "@vis.gl/react-google-maps";
 import windowLogo from "../../public/assets/logo-badge.svg";
 import CustomPopup from "./CustomPopup";
@@ -30,7 +29,7 @@ const Maps = ({ markersList }) => {
     },
   }), []);
 
-  const [currentOverlay, setCurrentOverlay] = useState(overlayData.desktop)
+  const [currentOverlay, setCurrentOverlay] = useState(overlayData.mobile)
   const [overlayLoaded, setOverlayLoaded] = useState(false);
   const [activeMarkerId, setActiveMarkerId] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -41,8 +40,6 @@ const Maps = ({ markersList }) => {
   const apiIsLoaded = useApiIsLoaded();
 
   const [mapCenter, setMapCenter] = useState({ lat: 55.97, lng: -3.699966 });
-  const [mapZoom, setMapZoom] = useState();
-  const [maxZoom, setMaxZoom] = useState();
   const [markerIconScale, setMarkerIconScale] = useState(6);
  
  
@@ -50,11 +47,11 @@ const Maps = ({ markersList }) => {
   useEffect(() => {
     if (!apiIsLoaded || !map || !coreLibrary || !mapsLibrary || overlayLoaded) return;
   
-    // Define a solid color map type
+    // Solid color map type to avoid showing map
     const solidColorMapType = new mapsLibrary.ImageMapType({
       getTileUrl: function(coord, zoom) {
-        // Return a solid color image; replace the Base64 URL with your desired solid color
-        return "data:image/png;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZGVkNWM2O308L3N0eWxlPjwvZGVmcz48ZyBpZD0iQ2FwYV8yIiBkYXRhLW5hbWU9IkNhcGEgMiI+PGcgaWQ9IkNhcGFfMS0yIiBkYXRhLW5hbWU9IkNhcGEgMSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PC9nPjwvZz48L3N2Zz4=";
+        // Return a solid color image
+        return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAACXBIWXMAAAsSAAALEgHS3X78AAAAEUlEQVQImWPcubS3gYGBgQEAECsCbWtkXRcAAAAASUVORK5CYII=";
       },
       tileSize: new coreLibrary.Size(256, 256),
       maxZoom: 20,
@@ -93,33 +90,65 @@ const Maps = ({ markersList }) => {
   const breakpoints = useMemo(() => ([
     {
       min: 0,
+      max: 374,
+      action: () => {
+        setMapCenter({ lat: 54.7, lng: -2.399966 });
+        setMarkerIconScale(4);
+      },
+    },
+    {
+      min: 375,
       max: 379,
       action: () => {
-        setMapCenter({ lat: 56.65, lng: -3.499966 });
+        setMapCenter({ lat: 54.9, lng: -2.399966 });
         setMarkerIconScale(4);
       },
     },
     {
       min: 380,
+      max: 383,
+      action: () => {
+        setMapCenter({ lat: 54.8, lng: -2.399966 });
+        setMarkerIconScale(4);
+      },
+    },
+    {
+      min: 384,
       max: 389,
       action: () => {
-        setMapCenter({ lat: 56.35, lng: -3.499966 });
+        setMapCenter({ lat: 54.55, lng: -2.399966 });
         setMarkerIconScale(4);
       },
     },
     {
       min: 390,
+      max: 392,
+      action: () => {
+        setMapCenter({ lat: 54.7, lng: -2.399966 });
+        setMarkerIconScale(5);
+      },
+    },
+    {
+      min: 393,
       max: 399,
       action: () => {
-        setMapCenter({ lat: 56.15, lng: -2.899966 });
+        setMapCenter({ lat: 55, lng: -2.399966 });
         setMarkerIconScale(5);
       },
     },
     {
       min: 400,
+      max: 413,
+      action: () => {
+        setMapCenter({ lat: 55.1, lng: -2.399966 });
+        setMarkerIconScale(5);
+      },
+    },
+    {
+      min: 414,
       max: 419,
       action: () => {
-        setMapCenter({ lat: 55.7, lng: -2.499966 });
+        setMapCenter({ lat: 54.8, lng: -2.399966 });
         setMarkerIconScale(5);
       },
     },
@@ -127,7 +156,7 @@ const Maps = ({ markersList }) => {
       min: 420,
       max: 559,
       action: () => {
-        setMapCenter({ lat: 55.9, lng: -2.499966 });
+        setMapCenter({ lat: 54.9, lng: -2.399966 });
         setMarkerIconScale(5);
       },
     },
@@ -167,7 +196,7 @@ const Maps = ({ markersList }) => {
       min: 1280,
       max: 1365,
       action: () => {
-        setMapCenter({ lat: 54.88, lng: -3.799966 });
+        setMapCenter({ lat: 54.7, lng: -3.799966 });
         setMarkerIconScale(4);
       },
     },
@@ -175,7 +204,7 @@ const Maps = ({ markersList }) => {
       min: 1366,
       max: 1439,
       action: () => {
-        setMapCenter({ lat: 54.9, lng: -3.799966 });
+        setMapCenter({ lat: 54.8, lng: -3.799966 });
         setMarkerIconScale(5);
       },
     },
@@ -183,7 +212,7 @@ const Maps = ({ markersList }) => {
       min: 1440,
       max: 1919,
       action: () => {
-        setMapCenter({ lat: 54.93, lng: -3.799966 });
+        setMapCenter({ lat: 54.5, lng: -3.799966 });
         setMarkerIconScale(5);
       },
     },
@@ -192,14 +221,13 @@ const Maps = ({ markersList }) => {
       max: 1999,
       action: () => {
         setMapCenter({ lat: 54.8, lng: -3.799966 });
-        setMapZoom(6.5);
       },
     },
     {
       min: 2000,
       max: 2999,
       action: () => {
-        setMapCenter({ lat: 54.85, lng: -3.799966 });
+        setMapCenter({ lat: 54.5, lng: -3.799966 });
         setMarkerIconScale(8);
       },
     },
@@ -208,7 +236,7 @@ const Maps = ({ markersList }) => {
       max: Infinity,
       action: () => {
         setMapCenter({ lat: 54.85, lng: -3.799966 });
-        setMarkerIconScale(13);
+        setMarkerIconScale(9);
       },
     },
 
@@ -218,22 +246,14 @@ const Maps = ({ markersList }) => {
 
   // Set up resize listener and initial settings
   useEffect(() => {
+
     const checkDeviceAndAdjustMap = () => {
       const width = window.innerWidth;
       const isMobile = window.matchMedia("(max-width: 1279px)").matches;
   
       // Determine current overlay based on device type
       const currentOverlay = isMobile ? overlayData.mobile : overlayData.desktop;
-      setCurrentOverlay(currentOverlay); // Assuming setCurrentOverlay updates the overlay state
-
-      // Set mapZoom and maxZoom based on device type
-    if (isMobile) {
-      setMapZoom(4);
-      setMaxZoom(7); 
-    } else {
-      setMapZoom(6); 
-      setMaxZoom(7);
-    }
+      setCurrentOverlay(currentOverlay);
 
   
       // Find and apply the appropriate breakpoint action
@@ -318,8 +338,8 @@ const Maps = ({ markersList }) => {
   return (
     <div className="h-dvh">
       <Map
-        zoom={mapZoom}
-        maxZoom={maxZoom}
+        zoom={5}
+        maxZoom={7}
         center={mapCenter}
         gestureHandling={"greedy"}
         disableDefaultUI={true}
