@@ -21,7 +21,7 @@ const fetchClientsImages = async () => {
       );
     }
     const clientsImages = await res.json()
-    const formattedClientsImages = await formatClientsImages(clientsImages);
+    const formattedClientsImages = formatClientsImages(clientsImages);
 
     return formattedClientsImages;
   } catch (error) {

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const ResponsiveImage = ({images}) => {
   const [isDesktopOrLaptop, setIsDesktopOrLaptop] = useState(false);
 
+
   useEffect(() => {
     const handleResize = () => {
       setIsDesktopOrLaptop(window.innerWidth >= 1280);
@@ -22,7 +23,7 @@ const ResponsiveImage = ({images}) => {
     <div className="relative w-auto h-full">
       {isDesktopOrLaptop ? (
         <Image
-          src={images.desktop.formats.xl ? images.desktop.formats.xl.url : images.desktop.formats.large.url}
+          src={images.desktop.url}
           quality={100}
           priority={true}
           alt="our clients"
@@ -32,7 +33,7 @@ const ResponsiveImage = ({images}) => {
         />
       ) : (
         <Image
-          src={images.mobile.formats.medium ? images.mobile.formats.medium.url : images.mobile.formats.small.url}
+          src={images.mobile.url}
           quality={100}
           priority={true}
           alt="our clients"

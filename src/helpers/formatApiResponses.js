@@ -85,25 +85,18 @@ const formatServices = async (servicesApiResponse) => {
   return servicesWithBlurredImages;
 };
 
-const formatClientsImages = async (clientsImagesApiResponse) => {
+const formatClientsImages = (clientsImagesApiResponse) => {
 
-
-  const placeholderUrls = [clientsImagesApiResponse.data.attributes.desktop.data.attributes.formats.placeholder.url,
-     clientsImagesApiResponse.data.attributes.mobile.data.attributes.formats.placeholder.url];
-  const base64Strings = await fetchAndConvertToBase64(placeholderUrls);
 
   const result = {
    desktop: {
-      ...clientsImagesApiResponse.data.attributes.desktop.data.attributes,
-      blurDataURL: base64Strings[0],
+     url: clientsImagesApiResponse.data.attributes.desktop.data.attributes.url
     },
 
    mobile: {
-      ...clientsImagesApiResponse.data.attributes.mobile.data.attributes,
-         blurDataURL: base64Strings[1],
+    url: clientsImagesApiResponse.data.attributes.mobile.data.attributes.url
      }
     };
-  
   return result
 };
 
