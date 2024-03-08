@@ -19,7 +19,7 @@ const ResponsiveImage = ({images}) => {
   }, []);
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-auto h-full">
       {isDesktopOrLaptop ? (
         <Image
           src={images.desktop.formats.xl ? images.desktop.formats.xl.url : images.desktop.formats.large.url}
@@ -29,8 +29,6 @@ const ResponsiveImage = ({images}) => {
           sizes="70vw"
           fill
           className="object-contain flex items-center justify-center py-3"
-          placeholder="blur"
-          blurDataURL={images.desktop.blurDataURL}
         />
       ) : (
         <Image
@@ -38,11 +36,9 @@ const ResponsiveImage = ({images}) => {
           quality={100}
           priority={true}
           alt="our clients"
-          sizes="100vw"
+          sizes="90vw"
           fill
           className="object-contain flex items-center justify-center px-2"
-          placeholder="blur"
-          blurDataURL={images.mobile.blurDataURL}
         />
       )}
     </div>

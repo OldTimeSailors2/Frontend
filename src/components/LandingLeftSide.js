@@ -157,7 +157,7 @@ const LandingLeftSide = () => {
 
 {isModalOpen && ModalComponent && (
 <ModalComponent.Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}
-       size="xl" classNames={{base: "bg-beigePattern bg-center bg-contain rounded-3xl xl:rounded-[35px]", 
+       size="xl" classNames={{base: "bg-beigePattern bg-center bg-cover rounded-3xl xl:rounded-[35px]", 
                               closeButton: "text-[2.5rem] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
                             header: "border-none"}}
       backdrop="blur" placement="center"
