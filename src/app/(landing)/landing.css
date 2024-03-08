@@ -169,19 +169,13 @@
     );
   }
   
-  @media (min-width: 375px) {
+  @media (min-width: 375px) and (max-width: 380px) {
     .octagon {
-      width: 110px;
+      width: 100px;
       height: 20px;
     }
   }
   
-  @media (min-width: 380px) {
-    .octagon {
-      width: 140px;
-      height: 30px;
-    }
-  }
   @media (min-width: 390px) and (max-width: 393px) {
     .octagon {
       width: 125px;
@@ -193,6 +187,7 @@
   @media (min-width: 400px) {
     .octagon {
       width: 150px;
+      height: 30px;
     }
   }
   @media (min-width: 414px) and (max-width: 419px) {
