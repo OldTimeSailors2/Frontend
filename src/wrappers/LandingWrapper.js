@@ -7,7 +7,7 @@ const LandingWrapper = ({ children }) => {
   return (
     <NextUIProvider>
       {children}
-      <Footer />
+
     </NextUIProvider>
   );
 };

@@ -34,17 +34,17 @@ const LandingLeftSide = () => {
 
   return (
     <div className={`flex flex-col items-center justify-center   xl:ml-4 1xl:ml-[1.15rem] min-[1536px]:ml-3.5 fullHD:ml-4 4k:ml-14   xl:mt-[120px] 1xl:mt-[115px] 1xxl:mt-[135px]  fullHD:mt-[190px] 2k:mt-[310px] 4k:mt-[390px]  ${ isSafari
-     ? " ml-2 iphone-1:ml-3.5 iphone-3:ml-2 md1:ml-1.5  min-[810px]:ml-[1.15rem] min-[820px]:ml-6 lg:ml-7 xl:ml-4 fullHD:ml-4 4k:ml-14          mt-[6.25rem] iphone-1:mt-28 iphone-2:mt-[7.25rem] iphone-3:mt-[7.5rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[220px]" 
+     ? " ml-2 iphone-1:ml-1.5 md1:ml-1.5  min-[810px]:ml-[1.15rem] min-[820px]:ml-6 lg:ml-7 xl:ml-4 fullHD:ml-4 4k:ml-14          mt-[7rem] iphone-1:mt-[7.25rem] iphone-2:mt-[7.9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[220px]" 
      
      : "ml-2 md:ml-3.5 min-[810px]:ml-2 min-[820px]:ml-2.5 lg:ml-[18px]     mt-[102px] xs:mt-[112px] xs2:mt-[122px] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[250px] "}`}>
               <Image
                 src={descriptionImage}
-                width={80}
-                height={80}
+                width={90}
+                height={90}
                 alt="Text image"
                 className={`self-center xl:w-[90px] xl:h-auto 1xl:w-[85px] 1xxl:w-[110px] fullHD:w-[150px] 2k:w-[280px] 4k:w-[300px] ${ isSafari
                    
-                  ? " iphone-2:w-[90px] iphone-3:w-[100px] md1:w-[110px]  min-[810px]:w-[100px] min-[820px]:w-[120px] lg:w-[140px]" 
+                  ? " iphone-1:w-[100px] iphone-2:w-[110px] md1:w-[110px]  min-[810px]:w-[100px] min-[820px]:w-[120px] lg:w-[140px]" 
                   
                   : "xs:w-[90px] xs2:w-[100px] md1:w-[105px] min-[810px]:w-[125px] min-[820px]:w-[150px] lg:w-[190px] "}`}
               />
@@ -61,10 +61,10 @@ const LandingLeftSide = () => {
         />
         </div>
         <button
-          className={`text-darkBlue bg-lightRed font-semibold font-titles rounded-md 1xxl:rounded-lg text-center xl:text-[14px] xl:leading-6 1xxl:text-base  fullHD:text-xl 2k:text-4xl 4k:text-5xl   xl:px-1 2k:px-2 2k:py-1 4k:py-1 4k:px-3
+          className={`text-darkBlue bg-lightRed font-semibold tracking-tighter font-titles rounded-md 1xxl:rounded-lg text-center xl:text-[14px] xl:leading-6 1xxl:text-base  fullHD:text-xl 2k:text-4xl 4k:text-5xl   xl:px-1 2k:px-2 2k:py-1 4k:py-1 4k:px-3
            ${ isSafari
 
-             ? "text-sm min-[425px]:text-base md1:text-lg min-[820px]:text-xl lg:text-2xl  px-0.5 iphone-3:px-1 md1:px-1" 
+             ? "text-[12px] min-[425px]:text-base md1:text-lg min-[820px]:text-xl lg:text-2xl  px-0.5 iphone-3:px-1 md1:px-1" 
              
              : "text-sm xs2:text-base md1:text-lg min-[820px]:text-xl lg:text-3xl   px-1 xs2:px-1.5 md1:px-1"}`}
           
@@ -90,7 +90,7 @@ const LandingLeftSide = () => {
       <div className={`grid grid-cols-2 gap-2 xs2:gap-2.5 min-[820px]:gap-3.5 xl:gap-2 fullHD:gap-4 2k:gap-6 4k:gap-9  xl:mt-7 1xl:mt-1.5 1xxl:mt-7  fullHD:mt-4 2k:mt-8 4k:mt-14
       
       ${ isSafari
-         ? "mt-3 iphone-1:mt-2 iphone-2:mt-4 iphone-3:mb-2 min-[430px]:mb-0 md1:mb-0 md1:mt-6 md:mt-3 min-[820px]:mt-5 lg:mt-6"
+         ? "mt-10 iphone-1:mt-11 iphone-2:mt-12  min-[430px]:mb-0 md1:mb-0 md1:mt-6 md:mt-3 min-[820px]:mt-5 lg:mt-6"
          
          : "mt-6 xs2:mt-5 min-[425px]:mt-11 md1:mt-4 md:mt-3 min-[820px]:mt-7 lg:mt-6"}`}>
 
@@ -101,7 +101,7 @@ const LandingLeftSide = () => {
           
           ${ isSafari
 
-             ? "text-[20px] p-1 iphone-2:text-[24px] iphone-2:p-1.5 iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+             ? "text-[20px] p-1 iphone-1:text-[22px] iphone-2:text-[24px] iphone-2:p-[0.3rem] iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
 
               : "text-[25px] p-1.5 md1:text-[30px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
 
@@ -114,7 +114,7 @@ const LandingLeftSide = () => {
           
           ${ isSafari
 
-             ? "text-[20px] p-1 iphone-2:text-[24px] iphone-2:p-1.5 iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+             ? "text-[20px] p-1 iphone-1:text-[22px] iphone-2:text-[24px] iphone-2:p-[0.3rem] iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
 
               : "text-[25px] p-1.5 md1:text-[30px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
 
@@ -127,7 +127,7 @@ const LandingLeftSide = () => {
           
           ${ isSafari
 
-             ? "text-[20px] p-1 iphone-2:text-[24px] iphone-2:p-1.5 iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+             ? "text-[20px] p-1 iphone-1:text-[22px] iphone-2:text-[24px] iphone-2:p-[0.3rem] iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
 
               : "text-[25px] p-1.5 md1:text-[30px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
 
@@ -140,7 +140,7 @@ const LandingLeftSide = () => {
           
           ${ isSafari
 
-             ? "text-[20px] p-1 iphone-2:text-[24px] iphone-2:p-1.5 iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+             ? "text-[20px] p-1 iphone-1:text-[22px] iphone-2:text-[24px] iphone-2:p-[0.3rem] iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
 
               : "text-[25px] p-1.5 md1:text-[30px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
 
@@ -158,7 +158,9 @@ const LandingLeftSide = () => {
 {isModalOpen && ModalComponent && (
 <ModalComponent.Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}
        size="xl" classNames={{base: "bg-beigePattern bg-center bg-cover rounded-3xl xl:rounded-[35px]", 
-                              closeButton: "text-[2.5rem] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
+                              wrapper: "z-[110]",
+                              backdrop: "z-[109]",
+                              closeButton: "z-[108] text-[2.5rem] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
                             header: "border-none"}}
       backdrop="blur" placement="center"
       >

@@ -39,7 +39,7 @@ const ResponsiveImage = ({images}) => {
           alt="our clients"
           sizes="90vw"
           fill
-          className="object-contain flex items-center justify-center px-2"
+          className="object-contain flex items-center justify-center p-2"
         />
       )}
     </div>

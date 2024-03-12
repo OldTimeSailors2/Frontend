@@ -38,20 +38,23 @@ const Home = async () => {
 
   return (
 
-    <main className="w-screen h-dvh flex flex-col overflow-hidden relative">
+    <main className="w-screen h-auto flex flex-col overflow-auto relative">
       <LandingDynamicBg />
       <div className="w-full h-full p-[17.5px] xl:p-[28px]  2k:p-[52px] 4k:p-[64px] relative">
         <div className="absolute inset-0 image-border pointer-events-none" />
 
-        <div className="w-full h-full flex flex-col justify-between relative">
+        <div className="w-full h-full flex flex-col gap-3 relative">
           
         <Image
             src={logo}
-            width={110}
-            height={110}
+            width={120}
+            height={120}
             priority={true}
             alt="OTS Logo"
-            className="absolute -top-3 -left-1.5 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-2  fullHD:-left-[14px] 2k:-top-12 2k:-left-6 4k:-top-14 4k:-left-2      xs:w-[120px] xs:h-[120px] xs2:w-[130px] xs2:h-[130px] md1:w-[150px] md1:h-[150px] md:w-[170px] md:h-[170px]  min-[820px]:w-[200px]  min-[820px]:h-[200px] lg:w-[230px] lg:h-[230px] xl:w-[140px] xl:h-[140px] 1xxl:w-[160px] 1xxl:h-[160px]  fullHD:w-[210px] fullHD:h-[210px] 2k:w-[350px] 2k:h-[350px] 4k:w-[430px] 4k:h-[430px]"
+            className="absolute -top-3 -left-1.5 xs:-top-4 xs:-left-2 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-2  fullHD:-left-[14px] 2k:-top-12 2k:-left-6 4k:-top-14 4k:-left-2 
+                 xs:w-[130px] xs:h-[130px] xs2:w-[140px] xs2:h-[140px]
+                  md1:w-[150px] md1:h-[150px] md:w-[170px] md:h-[170px]  min-[820px]:w-[200px]  min-[820px]:h-[200px] lg:w-[230px] lg:h-[230px]
+                   xl:w-[140px] xl:h-[140px] 1xxl:w-[160px] 1xxl:h-[160px]  fullHD:w-[210px] fullHD:h-[210px] 2k:w-[350px] 2k:h-[350px] 4k:w-[430px] 4k:h-[430px]"
           />
 
           <div className="flex justify-between ">
@@ -59,7 +62,7 @@ const Home = async () => {
             <LandingLeftSide />
 
           {/* Pages Buttons */}
-          <div className="flex flex-col gap-1 md1:gap-3 xl:gap-2 1xxl:gap-3.5 min-[1536px]:gap-2 fullHD:gap-3.5 2k:gap-5 4k:gap-7 mt-3 min-[375px]:max-xs:mt-1 md1:mt-8 min-[820px]:mt-10 lg:mt-11 xl:mt-1.5 2k:mt-5 4k:mt-7      mr-2 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-6 4k:mr-4">
+          <div className="flex flex-col gap-1.5 xs:gap-1 md1:gap-3 xl:gap-2 1xxl:gap-3.5 min-[1536px]:gap-2 fullHD:gap-3.5 2k:gap-5 4k:gap-7 mt-3 min-[375px]:max-xs:mt-1 md1:mt-8 min-[820px]:mt-10 lg:mt-11 xl:mt-1.5 2k:mt-5 4k:mt-7      mr-5 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-6 4k:mr-4">
         <Link
           className="octagon flex items-center justify-center bg-beigePattern bg-contain"
           href="/media"
