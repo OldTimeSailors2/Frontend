@@ -19,7 +19,7 @@ const LandingDynamicBg = () => {
           md1:-translate-y-60 lg:-translate-y-[30%] xl:-translate-y-[7.25rem] 1xl:-translate-y-[8rem] 1xxl:-translate-y-28 fullHD:-translate-y-36 4k:-translate-y-72
           md1:-translate-x-14 lg:-translate-x-24 xl:-translate-x-6 1xxl:-translate-x-6
           ${isSafari 
-            ? " -translate-y-[7.5%] iphone-1:-translate-y-[6%] iphone-2:-translate-y-[5%] min-[430px]:-translate-y-[6.5%]"
+            ? " -translate-y-[4.5%] iphone-1:-translate-y-[3.5%] iphone-2:-translate-y-[3%] min-[430px]:-translate-y-[3.5%]"
             : " -translate-y-[7%] xs:-translate-y-[3.5%] min-[384px]:-translate-y-[6.5%] xs2:-translate-y-[2.5%]"
           }`}
         onLoad={() => setIsSafariLoaded(true)}

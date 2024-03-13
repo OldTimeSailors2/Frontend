@@ -34,17 +34,17 @@ const LandingLeftSide = () => {
 
   return (
     <div className={`flex flex-col items-center justify-center   xl:ml-4 1xl:ml-[1.15rem] min-[1536px]:ml-3.5 fullHD:ml-4 4k:ml-14   xl:mt-[120px] 1xl:mt-[115px] 1xxl:mt-[135px]  fullHD:mt-[190px] 2k:mt-[310px] 4k:mt-[390px]  ${ isSafari
-     ? " ml-2 iphone-1:ml-1.5 md1:ml-1.5  min-[810px]:ml-[1.15rem] min-[820px]:ml-6 lg:ml-7 xl:ml-4 fullHD:ml-4 4k:ml-14          mt-[7rem] iphone-1:mt-[7.25rem] iphone-2:mt-[7.9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[220px]" 
+     ? " ml-1  md1:ml-1.5  min-[810px]:ml-[1.15rem] min-[820px]:ml-6 lg:ml-7 xl:ml-4 fullHD:ml-4 4k:ml-14          mt-[7.75rem] iphone-1:mt-[8.35rem] iphone-2:mt-[9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[220px]" 
      
      : "ml-2 md:ml-3.5 min-[810px]:ml-2 min-[820px]:ml-2.5 lg:ml-[18px]     mt-[102px] xs:mt-[112px] xs2:mt-[122px] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[250px] "}`}>
               <Image
                 src={descriptionImage}
-                width={90}
-                height={90}
+                width={100}
+                height={100}
                 alt="Text image"
                 className={`self-center xl:w-[90px] xl:h-auto 1xl:w-[85px] 1xxl:w-[110px] fullHD:w-[150px] 2k:w-[280px] 4k:w-[300px] ${ isSafari
                    
-                  ? " iphone-1:w-[100px] iphone-2:w-[110px] md1:w-[110px]  min-[810px]:w-[100px] min-[820px]:w-[120px] lg:w-[140px]" 
+                  ? " iphone-1:w-[105px] iphone-2:w-[115px] md1:w-[110px]  min-[810px]:w-[100px] min-[820px]:w-[120px] lg:w-[140px]" 
                   
                   : "xs:w-[90px] xs2:w-[100px] md1:w-[105px] min-[810px]:w-[125px] min-[820px]:w-[150px] lg:w-[190px] "}`}
               />
@@ -61,12 +61,12 @@ const LandingLeftSide = () => {
         />
         </div>
         <button
-          className={`text-darkBlue bg-lightRed font-semibold tracking-tighter font-titles rounded-md 1xxl:rounded-lg text-center xl:text-[14px] xl:leading-6 1xxl:text-base  fullHD:text-xl 2k:text-4xl 4k:text-5xl   xl:px-1 2k:px-2 2k:py-1 4k:py-1 4k:px-3
+          className={`text-darkBlue bg-lightRed tracking-wide font-titles rounded-md 1xxl:rounded-lg text-center xl:text-[14px] xl:leading-6 1xxl:text-base  fullHD:text-xl 2k:text-4xl 4k:text-5xl   xl:px-1 2k:px-2 2k:py-1 4k:py-1 4k:px-3
            ${ isSafari
 
-             ? "text-[12px] min-[425px]:text-base md1:text-lg min-[820px]:text-xl lg:text-2xl  px-0.5 iphone-3:px-1 md1:px-1" 
+             ? "font-medium text-[12px] min-[425px]:text-base md1:text-lg min-[820px]:text-xl lg:text-2xl  px-0.5 iphone-3:px-1 md1:px-1" 
              
-             : "text-sm xs2:text-base md1:text-lg min-[820px]:text-xl lg:text-3xl   px-1 xs2:px-1.5 md1:px-1"}`}
+             : "font-semibold text-sm xs2:text-base md1:text-lg min-[820px]:text-xl lg:text-3xl   px-1 xs2:px-1.5 md1:px-1"}`}
           
              onClick={() => handleClick()}
         >

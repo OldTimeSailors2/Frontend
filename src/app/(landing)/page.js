@@ -38,21 +38,22 @@ const Home = async () => {
 
   return (
 
-    <main className="w-screen h-auto flex flex-col overflow-auto relative">
+    <main className="w-screen h-auto flex flex-col overflow-auto relative"> 
+    {/* Si pongo scroll poner overflow auto solo para mobile */}
       <LandingDynamicBg />
-      <div className="w-full h-full p-[17.5px] xl:p-[28px]  2k:p-[52px] 4k:p-[64px] relative">
-        <div className="absolute inset-0 image-border pointer-events-none" />
+      <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
+        
 
         <div className="w-full h-full flex flex-col gap-3 relative">
-          
+        <div className="absolute image-border pointer-events-none" />
         <Image
             src={logo}
-            width={120}
-            height={120}
+            width={135}
+            height={135}
             priority={true}
             alt="OTS Logo"
-            className="absolute -top-3 -left-1.5 xs:-top-4 xs:-left-2 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-2  fullHD:-left-[14px] 2k:-top-12 2k:-left-6 4k:-top-14 4k:-left-2 
-                 xs:w-[130px] xs:h-[130px] xs2:w-[140px] xs2:h-[140px]
+            className="absolute -top-3.5 -left-3.5 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-2  fullHD:-left-[14px] 2k:-top-12 2k:-left-6 4k:-top-14 4k:-left-2 
+                 xs:w-[145px] xs:h-[145px] xs2:w-[155px] xs2:h-[155px]
                   md1:w-[150px] md1:h-[150px] md:w-[170px] md:h-[170px]  min-[820px]:w-[200px]  min-[820px]:h-[200px] lg:w-[230px] lg:h-[230px]
                    xl:w-[140px] xl:h-[140px] 1xxl:w-[160px] 1xxl:h-[160px]  fullHD:w-[210px] fullHD:h-[210px] 2k:w-[350px] 2k:h-[350px] 4k:w-[430px] 4k:h-[430px]"
           />
@@ -62,12 +63,12 @@ const Home = async () => {
             <LandingLeftSide />
 
           {/* Pages Buttons */}
-          <div className="flex flex-col gap-1.5 xs:gap-1 md1:gap-3 xl:gap-2 1xxl:gap-3.5 min-[1536px]:gap-2 fullHD:gap-3.5 2k:gap-5 4k:gap-7 mt-3 min-[375px]:max-xs:mt-1 md1:mt-8 min-[820px]:mt-10 lg:mt-11 xl:mt-1.5 2k:mt-5 4k:mt-7      mr-5 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-6 4k:mr-4">
+          <div className="flex flex-col gap-1 xs:gap-1 md1:gap-3 xl:gap-2 1xxl:gap-3.5 min-[1536px]:gap-2 fullHD:gap-3.5 2k:gap-5 4k:gap-7 mt-3 min-[375px]:max-xs:mt-2 md1:mt-8 min-[820px]:mt-10 lg:mt-11 xl:mt-1.5 2k:mt-5 4k:mt-7      mr-8 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-6 4k:mr-4">
         <Link
           className="octagon flex items-center justify-center bg-beigePattern bg-contain"
           href="/media"
         >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-base xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl font-titles text-darkBlue">
+          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl font-titles text-darkBlue">
             media
           </p>
         </Link>
@@ -76,7 +77,7 @@ const Home = async () => {
           className="octagon flex items-center justify-center bg-bluePattern bg-contain"
           href="/tickets"
         >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-base xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl xl:pb-0 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl font-titles text-lightRed">
+          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl xl:pb-0 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl font-titles text-lightRed">
             tickets
           </p>
         </Link>
@@ -85,7 +86,7 @@ const Home = async () => {
           className="octagon flex items-center justify-center bg-redPattern bg-contain"
           href="/services"
         >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-base xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl xl:pb-0 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl font-titles text-beige">
+          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl xl:pb-0 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl font-titles text-beige">
             services
           </p>
         </Link>
@@ -94,7 +95,7 @@ const Home = async () => {
           className="octagon flex items-center justify-center bg-bluePattern bg-contain"
           href="/reviews"
         >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-base xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl xl:pb-0 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl font-titles text-beige">
+          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl xl:pb-0 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl font-titles text-beige">
             reviews
           </p>
         </Link>
@@ -103,7 +104,7 @@ const Home = async () => {
           className="octagon flex items-center justify-center bg-beigePattern bg-contain"
           href="/our-clients"
         >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-base xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl xl:pb-0 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl tracking-wides font-titles font-medium text-lightRed">
+          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[26px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-3xl xl:pb-0 1xxl:text-4xl fullHD:text-5xl 2k:text-6xl 4k:text-8xl tracking-wides font-titles font-medium text-lightRed">
             our clients
           </p>
         </Link>
@@ -115,6 +116,11 @@ const Home = async () => {
           <LandingDisplay images={formattedLandingImages} />
         </div>
       </div>
+      <footer className="w-full z-[200] flex justify-center items-center py-1 xl:p-1 2k:py-2">
+        <p className="text-beige font-txt text-[9px] md1:text-lg md:text-xl xl:text-base 2k:text-3xl 4k:text-5xl uppercase">
+        OLD TIME SAILORS LTD.®
+        </p>
+      </footer>
     </main>
   );
 };

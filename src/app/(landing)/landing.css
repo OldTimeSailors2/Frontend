@@ -35,45 +35,46 @@
   /*Animation End*/
 
 .image-border {
-    border: 49px solid;
+    border: 10px solid;
     border-image-source: url("../../../public/assets/landing-frame-mobile.svg");
-    border-image-slice: 17;
+    border-image-slice: 10;
+    inset: -0.5rem;
   }
   
   @media (min-width: 380px) {
     .image-border {
-      border-width: 44px;
+      border-width: 10px;
     }
   }
   
   @media (min-width: 390px) {
     .image-border {
-      border-width: 48px;
+      border-width: 10px;
     }
   }
   
   @media (min-width: 393px) {
     .image-border {
-      border-width: 44px;
+      border-width: 10px;
     }
   }
   
   @media (min-width: 412px) {
     .image-border {
-      border-width: 42px;
+      border-width: 10px;
   
     }
   }
   @media (min-width: 414px) {
     .image-border {
-      border-width: 44px;
+      border-width: 10px;
   
     }
   }
   
   @media (min-width: 430px) {
     .image-border {
-      border-width: 42px;
+      border-width: 10px;
     }
   }
   
@@ -171,7 +172,7 @@
   
   @media (min-width: 375px) and (max-width: 380px) {
     .octagon {
-      width: 100px;
+      width: 110px;
       height: 20px;
     }
   }
