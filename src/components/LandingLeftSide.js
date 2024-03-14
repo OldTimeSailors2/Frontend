@@ -36,7 +36,7 @@ const LandingLeftSide = () => {
     <div className={`flex flex-col items-center justify-center   xl:ml-4 1xl:ml-[1.15rem] min-[1536px]:ml-3.5 fullHD:ml-4 4k:ml-14   xl:mt-[120px] 1xl:mt-[115px] 1xxl:mt-[135px]  fullHD:mt-[190px] 2k:mt-[310px] 4k:mt-[390px]  ${ isSafari
      ? " ml-1  md1:ml-1.5  min-[810px]:ml-[1.15rem] min-[820px]:ml-6 lg:ml-7 xl:ml-4 fullHD:ml-4 4k:ml-14          mt-[7.75rem] iphone-1:mt-[8.35rem] iphone-2:mt-[9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[220px]" 
      
-     : "ml-2 md:ml-3.5 min-[810px]:ml-2 min-[820px]:ml-2.5 lg:ml-[18px]     mt-[102px] xs:mt-[112px] xs2:mt-[122px] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[250px] "}`}>
+     : "ml-0.5 xs:ml-1 md:ml-3.5 min-[810px]:ml-2 min-[820px]:ml-2.5 lg:ml-[18px]     mt-[7.75rem] xs:mt-[8.35rem] xs2:mt-[9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[250px] "}`}>
               <Image
                 src={descriptionImage}
                 width={100}
@@ -46,7 +46,7 @@ const LandingLeftSide = () => {
                    
                   ? " iphone-1:w-[105px] iphone-2:w-[115px] md1:w-[110px]  min-[810px]:w-[100px] min-[820px]:w-[120px] lg:w-[140px]" 
                   
-                  : "xs:w-[90px] xs2:w-[100px] md1:w-[105px] min-[810px]:w-[125px] min-[820px]:w-[150px] lg:w-[190px] "}`}
+                  : "xs:w-[105px] xs2:w-[115px] md1:w-[105px] min-[810px]:w-[125px] min-[820px]:w-[150px] lg:w-[190px] "}`}
               />
               {/* BlurbButton */}
 
@@ -92,7 +92,7 @@ const LandingLeftSide = () => {
       ${ isSafari
          ? "mt-10 iphone-1:mt-11 iphone-2:mt-12  min-[430px]:mb-0 md1:mb-0 md1:mt-6 md:mt-3 min-[820px]:mt-5 lg:mt-6"
          
-         : "mt-6 xs2:mt-5 min-[425px]:mt-11 md1:mt-4 md:mt-3 min-[820px]:mt-7 lg:mt-6"}`}>
+         : "mt-10 xs:mt-20 xs2:mt-[5.5rem] min-[425px]:mt-11 md1:mt-4 md:mt-3 min-[820px]:mt-7 lg:mt-6"}`}>
 
 
 

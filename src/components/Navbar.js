@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/assets/logo.svg";
+import logo2 from "../../public/assets/logo-services.svg"
 import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 
@@ -82,7 +83,7 @@ const Navbar = () => {
       <div className="flex gap-1.5 sm:gap-4 items-center">
         <Link href="/" className="inline-block">
           <Image
-            src={logo}
+            src={pathname !== '/services' ? logo : logo2}
             width={65}
             height={65}
             priority={true}

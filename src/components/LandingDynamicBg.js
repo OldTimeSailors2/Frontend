@@ -20,7 +20,7 @@ const LandingDynamicBg = () => {
           md1:-translate-x-14 lg:-translate-x-24 xl:-translate-x-6 1xxl:-translate-x-6
           ${isSafari 
             ? " -translate-y-[4.5%] iphone-1:-translate-y-[3.5%] iphone-2:-translate-y-[3%] min-[430px]:-translate-y-[3.5%]"
-            : " -translate-y-[7%] xs:-translate-y-[3.5%] min-[384px]:-translate-y-[6.5%] xs2:-translate-y-[2.5%]"
+            : " translate-y-[0%] xs:-translate-y-[0.5%] xs2:-translate-y-[2.5%]"
           }`}
         onLoad={() => setIsSafariLoaded(true)}
       />
