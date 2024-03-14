@@ -64,7 +64,7 @@ const LandingLeftSide = () => {
           className={`text-darkBlue bg-lightRed tracking-wide font-titles rounded-md 1xxl:rounded-lg text-center xl:text-[14px] xl:leading-6 1xxl:text-base  fullHD:text-xl 2k:text-4xl 4k:text-5xl   xl:px-1 2k:px-2 2k:py-1 4k:py-1 4k:px-3
            ${ isSafari
 
-             ? "font-medium text-[12px] min-[425px]:text-base md1:text-lg min-[820px]:text-xl lg:text-2xl  px-0.5 iphone-3:px-1 md1:px-1" 
+             ? "font-medium text-sm min-[425px]:text-base md1:text-lg min-[820px]:text-xl lg:text-2xl  px-1 iphone-3:px-1.5 md1:px-1" 
              
              : "font-semibold text-sm xs2:text-base md1:text-lg min-[820px]:text-xl lg:text-3xl   px-1 xs2:px-1.5 md1:px-1"}`}
           

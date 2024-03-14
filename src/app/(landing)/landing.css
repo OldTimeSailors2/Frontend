@@ -41,116 +41,51 @@
     inset: -0.5rem;
   }
   
-  @media (min-width: 380px) {
-    .image-border {
-      border-width: 10px;
-    }
-  }
-  
-  @media (min-width: 390px) {
-    .image-border {
-      border-width: 10px;
-    }
-  }
-  
-  @media (min-width: 393px) {
-    .image-border {
-      border-width: 10px;
-    }
-  }
-  
-  @media (min-width: 412px) {
-    .image-border {
-      border-width: 10px;
-  
-    }
-  }
-  @media (min-width: 414px) {
-    .image-border {
-      border-width: 10px;
-  
-    }
-  }
-  
-  @media (min-width: 430px) {
-    .image-border {
-      border-width: 10px;
-    }
-  }
-  
   @media (min-width: 600px) {
     .image-border {
-      border-width: 58px;
-    }
-  }
-  
-  @media (min-width: 744px) {
-    .image-border {
-      border-left-width: 30px;
-      border-right-width: 30px;
-    }
-  }
-  @media (min-width: 768px) {
-    .image-border {
-      border-width: 58px;
+      inset: 0.25rem;
     }
   }
   
   @media (min-width: 820px) {
     .image-border {
-      border-width: 59px;
+      border-width: 14px;
+
     }
   }
   
   @media (min-width: 1024px) {
     .image-border {
-      border-width: 50px;
+      inset: 0;
     }
   }
   
   @media (min-width: 1280px) {
     .image-border {
-      border-width: 125px;
-      border-image-slice: 27;
-    }
-  }
-  
-  @media (min-width: 1366px) {
-    .image-border {
-      border-width: 130px;
+      border-image-source: url("../../../public/assets/landing-frame-desktop.svg");
+      border-width: 12px;
+      inset: -0.5rem;
+
     }
   }
   
   @media (min-width: 1440px) {
     .image-border {
-      border-width: 110px;
-    }
-  }
-  
-  @media (min-width: 1536px) {
-    .image-border {
-      border-width: 120px;
-    }
-  }
-  @media (min-width: 1920px) {
-    .image-border {
-      border-width: 85px;
-      border-right-width: 94px;
+      inset: -0.75rem;
     }
   }
   
   @media (min-width: 2560px) {
     .image-border {
-      border-image-source: url("../../../public/assets/landing-frame-desktop.svg");
-      border-image-slice: 36;
-      border-width: 140px;
+      border-width: 16px;
+      border-image-slice: 18;
     }
   }
   
   @media (min-width: 3840px) {
     .image-border {
-      border-width: 142px;
-      border-image-slice: 42;
+      border-width: 20px;
+      border-image-slice: 30;
   
     }
   }

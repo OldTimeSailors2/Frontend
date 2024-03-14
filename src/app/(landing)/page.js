@@ -38,13 +38,12 @@ const Home = async () => {
 
   return (
 
-    <main className="w-screen h-auto flex flex-col overflow-auto relative"> 
-    {/* Si pongo scroll poner overflow auto solo para mobile */}
+    <main className="w-screen h-auto md1:h-dvh flex flex-col overflow-auto md1:overflow-hidden relative"> 
       <LandingDynamicBg />
       <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
         
 
-        <div className="w-full h-full flex flex-col gap-3 relative">
+        <div className="w-full h-full flex flex-col gap-3 md1:justify-between xl:gap-0 relative">
         <div className="absolute image-border pointer-events-none" />
         <Image
             src={logo}
