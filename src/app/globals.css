@@ -48,7 +48,7 @@
 
 
 .octagon-navbar {
-  width: 140px;
+  width: 136px;
   height: 30px;
   clip-path: polygon(
     5% 0%,
@@ -62,10 +62,16 @@
   );
 }
 
-@media (min-width: 380px) {
+@media (min-width: 400px) {
   .octagon-navbar {
-    width: 145px;
-    height: 35px;
+    width: 155px;
+    height: 34px;
+  }
+}
+
+@media (min-width: 420px) {
+  .octagon-navbar {
+    width: 165px;
   }
 }
 

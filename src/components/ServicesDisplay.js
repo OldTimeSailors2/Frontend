@@ -117,7 +117,7 @@ const ServicesDisplay = ({ services }) => {
     mobile: {
       breakpoint: { max: 419, min: 0 },
       items: 2,
-      partialVisibilityGutter: 5,
+      partialVisibilityGutter: 8,
     },
     mobile2: {
       breakpoint: { max: 599, min: 420 },
@@ -331,7 +331,7 @@ const ServicesDisplay = ({ services }) => {
                     alt={`Image ${index + 1}`}
                     className="rounded-md
                     
-                    w-[110px] h-[110px] xs:w-[120px] xs:h-[120px] xs2:w-[130px] xs2:h-[130px]
+                    w-[110px] h-[110px] xs:w-[120px] xs:h-[120px] iphone-3:w-[130px] iphone-3:h-[130px]
                     
                     md1:w-[230px] md1:h-[230px] md:w-[230px] md:h-[230px] md2:w-[240px] md2:h-[240px] lg:w-[300px] lg:h-[300px]"
                     onClick={() => handleClick({

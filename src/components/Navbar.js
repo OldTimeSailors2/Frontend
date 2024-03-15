@@ -92,7 +92,7 @@ const Navbar = () => {
           />
         </Link>
         <h1
-          className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles text-2xl xs:text-[26px] sm:text-[40px] 2xl:text-5xl 2k:text-7xl 4k:text-8xl flex items-center justify-center`}
+          className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles text-2xl xs2:text-[26px] sm:text-[40px] 2xl:text-5xl 2k:text-7xl 4k:text-8xl flex items-center justify-center`}
         >
           {title}
         </h1>
@@ -106,8 +106,8 @@ const Navbar = () => {
           target="_blank"
         >
           <TfiEmail
-            size={18}
-            className="xs:w-[20px] xs:h-[20px] sm:w-[30px] sm:h-[30px] 2k:w-[50px] 2k:h-[50px]  4k:w-[60px] 4k:h-[60px]"
+            size={22}
+            className="xs:w-[24px] xs:h-[24px] iphone-3:w-[26px] iphone-3:h-[26px] sm:w-[30px] sm:h-[30px] 2k:w-[50px] 2k:h-[50px]  4k:w-[60px] 4k:h-[60px]"
           />
         </Link>
 
@@ -118,8 +118,8 @@ const Navbar = () => {
           target="_blank"
         >
           <FaWhatsapp
-            size={18}
-            className="xs:w-[20px] xs:h-[20px] sm:w-[30px] sm:h-[30px] 2k:w-[50px] 2k:h-[50px] 4k:w-[60px] 4k:h-[60px]"
+            size={22}
+            className="xs:w-[24px] xs:h-[24px] iphone-3:w-[26px] iphone-3:h-[26px] sm:w-[30px] sm:h-[30px] 2k:w-[50px] 2k:h-[50px] 4k:w-[60px] 4k:h-[60px]"
           />
         </Link>
 
@@ -130,8 +130,8 @@ const Navbar = () => {
           target="_blank"
         >
           <FaInstagram
-            size={18}
-            className="xs:w-[20px] xs:h-[20px] sm:w-[30px] sm:h-[30px] 2k:w-[50px] 2k:h-[50px] 4k:w-[60px] 4k:h-[60px]"
+            size={22}
+            className="xs:w-[24px] xs:h-[24px] iphone-3:w-[26px] iphone-3:h-[26px] sm:w-[30px] sm:h-[30px] 2k:w-[50px] 2k:h-[50px] 4k:w-[60px] 4k:h-[60px]"
           />
         </Link>
 
@@ -142,8 +142,8 @@ const Navbar = () => {
           target="_blank"
         >
           <FaFacebookF
-            size={18}
-            className="xs:w-[20px] xs:h-[20px] sm:w-[30px] sm:h-[30px] 2k:w-[50px] 2k:h-[50px] 4k:w-[60px] 4k:h-[60px]"
+            size={22}
+            className="xs:w-[24px] xs:h-[24px] iphone-3:w-[26px] iphone-3:h-[26px] sm:w-[30px] sm:h-[30px] 2k:w-[50px] 2k:h-[50px] 4k:w-[60px] 4k:h-[60px]"
           />
         </Link>
       </div>

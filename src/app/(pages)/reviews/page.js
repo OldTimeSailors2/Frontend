@@ -28,7 +28,7 @@ const Reviews = () => {
 
         {/*column 1*/}
         <MobileSeparator>
-          <article className="flex-grow flex flex-col pt-4">
+          <article className="flex-grow flex flex-col pt-4 max-xl:px-3">
 
           
 
@@ -46,7 +46,7 @@ const Reviews = () => {
               you will.
             </p>
 
-            <div className="flex max-xl:flex-shrink-0 w-full h-full relative rounded-sm">
+            <div className="flex max-xl:flex-shrink-0 w-full h-[22dvh] xs:h-[20dvh] relative rounded-sm">
               <Image
                 src="/assets/reviews.webp"
                 fill={true}

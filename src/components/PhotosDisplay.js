@@ -91,8 +91,8 @@ const PhotosDisplay = () => {
               <Image key={photo.id}
                       src={photo.attributes.formats.xl ? photo.attributes.formats.xl.url : photo.attributes.url}
                        alt={`Slide ${photo.id}`}
-               width={1000}
-                height={1000} 
+               width={500}
+                height={500} 
                 className="xl:w-[95dvh] xl:h-[95dvh]"
                style={{ objectFit: "contain" }}
                placeholder="blur"
