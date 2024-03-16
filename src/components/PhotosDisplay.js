@@ -65,9 +65,8 @@ const PhotosDisplay = () => {
       isOpen={isPhotoModalOpen}
       onClose={handleClose}
       placement="center"
-      style={{maxWidth:'95dvh'}}
       classNames={{
-        base: "flex items-center justify-center w-full bg-black",
+        base: "flex items-center justify-center w-full bg-black max-w-[95vw] xl:max-w-[95dvh]",
         wrapper: "z-[110] overflow-y-hidden",
         backdrop: "z-[109]",
         closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
@@ -91,12 +90,13 @@ const PhotosDisplay = () => {
               <Image key={photo.id}
                       src={photo.attributes.formats.xl ? photo.attributes.formats.xl.url : photo.attributes.url}
                        alt={`Slide ${photo.id}`}
-               width={500}
+                width={500}
                 height={500} 
-                className="w-[95dvh] h-[47.3dvh] xs:h-[45dvh] md1:h-[70dvh] md2:h-[66dvh] lg:h-[71dvh] xl:h-[95dvh]"
-               style={{ objectFit: "contain" }}
-               placeholder="blur"
-               blurDataURL={photo.blurDataURL}
+                className="w-[95vw] h-[95vw] xl:h-[95dvh]"
+                sizes="(max-width: 1280px) 95vw, 95dvh"
+                style={{ objectFit: "contain" }}
+                placeholder="blur"
+                blurDataURL={photo.blurDataURL}
                
                />
             ))}
