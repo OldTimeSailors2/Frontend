@@ -66,7 +66,7 @@ const PhotosDisplay = () => {
       onClose={handleClose}
       placement="center"
       classNames={{
-        base: "flex items-center justify-center w-full bg-black max-w-[95vw] xl:max-w-[95dvh]",
+        base: "flex items-center justify-center w-full bg-black max-w-[98vw] xl:max-w-[95dvh]",
         wrapper: "z-[110] overflow-y-hidden",
         backdrop: "z-[109]",
         closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
@@ -92,7 +92,7 @@ const PhotosDisplay = () => {
                        alt={`Slide ${photo.id}`}
                 width={500}
                 height={500} 
-                className="w-[95vw] h-[95vw] xl:h-[95dvh]"
+                className="w-[98vw] h-[98vw] xl:h-[95dvh]"
                 sizes="(max-width: 1280px) 95vw, 95dvh"
                 style={{ objectFit: "contain" }}
                 placeholder="blur"

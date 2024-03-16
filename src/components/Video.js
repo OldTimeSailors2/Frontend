@@ -3,11 +3,15 @@
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa6";
 import useMedia from "@/hooks/useMedia";
+import useMusicPlayer from "@/hooks/useMusicPlayer";
 
 const Video = ({ video }) => {
   const { selectVideo, openVideoModal, isCarouselMoving } = useMedia();
+  const { togglePlayPause } = useMusicPlayer();
 
   const handleClick = () => {
+    togglePlayPause()
+
     selectVideo(video.url);
     openVideoModal();
   };
