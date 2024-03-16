@@ -30,12 +30,20 @@ const Reviews = () => {
         <MobileSeparator>
           <article className="flex-grow flex flex-col pt-4 max-xl:px-3">
 
-          
 
-            <h2 className=" bg-darkBlue w-fit text-[15px] xs2:text-[17px] md1:text-3xl md2:text-4xl lg:text-5xl xl:text-[17px] xl:leading-5 1xl:text-base 1xxl:text-[19px] fullHD:text-2xl 2k:text-4xl 4k:text-[54px] 4k:leading-snug">
+        {/*Title for very small screens*/}
+          <h2 className=" bg-darkBlue w-fit text-[15px] min-[370px]:hidden">
+              The Old Time Sailors - Sunday 26th September
+            </h2>
+            <h2 className=" mt-0.5 bg-darkBlue w-fit text-[15px] min-[370px]:hidden">
+              2021
+            </h2>
+
+
+            <h2 className="hidden min-[370px]:block bg-darkBlue w-fit text-[15px] xs2:text-[17px] md1:text-3xl md2:text-4xl lg:text-5xl xl:text-[17px] xl:leading-5 1xl:text-base 1xxl:text-[19px] fullHD:text-2xl 2k:text-4xl 4k:text-[54px] 4k:leading-snug">
               The Old Time Sailors - Sunday 26th September 2021
             </h2>
-            <p className=" my-1 text-[13px] leading-[18px] xs2:text-base xs2:leading-5 md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:text-[12.5px] xl:leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
+            <p className=" my-1 text-[14px] leading-[18px] xs2:text-[17px] xs2:leading-5 md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:text-[12.5px] xl:leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
               "It was the best of times, it was the worst of times,". For me,
               Dickens' immortal words describe Sundays perfectly. For many
               Sunday is a day of rest yet we end up following a set pattern,
@@ -71,7 +79,7 @@ const Reviews = () => {
             </p>
             {/*Mobile/Tablet content */}
 
-            <p className="mt-2 text-[13px] leading-[18px] xs2:text-base  xs2:leading-5  md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:hidden">
+            <p className="mt-2 text-[14px] leading-[18px] xs2:text-[17px] xs2:leading-5  md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:hidden">
               That Sunday afternoon, the pub sailed back into the 19th century
               and was treated to over three hours of outstanding traditional
               seafaring music played and sung by a seventeen piece band, all
@@ -110,15 +118,20 @@ const Reviews = () => {
               </div>
             </Link>
 
+          
+
+
             <h2 className="bg-darkBlue w-fit mt-6 text-[17px] xs2:text-xl md1:text-3xl md2:text-4xl lg:text-5xl leading-5  xl:hidden">
               "The White Hart welcomes the return of the
             </h2>
-            <h3 className="bg-darkBlue w-fit mt-1 text-[17px] xs2:text-xl md1:text-3xl md2:text-4xl lg:text-5xl leading-5 mr-40 xl:hidden">
+            <h3 className="bg-darkBlue w-fit mt-1 text-[17px] xs2:text-xl md1:text-3xl md2:text-4xl lg:text-5xl leading-5 xl:hidden">
               {" "}
               Sailorette and her crew."
             </h3>
 
-            <p className="mt-2 text-[13px] xs2:text-base xs2:leading-5 leading-[18px] md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:hidden">
+            
+
+            <p className="mt-2 text-[14px] leading-[18px] xs2:text-[17px] xs2:leading-5 md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:hidden">
               Eight bells has just been struck in the White Hart. It is the end
               of the afternoon watch (16:00 hours). The bar is starting to fill
               up with eager customers, animated chatter, all feeling a frisson

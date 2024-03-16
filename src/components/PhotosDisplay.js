@@ -67,7 +67,7 @@ const PhotosDisplay = () => {
       placement="center"
       style={{maxWidth:'95dvh'}}
       classNames={{
-        base: "flex items-center justify-center w-full",
+        base: "flex items-center justify-center w-full bg-black",
         wrapper: "z-[110] overflow-y-hidden",
         backdrop: "z-[109]",
         closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
@@ -93,7 +93,7 @@ const PhotosDisplay = () => {
                        alt={`Slide ${photo.id}`}
                width={500}
                 height={500} 
-                className="xl:w-[95dvh] xl:h-[95dvh]"
+                className="w-[95dvh] h-[47.3dvh] xs:h-[45dvh] md1:h-[70dvh] md2:h-[66dvh] lg:h-[71dvh] xl:h-[95dvh]"
                style={{ objectFit: "contain" }}
                placeholder="blur"
                blurDataURL={photo.blurDataURL}
