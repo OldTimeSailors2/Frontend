@@ -33,8 +33,8 @@ const LandingLeftSide = () => {
   
 
   return (
-    <div className={`flex flex-col items-center justify-center   xl:ml-4 1xl:ml-[1.15rem] min-[1536px]:ml-3.5 fullHD:ml-4 4k:ml-14   xl:mt-[120px] 1xl:mt-[115px] 1xxl:mt-[135px]  fullHD:mt-[190px] 2k:mt-[310px] 4k:mt-[390px]  ${ isSafari
-     ? " ml-1  md1:ml-1.5  min-[810px]:ml-[1.15rem] min-[820px]:ml-6 lg:ml-7 xl:ml-4 fullHD:ml-4 4k:ml-14          mt-[7.75rem] iphone-1:mt-[8.35rem] iphone-2:mt-[9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[220px]" 
+    <div className={`flex flex-col items-center justify-center   xl:ml-4 1xl:ml-[1.15rem] 1xxl:ml-4  4k:ml-14   xl:mt-[120px] 1xl:mt-[115px] 1xxl:mt-[135px]  fullHD:mt-[190px] 2k:mt-[310px] 4k:mt-[390px]  ${ isSafari
+     ? " ml-1  md1:ml-1.5  min-[810px]:ml-[1.15rem] min-[820px]:ml-6 lg:ml-7         mt-[7.75rem] iphone-1:mt-[8.35rem] iphone-2:mt-[9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[220px]" 
      
      : "ml-0.5 xs:ml-1 md:ml-3.5 min-[810px]:ml-2 min-[820px]:ml-2.5 lg:ml-[18px]     mt-[7.75rem] xs:mt-[8.35rem] xs2:mt-[9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[250px] "}`}>
               <Image
@@ -90,9 +90,10 @@ const LandingLeftSide = () => {
       <div className={`grid grid-cols-2 gap-2 xs2:gap-2.5 min-[820px]:gap-3.5 xl:gap-2 fullHD:gap-4 2k:gap-6 4k:gap-9  xl:mt-7 1xl:mt-1.5 1xxl:mt-7  fullHD:mt-4 2k:mt-8 4k:mt-14
       
       ${ isSafari
-         ? "mt-10 iphone-1:mt-11 iphone-2:mt-12  min-[430px]:mb-0 md1:mb-0 md1:mt-6 md:mt-3 min-[820px]:mt-5 lg:mt-6"
+         ? "mt-14 iphone-1:mt-14 iphone-2:mt-16  md1:mt-6 md:mt-3 min-[820px]:mt-5 lg:mt-6"
          
-         : "mt-10 xs:mt-20 xs2:mt-[5.5rem] min-[425px]:mt-11 md1:mt-4 md:mt-3 min-[820px]:mt-7 lg:mt-6"}`}>
+         : "mt-10 xs:mt-11 xs2:mt-9 min-[425px]:mt-11 md1:mt-4 md:mt-3 min-[820px]:mt-7 lg:mt-6"}
+         `}>
 
 
 
@@ -101,9 +102,9 @@ const LandingLeftSide = () => {
           
           ${ isSafari
 
-             ? "text-[20px] p-1 iphone-1:text-[22px] iphone-2:text-[24px] iphone-2:p-[0.3rem] iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+             ? "text-[20px] p-1.5 iphone-1:text-[22px] iphone-1:p-1.5 iphone-2:text-[24px] iphone-3:text-[25px] min-[430px]:text-[24px] md1:text-[35px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
 
-              : "text-[25px] p-1.5 md1:text-[30px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
+              : "text-[25px] p-1.5 md1:text-[30px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
 
           href="https://www.instagram.com/oldtimesailors" target="_blank"
         >
@@ -114,9 +115,9 @@ const LandingLeftSide = () => {
           
           ${ isSafari
 
-             ? "text-[20px] p-1 iphone-1:text-[22px] iphone-2:text-[24px] iphone-2:p-[0.3rem] iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+             ? "text-[20px] p-1.5 iphone-1:text-[22px] iphone-1:p-1.5 iphone-2:text-[24px] iphone-3:text-[25px] min-[430px]:text-[24px] md1:text-[35px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
 
-              : "text-[25px] p-1.5 md1:text-[30px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
+              : "text-[25px] p-1.5 md1:text-[30px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
 
           href="https://www.facebook.com/oldtimesailors/" target="_blank"
         >
@@ -127,9 +128,9 @@ const LandingLeftSide = () => {
           
           ${ isSafari
 
-             ? "text-[20px] p-1 iphone-1:text-[22px] iphone-2:text-[24px] iphone-2:p-[0.3rem] iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+             ? "text-[20px] p-1.5 iphone-1:text-[22px] iphone-1:p-1.5 iphone-2:text-[24px] iphone-3:text-[25px] min-[430px]:text-[24px] md1:text-[35px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
 
-              : "text-[25px] p-1.5 md1:text-[30px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
+              : "text-[25px] p-1.5 md1:text-[30px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
 
           href="https://wa.me/447539045312" target="_blank"
         >
@@ -140,9 +141,9 @@ const LandingLeftSide = () => {
           
           ${ isSafari
 
-             ? "text-[20px] p-1 iphone-1:text-[22px] iphone-2:text-[24px] iphone-2:p-[0.3rem] iphone-3:text-[25px] min-[430px]:text-[24px] min-[430px]:p-1 md1:text-[35px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+             ? "text-[20px] p-1.5 iphone-1:text-[22px] iphone-1:p-1.5 iphone-2:text-[24px] iphone-3:text-[25px] min-[430px]:text-[24px] md1:text-[35px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
 
-              : "text-[25px] p-1.5 md1:text-[30px] md1:p-1.5  min-[810px]:text-[27px] min-[810px]:p-1.5 min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
+              : "text-[25px] p-1.5 md1:text-[30px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "}`}
 
           href="mailto:captainnicholasmoffat@oldtimesailors.com" target="_blank"
         >

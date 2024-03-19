@@ -58,7 +58,7 @@ const Media = async () => {
   return (
     <>
       <main
-        className="bg-bluePatternMobile md1:bg-bluePatternTablet xl:bg-bluePattern  bg-contain  w-screen h-dvh flex flex-col pt-[77px] xs:pt-[92px] sm:pt-[140px] 2xl:pt-[172px] 2k:pt-[204px] 4k:pt-[268px]
+        className="bg-bluePatternMobile md1:bg-bluePatternTablet xl:bg-bluePattern  bg-contain  w-screen h-dvh flex flex-col pt-[77px] xs:pt-[92px] sm:pt-[140px] fullHD:pt-[172px] 2k:pt-[204px] 4k:pt-[268px]
         pb-[17.5px] md1:pb-[44px] xl:pb-[40px] 2k:pb-[52px] 4k:pb-[64px]  justify-around xl:justify-evenly 1xl:justify-center 1xl:gap-1 1xxl:gap-6 2k:gap-0 2k:justify-around"
       >
         <MediaWrapper
@@ -75,7 +75,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 music
               </h1>
               <DynamicDecoMedia />
@@ -93,7 +93,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 videos
               </h1>
               <DynamicDecoMedia />
@@ -112,7 +112,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl 2xl:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 photos
               </h1>
               <DynamicDecoMedia />

@@ -82,7 +82,7 @@
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1920px) {
   .octagon-navbar {
     width: 300px;
     height: 65px;
@@ -545,18 +545,24 @@
     height: 65px;
   }
 }
-
-@media (min-width: 2560px) {
+@media (min-width: 1920px) {
   .services-octagon-link {
     width: 480px;
     height: 82px;
   }
 }
 
-@media (min-width: 3840px) {
+@media (min-width: 2560px) {
   .services-octagon-link {
     width: 590px;
     height: 104px;
+  }
+}
+
+@media (min-width: 3840px) {
+  .services-octagon-link {
+    width: 980px;
+    height: 170px;
   }
 }
 

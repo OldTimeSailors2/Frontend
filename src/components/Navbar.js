@@ -83,16 +83,16 @@ const Navbar = () => {
       <div className="flex gap-1.5 sm:gap-4 items-center">
         <Link href="/" className="inline-block">
           <Image
-            src={pathname !== '/services' ? logo : logo2}
+            src={pathname !== '/services' || pathname !== '/tickets' ? logo : logo2}
             width={65}
             height={65}
             priority={true}
             alt="OTS Logo"
-            className="xs:w-[80px] xs:h-[80px] sm:w-32 sm:h-32 2xl:w-40 2xl:h-40 2k:w-48 2k:h-48 4k:w-64 4k:h-64"
+            className="xs:w-[80px] xs:h-[80px] sm:w-32 sm:h-32 fullHD:w-40 fullHD:h-40 2k:w-48 2k:h-48 4k:w-64 4k:h-64"
           />
         </Link>
         <h1
-          className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles text-2xl xs2:text-[26px] sm:text-[40px] 2xl:text-5xl 2k:text-7xl 4k:text-8xl flex items-center justify-center`}
+          className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles text-2xl xs2:text-[26px] sm:text-[40px] fullHD:text-5xl 2k:text-7xl 4k:text-8xl flex items-center justify-center`}
         >
           {title}
         </h1>

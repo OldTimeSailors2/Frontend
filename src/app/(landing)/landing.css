@@ -74,11 +74,18 @@
       inset: -0.75rem;
     }
   }
+
+  @media (min-width: 1500px) {
+    .image-border {
+      inset: -0.5rem;
+    }
+  }
   
   @media (min-width: 2560px) {
     .image-border {
       border-width: 16px;
       border-image-slice: 18;
+      inset: -0.75rem;
     }
   }
   
@@ -92,7 +99,7 @@
 
   .octagon {
     width: 120px;
-    height: 25px;
+    height: 20px;
     clip-path: polygon(
       5% 0%,
       95% 0%,
@@ -107,15 +114,15 @@
   
   @media (min-width: 375px) and (max-width: 380px) {
     .octagon {
-      width: 110px;
+      width: 115px;
       height: 20px;
     }
   }
   
   @media (min-width: 390px) and (max-width: 393px) {
     .octagon {
-      width: 120px;
-      height: 25px;
+      width: 125px;
+      height: 22px;
     }
   }
   
@@ -128,8 +135,8 @@
   }
   @media (min-width: 414px) and (max-width: 419px) {
     .octagon {
-      width: 125px;
-      height: 25px;
+      width: 135px;
+      height: 24px;
     }
   }
   
@@ -142,7 +149,7 @@
   @media (min-width: 427px) {
     .octagon {
       width: 125px;
-      height: 26px;
+      height: 24px;
     }
   }
   
@@ -176,36 +183,22 @@
   
   @media (min-width: 1280px) {
     .octagon {
-      width: 190px;
-      height: 40px;
-    }
-  }
-  
-  @media (min-width: 1440px) {
-    .octagon {
-      width: 230px;
-      height: 50px;
-    }
-  }
-  
-  @media (min-width: 1920px) {
-    .octagon {
-      width: 300px;
-      height: 68px;
+      width: 120%;
+      height: 10%;
     }
   }
   
   @media (min-width: 2560px) {
     .octagon {
-      width: 380px;
-      height: 82px;
+      width: 125%;
+      height: 8.5%;
     }
   }
   
   @media (min-width: 3840px) {
     .octagon {
-      width: 580px;
-      height: 120px;
+      width: 125%;
+      height: 8.5%;
     }
   }
   

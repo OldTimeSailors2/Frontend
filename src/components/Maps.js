@@ -339,7 +339,7 @@ const Maps = ({ markersList }) => {
     <div className="h-dvh">
       <Map
         zoom={5}
-        maxZoom={8}
+        maxZoom={9}
         center={mapCenter}
         gestureHandling={"greedy"}
         disableDefaultUI={true}

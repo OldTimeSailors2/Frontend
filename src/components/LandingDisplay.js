@@ -53,7 +53,7 @@ const [ModalContent, setModalContent] = useState(null);
   return (
     <>
       <div className="md1:px-3 md:px-14 md2:px-14 lg:px-28 xl:p-0">
-    <div className="grid grid-cols-2 md1:px-28 md1:pb-4 xl:p-0 min-[1536px]:max-fullHD:px-40 xl:grid-cols-4 gap-[5px] xl:gap-4">
+    <div className="grid grid-cols-2 md1:px-28 md1:pb-4 xl:p-0 xl:grid-cols-4 gap-[5px] xl:gap-4">
         {images && images.map((image) => (
 
                 <div key={image.id}

@@ -28,7 +28,7 @@ const Reviews = () => {
 
         {/*column 1*/}
         <MobileSeparator>
-          <article className="flex-grow flex flex-col pt-4 max-xl:px-3">
+          <article className="flex-grow flex flex-col pt-4 max-xl:px-3 xl:overflow-hidden">
 
 
         {/*Title for very small screens*/}
@@ -54,11 +54,11 @@ const Reviews = () => {
               you will.
             </p>
 
-            <div className="flex max-xl:flex-shrink-0 w-full h-[22dvh] xs:h-[20dvh] relative rounded-sm">
+            <div className="flex max-xl:flex-shrink-0 w-full h-[22dvh] xs:h-[20dvh] xl:h-full relative rounded-sm">
               <Image
                 src="/assets/reviews.webp"
                 fill={true}
-                style={{ objectFit: "cover" }}
+                className="object-cover xl:object-contain"
                 priority={true}
                 alt="Reviews photo"
               />

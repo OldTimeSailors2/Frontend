@@ -56,7 +56,10 @@ const Services = async () => {
         />
         <div className="absolute inset-0 flex justify-center items-center">
           <Link href="mailto:captainnicholasmoffat@oldtimesailors.com" target="_blank">
-            <h2 className="services-octagon-link bg-bluePattern bg-contain underline underline-offset-2 text-beige  text-2xl leading-[39px] xs2:text-3xl xs2:leading-[43px] font-medium tracking-wide  pl-[3.8px] md1:text-[38px] md1:tracking-wide md1:max-xl:pt-1.5 md1:max-xl:pl-1.5 md:text-[44px] md:leading-[48px] lg:text-[55px] lg:leading-[66px] xl:text-3xl  xl:tracking-normal  1xl:text-[27px] fullHD:text-4xl 2k:text-5xl 4k:text-6xl font-titles flex justify-center  xl:items-start  xl:pt-1 fullHD:pt-2 2k:pt-3 4k:pt-4">
+            <h2 className="services-octagon-link bg-bluePattern bg-contain underline underline-offset-2 text-beige  text-2xl leading-[39px]
+             xs2:text-3xl xs2:leading-[43px] font-medium tracking-wide  pl-[3.8px]
+              md1:text-[38px] md1:tracking-wide md1:max-xl:pt-1.5 md1:max-xl:pl-1.5 md:text-[44px] md:leading-[48px] lg:text-[55px] lg:leading-[66px]
+               xl:text-3xl  xl:tracking-normal  1xl:text-[27px] 2xl:text-4xl fullHD:text-5xl  2k:text-6xl 4k:text-8xl font-titles flex justify-center  xl:items-start  xl:pt-1 2xl:pt-2 fullHD:pt-3 2k:pt-4 4k:pt-6">
               hire our services!
             </h2>
           </Link>
