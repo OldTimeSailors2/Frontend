@@ -733,12 +733,12 @@
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1920px) {
   .reviews-octagon {
     height: 65px;
   }
 }
-@media (min-width: 1536px) {
+@media (min-width: 1920px) {
   .reviews-octagon::before {
     height: 63px;
   }

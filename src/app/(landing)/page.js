@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 
 import { formatLandingImages } from "@/helpers/formatApiResponses";
 
-const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), { ssr: true });
+const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), { ssr: false });
 const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), { ssr: false });
 const LandingDynamicBg = dynamic(() => import("@/components/LandingDynamicBg"), { ssr: false });
 
@@ -38,7 +38,7 @@ const Home = async () => {
 
   return (
 
-    <main className="w-screen h-auto md1:h-dvh flex flex-col overflow-auto md1:overflow-hidden relative"> 
+    <main className="w-screen max-md1:min-h-screen md1:h-dvh flex flex-col overflow-auto md1:overflow-hidden relative"> 
       <LandingDynamicBg />
       <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
         
@@ -126,7 +126,7 @@ const Home = async () => {
           <LandingDisplay images={formattedLandingImages} />
         </div>
       </div>
-      <footer className="w-full z-[200] flex justify-center items-center py-1 xl:p-1 2k:py-2">
+      <footer className="w-full z-[105] flex justify-center items-center py-1 xl:p-1 2k:py-2">
         <p className="text-beige font-txt text-[9px] md1:text-lg md:text-xl xl:text-base 2k:text-3xl 4k:text-5xl uppercase">
         OLD TIME SAILORS LTD.®
         </p>

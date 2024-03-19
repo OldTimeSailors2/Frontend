@@ -83,7 +83,7 @@ const Navbar = () => {
       <div className="flex gap-1.5 sm:gap-4 items-center">
         <Link href="/" className="inline-block">
           <Image
-            src={pathname !== '/services' || pathname !== '/tickets' ? logo : logo2}
+            src={!['/services', '/tickets'].includes(pathname) ? logo : logo2}
             width={65}
             height={65}
             priority={true}

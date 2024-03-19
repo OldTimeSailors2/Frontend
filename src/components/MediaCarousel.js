@@ -83,7 +83,7 @@ const MediaCarousel = ({ mediaType }) => {
       autoPlay={false}
       keyBoardControl={true}
       draggable={false} // for desktop
-      minimumTouchDrag={25}
+      minimumTouchDrag={50}
       containerClass="carousel-container"
       itemClass="item-carousel"
       removeArrowOnDeviceType={["tablet", "mobile"]}

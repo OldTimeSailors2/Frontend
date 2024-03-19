@@ -75,7 +75,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-4xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 music
               </h1>
               <DynamicDecoMedia />
@@ -93,7 +93,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-4xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 videos
               </h1>
               <DynamicDecoMedia />
@@ -112,7 +112,7 @@ const Media = async () => {
                 alt="Decoration"
                 className="md:w-[45px] 2xl:w-[65px] 2k:w-[80px] 4k:w-[110px]"
               />
-              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
+              <h1 className="mx-2 xl:mr-0 xl:ml-2 font-titles text-lightRed text-2xl sm:text-4xl min-[900px]:text-5xl xl:text-2xl 1xxl:text-4xl fullHD:text-[42px] 2k:text-[54px] 4k:text-7xl">
                 photos
               </h1>
               <DynamicDecoMedia />

@@ -6,9 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import wing from "../../public/assets/wing.svg";
 import descriptionImage from "../../public/assets/description.svg";
+import BlurbTitle from "../../public/assets/blurb-title.webp"
 import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 import useBrowserDetection from "@/hooks/useBrowserDetection";
+
 
 
 
@@ -27,7 +29,9 @@ const LandingLeftSide = () => {
       const ModalBody = await import('@nextui-org/modal').then(mod => mod.ModalBody);
       setModalComponent({ Modal, ModalContent, ModalHeader, ModalBody });
     }
-    setIsModalOpen(true);
+    setTimeout(() => {
+      setIsModalOpen(true);
+    }, 300);
   };
   
   
@@ -167,7 +171,7 @@ const LandingLeftSide = () => {
       >
         <ModalComponent.ModalContent>
               <ModalComponent.ModalHeader className="pb-0 iphone-3:px-7 xl:px-8">
-                <Image src="/assets/blurb-title.webp" width={130} height={130} alt="Blurb title" />
+                <Image src={BlurbTitle} width={130} height={130} alt="Blurb title" className="h-auto" placeholder="blur"/>
               </ModalComponent.ModalHeader>
               <ModalComponent.ModalBody className="pt-0 pb-6 iphone-3:px-7 xl:px-8">
                 <p className=" text-darkBlue font-txt font-bold text-justify text-lg leading-[1.35rem] iphone-3:text-xl iphone-3:leading-6 md1:text-xl md2:text-2xl lg:text-3xl xl:text-xl fullHD:text-2xl 2k:text-4xl 4k:text-6xl"> 

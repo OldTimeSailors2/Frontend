@@ -54,11 +54,12 @@ const Reviews = () => {
               you will.
             </p>
 
-            <div className="flex max-xl:flex-shrink-0 w-full h-[22dvh] xs:h-[20dvh] xl:h-full relative rounded-sm">
+            <div className="flex relative w-full h-[22dvh] xs:h-[20dvh] max-xl:flex-shrink-0 xl:h-full rounded-sm">
               <Image
                 src="/assets/reviews.webp"
                 fill={true}
-                className="object-cover xl:object-contain"
+                sizes="(max-width: 1280px) 100vw, 33vw"
+                className="object-cover xl:object-contain 2xl:max-fullHD:scale-x-[1.1]"
                 priority={true}
                 alt="Reviews photo"
               />
@@ -108,7 +109,7 @@ const Reviews = () => {
               target="_blank"
               className="w-full my-2 xl:hidden"
             >
-              <div className="reviews-octagon before:bg-redPattern before:bg-contain text-darkBlue text-[15px] min-[375px]:text-sm xs:text-base min-[390px]:text-sm xs2:text-[17px] min-[414px]:text-base md1:text-2xl md2:text-3xl lg:text-4xl max-md1:font-semibold  font-extralight font-titles flex justify-center items-center ">
+              <div className="reviews-octagon before:bg-redPattern before:bg-contain text-darkBlue text-[14px] min-[375px]:text-sm xs:text-[15px] xs2:text-base iphone-3:text-[17px] md1:text-2xl md2:text-3xl lg:text-4xl max-md1:font-semibold  font-extralight font-titles flex justify-center items-center ">
                 <span className="z-10">
                   thousands of audience reviews on our
                 </span>{" "}
@@ -286,7 +287,7 @@ const Reviews = () => {
             target="_blank"
             className="absolute bottom-2 left-0 w-full"
           >
-            <div className="reviews-octagon before:bg-redPattern before:bg-contain text-darkBlue text-[17px] 1xl:text-lg 1xxl:text-xl fullHD:text-[28px] 2k:text-4xl 4k:text-[55px] font-extralight font-titles flex justify-center items-center ">
+            <div className="reviews-octagon before:bg-redPattern before:bg-contain text-darkBlue text-[17px] 1xl:text-lg 1xxl:text-xl fullHD:text-[27px] 2k:text-4xl 4k:text-[55px] font-extralight font-titles flex justify-center items-center ">
               <span className="z-10">thousands of audience reviews on our</span>{" "}
               <span className="z-10 ml-1.5 fullHD:ml-2 4k:ml-3 text-beige underline underline-offset-4">
                 fan page
