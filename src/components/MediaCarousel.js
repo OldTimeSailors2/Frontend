@@ -83,20 +83,15 @@ const MediaCarousel = ({ mediaType }) => {
   const responsive = getResponsiveSettings(mediaType);
 
 
-  // Handlers for touch events
-  const handleTouchStart = (e) => {
-    const touch = e.touches[0];
-    setStartTouch({ x: touch.clientX, y: touch.clientY });
-  };
 
- // Disable vertical page scrolling
- const disableVerticalScrolling = () => {
-  document.body.style.overflowY = 'hidden';
+ // Function to disable vertical overscroll behavior
+ const disableVerticalOverscroll = () => {
+  document.body.style.overscrollBehaviorY = 'none';
 };
 
-// Re-enable vertical page scrolling
-const enableVerticalScrolling = () => {
-  document.body.style.overflowY = '';
+// Function to re-enable vertical overscroll behavior
+const enableVerticalOverscroll = () => {
+  document.body.style.overscrollBehaviorY = '';
 };
 
   return (
@@ -115,8 +110,8 @@ const enableVerticalScrolling = () => {
       centerMode={true}
       beforeChange={() => setIsCarouselMoving(true)}
       afterChange={() => setIsCarouselMoving(false)}
-      onTouchStart={disableVerticalScrolling}
-      onTouchEnd={enableVerticalScrolling}
+      onTouchStart={disableVerticalOverscroll}
+      onTouchEnd={enableVerticalOverscroll}
     >
       {content}
     </Carousel>
