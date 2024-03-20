@@ -5,6 +5,10 @@
 .carousel-container {
     @apply w-full overscroll-contain;
   }
+
+  .react-multi-carousel-track{
+    overscroll-behavior: contain
+  }
   
   .item-carousel {
     @apply flex items-end justify-center;
