@@ -89,24 +89,15 @@ const MediaCarousel = ({ mediaType }) => {
     setStartTouch({ x: touch.clientX, y: touch.clientY });
   };
 
-  const handleTouchMove = (e) => {
-    if (!startTouch.x || !startTouch.y) {
-      return;
-    }
+ // Disable vertical page scrolling
+ const disableVerticalScrolling = () => {
+  document.body.style.overflowY = 'hidden';
+};
 
-    const currentTouch = e.touches[0];
-    const deltaX = Math.abs(startTouch.x - currentTouch.clientX);
-    const deltaY = Math.abs(startTouch.y - currentTouch.clientY);
-
-    if (deltaX > deltaY) {
-      // Horizontal swipe is greater than vertical swipe
-      e.preventDefault(); // Prevent vertical scrolling
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setStartTouch({ x: 0, y: 0 }); // Reset touch coordinates
-  };
+// Re-enable vertical page scrolling
+const enableVerticalScrolling = () => {
+  document.body.style.overflowY = '';
+};
 
   return (
     <Carousel
@@ -124,9 +115,8 @@ const MediaCarousel = ({ mediaType }) => {
       centerMode={true}
       beforeChange={() => setIsCarouselMoving(true)}
       afterChange={() => setIsCarouselMoving(false)}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      onTouchStart={disableVerticalScrolling}
+      onTouchEnd={enableVerticalScrolling}
     >
       {content}
     </Carousel>
