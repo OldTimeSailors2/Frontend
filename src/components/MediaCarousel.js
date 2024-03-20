@@ -6,12 +6,17 @@ import Song from "./Song";
 import Video from "./Video";
 import Photo from "./Photo";
 import useMedia from "@/hooks/useMedia";
-import "./carousel-styles.css";
 import useBrowserDetection from "@/hooks/useBrowserDetection";
+import { useState, useEffect } from "react";
 
 const MediaCarousel = ({ mediaType }) => {
   const { playlist, videoList, photoList, setIsCarouselMoving } = useMedia();
   const { isSafari } = useBrowserDetection()
+  const [startTouch, setStartTouch] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    import("./carousel-styles.css")
+  }, []);
 
   let content;
   switch (mediaType) {
@@ -77,6 +82,32 @@ const MediaCarousel = ({ mediaType }) => {
 
   const responsive = getResponsiveSettings(mediaType);
 
+
+  // Handlers for touch events
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    setStartTouch({ x: touch.clientX, y: touch.clientY });
+  };
+
+  const handleTouchMove = (e) => {
+    if (!startTouch.x || !startTouch.y) {
+      return;
+    }
+
+    const currentTouch = e.touches[0];
+    const deltaX = Math.abs(startTouch.x - currentTouch.clientX);
+    const deltaY = Math.abs(startTouch.y - currentTouch.clientY);
+
+    if (deltaX > deltaY) {
+      // Horizontal swipe is greater than vertical swipe
+      e.preventDefault(); // Prevent vertical scrolling
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setStartTouch({ x: 0, y: 0 }); // Reset touch coordinates
+  };
+
   return (
     <Carousel
       responsive={responsive}
@@ -93,6 +124,9 @@ const MediaCarousel = ({ mediaType }) => {
       centerMode={true}
       beforeChange={() => setIsCarouselMoving(true)}
       afterChange={() => setIsCarouselMoving(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       {content}
     </Carousel>

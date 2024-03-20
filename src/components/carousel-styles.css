@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 .carousel-container {
-    @apply w-full overscroll-contain;
-  }
-
-  .react-multi-carousel-track{
-    overscroll-behavior: contain
+    @apply w-full;
   }
   
   .item-carousel {
