@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .carousel-container {
-    @apply w-full;
+    @apply w-full overscroll-contain;
   }
   
   .item-carousel {
