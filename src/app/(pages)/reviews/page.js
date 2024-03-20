@@ -54,7 +54,7 @@ const Reviews = () => {
               you will.
             </p>
 
-            <div className="flex relative w-full h-[22dvh] xs:h-[20dvh] max-xl:flex-shrink-0 xl:h-full rounded-sm">
+            <div className="flex relative w-full h-[25dvh] xs:h-[26dvh] xs2:h-[27dvh] max-xl:flex-shrink-0 xl:h-full rounded-sm">
               <Image
                 src="/assets/reviews.webp"
                 fill={true}
@@ -109,7 +109,9 @@ const Reviews = () => {
               target="_blank"
               className="w-full my-2 xl:hidden"
             >
-              <div className="reviews-octagon before:bg-redPattern before:bg-contain text-darkBlue text-[14px] min-[375px]:text-sm xs:text-[15px] xs2:text-base iphone-3:text-[17px] md1:text-2xl md2:text-3xl lg:text-4xl max-md1:font-semibold  font-extralight font-titles flex justify-center items-center ">
+              <div className="reviews-octagon before:bg-redPattern before:bg-contain text-darkBlue
+               text-[14px]  xs:text-[15px] iphone-1:max-[393px]:text-[14px] xs2:text-base iphone-3:text-[17px]
+                md1:text-2xl md2:text-3xl lg:text-4xl max-md1:font-semibold  font-extralight font-titles flex justify-center items-center ">
                 <span className="z-10">
                   thousands of audience reviews on our
                 </span>{" "}

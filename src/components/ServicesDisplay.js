@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import Image from "next/image";
+import useBrowserDetection from "@/hooks/useBrowserDetection";
 
 
 
@@ -10,11 +11,14 @@ const ServicesDisplay = ({ services }) => {
   const [isDevice, setIsDevice] = useState();
   const [activeService, setActiveService] = useState("our-show");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(null);
+  const [clickedPhotoIndex, setClickedPhotoIndex] = useState(null)
 // Dynamic import states
   const [Modal, setModal] = useState(null);
   const [ModalContent, setModalContent] = useState(null);
   const [Carousel, setCarousel] = useState(null); 
+  const carouselRef = useRef(null)
+
+  const { isSafari } = useBrowserDetection()
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,11 +56,21 @@ const ServicesDisplay = ({ services }) => {
         const CarouselModule = await import("react-multi-carousel");
         setCarousel(() => CarouselModule.default);
         await import("react-multi-carousel/lib/styles.css")
+        await import('./carousel-styles.css');
+
       }
     }
 
     loadCarousel();
   }, [isDevice]);
+
+  useEffect(() => {
+    if ( clickedPhotoIndex !== null && carouselRef.current) {
+      
+      carouselRef.current.goToSlide(clickedPhotoIndex);
+    }
+  }, [clickedPhotoIndex]);
+
 
   const dynamicStyle = {
     "--hexagon-width": `${105 * scaleFactor}px`,
@@ -141,14 +155,21 @@ const ServicesDisplay = ({ services }) => {
     },
   }), [])
 
+  const responsive2 = useMemo(() => ({
+    all: {
+      breakpoint: { max: Infinity, min: 0 },
+      items: 1
+    },
+  }), []);
+
   /*IMAGES DISPLAY */
 
   {
     /*Images Functions*/
   }
 
-  const selectImage = useCallback((image) => {
-    setCurrentImage(image);
+  const selectImage = useCallback((index) => {
+    setClickedPhotoIndex(index)
   }, []);
 
 
@@ -158,16 +179,25 @@ const ServicesDisplay = ({ services }) => {
 
   const closeModal = useCallback(() => {
     setIsModalOpen(false);
-    setCurrentImage(null);
+    setClickedPhotoIndex(null)
   }, []);
 
-  const handleClick = useCallback(async (image) => {
+  const handleClick = useCallback(async (index) => {
     if (!Modal || !ModalContent) {
       const modalModule = await import('@nextui-org/modal');
+
+      if(!Carousel){
+        const CarouselModule = await import('react-multi-carousel')
+        setCarousel(() => CarouselModule.default);
+        await import("react-multi-carousel/lib/styles.css")
+        await import('./carousel-styles.css');
+      }
+      
       setModal(() => modalModule.Modal);
       setModalContent(() => modalModule.ModalContent);
     }
-    selectImage(image);
+
+    selectImage(index);
     openModal();
   }, [Modal, ModalContent, selectImage, openModal]);
   
@@ -320,6 +350,7 @@ const ServicesDisplay = ({ services }) => {
               infinite={true}
               partialVisible
               itemClass="flex justify-end"
+              minimumTouchDrag={isSafari ? 75 : 50}
             >
               {activeServiceData.images.map((image, index) => (
                 <div key={index}>
@@ -333,10 +364,7 @@ const ServicesDisplay = ({ services }) => {
                     w-[110px] h-[110px] xs:w-[120px] xs:h-[120px] iphone-3:w-[130px] iphone-3:h-[130px]
                     
                     md1:w-[230px] md1:h-[230px] md:w-[230px] md:h-[230px] md2:w-[240px] md2:h-[240px] lg:w-[300px] lg:h-[300px]"
-                    onClick={() => handleClick({
-                      url: image.attributes.formats.xl ? image.attributes.formats.xl.url : image.attributes.url,
-                      blurDataURL: image.blurDataURL
-                    })}
+                    onClick={() => handleClick(index)}
                     placeholder="blur"
                     blurDataURL={image.blurDataURL}
                   />
@@ -356,10 +384,7 @@ const ServicesDisplay = ({ services }) => {
                   height={220}
                   alt={`Image ${index + 1}`}
                   className="rounded-sm cursor-pointer  1xxl:w-[240px] 1xxl:h-[240px] fullHD:w-[330px] fullHD:h-[330px] 2k:w-[440px] 2k:h-[440px] 4k:w-[630px] 4k:h-[630px]"
-                  onClick={() => handleClick({
-                    url: image.attributes.formats.xl ? image.attributes.formats.xl.url : image.attributes.url,
-                    blurDataURL: image.blurDataURL
-                  })}
+                  onClick={() => handleClick(index)}
                   placeholder="blur"
                   blurDataURL={image.blurDataURL}
                 />
@@ -375,35 +400,47 @@ const ServicesDisplay = ({ services }) => {
           isOpen={isModalOpen}
           onClose={closeModal}
           placement="center"
-          style={{maxWidth: '95dvh'}}
           classNames={{
-            base: "flex items-center justify-center w-full",
+            base: "flex items-center justify-center w-full bg-black max-w-[98vw] xl:max-w-[95dvh]",
             wrapper: "z-[110] overflow-y-hidden",
-            backdrop: "z-[109] ",
+            backdrop: "z-[109]",
             closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
           }}
           backdrop="blur"
         >
           <ModalContent>
-            {currentImage && (
-              <Image
-                src={currentImage.url}
-                alt="Selected Image"
-                width={1000}
-                height={1000}
-                className="xl:w-[95vh] xl:h-[95vh]"
+
+          <Carousel 
+            responsive={responsive2} 
+            ref={carouselRef}
+            infinite={false}
+            autoPlay={false}
+            keyBoardControl={true}           
+            containerClass="w-full h-full"
+            itemClass="flex items-center justify-center"
+            >
+
+            {activeServiceData.images.map((photo) => (
+              <Image key={photo.id}
+                      src={photo.attributes.formats.xl ? photo.attributes.formats.xl.url : photo.attributes.url}
+                       alt={`Slide ${photo.id}`}
+                width={500}
+                height={500} 
+                className="w-[98vw] h-[98vw] xl:h-[95dvh]"
+                sizes="(max-width: 1280px) 95vw, 95dvh"
                 style={{ objectFit: "contain" }}
-                priority={true}
                 placeholder="blur"
-                blurDataURL={currentImage.blurDataURL}
-              />
-            )}
+                blurDataURL={photo.blurDataURL}
+               
+               />
+            ))}
+
+            </Carousel>
+
           </ModalContent>
         </Modal>
 
             }
-            
-        {/*IMAGES DISPLAY END*/}
       </div>
     </div>
   );

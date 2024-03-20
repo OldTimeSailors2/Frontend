@@ -7,9 +7,11 @@ import Video from "./Video";
 import Photo from "./Photo";
 import useMedia from "@/hooks/useMedia";
 import "./carousel-styles.css";
+import useBrowserDetection from "@/hooks/useBrowserDetection";
 
 const MediaCarousel = ({ mediaType }) => {
   const { playlist, videoList, photoList, setIsCarouselMoving } = useMedia();
+  const { isSafari } = useBrowserDetection()
 
   let content;
   switch (mediaType) {
@@ -83,7 +85,7 @@ const MediaCarousel = ({ mediaType }) => {
       autoPlay={false}
       keyBoardControl={true}
       draggable={false} // for desktop
-      minimumTouchDrag={50}
+      minimumTouchDrag={isSafari ? 75 : 50}
       containerClass="carousel-container"
       itemClass="item-carousel"
       removeArrowOnDeviceType={["tablet", "mobile"]}
