@@ -159,6 +159,7 @@ const SplideCarousel = ({ mediaType }) => {
 
   const options = {
     type: "loop",
+    start: 7,
     updateOnMove: true,
     mediaQuery: "min",
     pagination: false,

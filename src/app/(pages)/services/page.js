@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import { formatServices } from "@/helpers/formatApiResponses";
 
@@ -15,7 +14,7 @@ export const metadata = {
 const ServicesDisplay = dynamic(() => import("@/components/ServicesDisplay"), {
   ssr: false,
   loading: () => (
-    <div className="w-full px-0.5 min-[600px]:px-3 xl:px-4 flex max-xl:justify-center xl:flex-col xl:items-center mt-10">
+    <div className="w-full px-0.5 min-[600px]:px-3 xl:px-4 flex max-xl:justify-center xl:flex-col xl:items-center">
       <div className="flex flex-col justify-between xl:w-full xl:flex-row xl:justify-evenly xl:px-3 2xl:px-4 fullHD:px-6 2k:px-9 4k:px-16">
         <div className="services-hexagon bg-lightRed animate-pulse"></div>
         <div className="services-hexagon bg-lightRed animate-pulse"></div>
@@ -28,6 +27,10 @@ const ServicesDisplay = dynamic(() => import("@/components/ServicesDisplay"), {
       <div className="services-octagon bg-lightRed animate-pulse"></div>
     </div>
   ),
+});
+
+const ServicesDeco = dynamic(() => import('@/components/ServicesDeco'), {
+  ssr: false, // Assuming client-side rendering is preferred; adjust as needed
 });
 
 const fetchServices = async () => {
@@ -61,14 +64,7 @@ const Services = async () => {
       <ServicesDisplay services={services} />
 
       <div className="w-full relative flex mt-4 md:max-md3:mt-0">
-        <Image
-          src="/assets/deco-services-2.svg"
-          srcSet="/assets/deco-services-1.svg 1280w"
-          width={45}
-          height={45}
-          className="grow"
-          alt="Your Image Description"
-        />
+        <ServicesDeco />
         <div className="absolute inset-0 flex justify-center items-center">
           <Link
             href="mailto:captainnicholasmoffat@oldtimesailors.com"
