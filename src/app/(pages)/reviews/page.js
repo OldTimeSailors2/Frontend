@@ -29,16 +29,13 @@ const Reviews = () => {
         {/*column 1*/}
         <MobileSeparator>
           <article className="flex-grow flex flex-col pt-4 max-xl:px-3 xl:overflow-hidden">
-
-
-        {/*Title for very small screens*/}
-          <h2 className=" bg-darkBlue w-fit text-[15px] min-[370px]:hidden">
+            {/*Title for very small screens*/}
+            <h2 className=" bg-darkBlue w-fit text-[15px] min-[370px]:hidden">
               The Old Time Sailors - Sunday 26th September
             </h2>
             <h2 className=" mt-0.5 bg-darkBlue w-fit text-[15px] min-[370px]:hidden">
               2021
             </h2>
-
 
             <h2 className="hidden min-[370px]:block bg-darkBlue w-fit text-[15px] xs2:text-[17px] md1:text-3xl md2:text-4xl lg:text-5xl xl:text-[17px] xl:leading-5 1xl:text-base 1xxl:text-[19px] fullHD:text-2xl 2k:text-4xl 4k:text-[54px] 4k:leading-snug">
               The Old Time Sailors - Sunday 26th September 2021
@@ -109,9 +106,11 @@ const Reviews = () => {
               target="_blank"
               className="w-full my-2 xl:hidden"
             >
-              <div className="reviews-octagon before:bg-redPattern before:bg-contain text-darkBlue
-               text-[14px]  xs:text-[15px] iphone-1:max-[393px]:text-[14px] xs2:text-base iphone-3:text-[17px]
-                md1:text-2xl md2:text-3xl lg:text-4xl max-md1:font-semibold  font-extralight font-titles flex justify-center items-center ">
+              <div
+                className="reviews-octagon before:bg-redPattern before:bg-contain text-darkBlue
+               text-[14px] min-[375px]:text-[13px]  xs:text-[15px] iphone-1:max-[393px]:text-[14px] xs2:text-base iphone-2:text-[15px]
+                md1:text-2xl md2:text-3xl lg:text-4xl max-md1:font-semibold  font-extralight font-titles flex justify-center items-center "
+              >
                 <span className="z-10">
                   thousands of audience reviews on our
                 </span>{" "}
@@ -121,9 +120,6 @@ const Reviews = () => {
               </div>
             </Link>
 
-          
-
-
             <h2 className="bg-darkBlue w-fit mt-6 text-[17px] xs2:text-xl md1:text-3xl md2:text-4xl lg:text-5xl leading-5  xl:hidden">
               "The White Hart welcomes the return of the
             </h2>
@@ -131,8 +127,6 @@ const Reviews = () => {
               {" "}
               Sailorette and her crew."
             </h3>
-
-            
 
             <p className="mt-2 text-[14px] leading-[18px] xs2:text-[17px] xs2:leading-5 md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:hidden">
               Eight bells has just been struck in the White Hart. It is the end
@@ -194,52 +188,49 @@ const Reviews = () => {
 
         {/*column 2*/}
         <article className="hidden xl:flex-grow xl:flex xl:flex-col xl:justify-between xl:w-1/3 xl:pt-4">
-          
           <div className="flex flex-col">
-          <p className="text-[12.5px] leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
-            Everyone in the audience recognised that they had witnessed an
-            extraordinary and unexpected event that had transformed a Sunday
-            afternoon. Especially the pub landlord; he was the guest tin
-            whistler! It is now Tuesday 28th September, and a warm euphoria
-            pervades the pub as the locals continue to reminisce and share
-            mobile video clips, continue to talk in wonder about the
-            unforgettable Sunday when the Old Time Sailors moored up to the
-            White Hart in Bicester, Oxfordshire."
-          </p>
+            <p className="text-[12.5px] leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
+              Everyone in the audience recognised that they had witnessed an
+              extraordinary and unexpected event that had transformed a Sunday
+              afternoon. Especially the pub landlord; he was the guest tin
+              whistler! It is now Tuesday 28th September, and a warm euphoria
+              pervades the pub as the locals continue to reminisce and share
+              mobile video clips, continue to talk in wonder about the
+              unforgettable Sunday when the Old Time Sailors moored up to the
+              White Hart in Bicester, Oxfordshire."
+            </p>
 
-          <address className="text-darkBlue 1xxl:text-lg fullHD:text-xl 2k:text-3xl 4k:text-5xl 4k:leading-[50px] self-end not-italic">
-            Harry Magnay
-          </address>
-
+            <address className="text-darkBlue 1xxl:text-lg fullHD:text-xl 2k:text-3xl 4k:text-5xl 4k:leading-[50px] self-end not-italic">
+              Harry Magnay
+            </address>
           </div>
 
-
           <div className="flex flex-col">
-          <h2 className="bg-darkBlue w-fit mt-1 xl:mt-14 1xl:mt-28 text-[17px] leading-5 1xxl:text-[19px] fullHD:text-2xl 2k:text-[35px] 2k:leading-9 4k:text-[54px] 4k:leading-[60px]  1xxl:mt-10 fullHD:mt-20 2k:mt-28 4k:mt-64">
-            "The White Hart welcomes the return of the Sailorette
-          </h2>
-          <h3 className="bg-darkBlue w-fit mt-1 text-[17px] leading-5 1xxl:text-[19px] fullHD:text-2xl 2k:text-[35px] 2k:leading-9 4k:text-[54px] 4k:leading-[60px]">
-            {" "}
-            and her crew."
-          </h3>
-          <p className=" 1xl:mt-2 text-[12.5px] leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
-            Eight bells has just been struck in the White Hart. It is the end of
-            the afternoon watch (16:00 hours). The bar is starting to fill up
-            with eager customers, animated chatter, all feeling a frisson of
-            excitement and anticipation although the Sailorette is not expected
-            to sail into Bicester for another three or four hours. Rather like a
-            flock of gulls breathlessly awaiting the return of a successful
-            fishing fleet filled to the gunwales with its haul. After casting
-            off in September, the Old Time Sailors had continued their voyage of
-            discovery. Sailing from faraway Edinburgh to Plymouth, Newquay to
-            exotic Matlock Bath, windswept whitby to the wilds of Pontardulais.
-            That morning, the Sailorette had been moored alongside HMS Warrior
-            in Portsmouth before returning to the White Hart. The ship docked
-            just before seven bells on the dog watch. Looking around, the
-            audience had grown much larger, augmented with wives, girlfriends,
-            partners, relatives and those who had heard about the legendary
-            performance.
-          </p>
+            <h2 className="bg-darkBlue w-fit mt-1 xl:mt-14 1xl:mt-28 text-[17px] leading-5 1xxl:text-[19px] fullHD:text-2xl 2k:text-[35px] 2k:leading-9 4k:text-[54px] 4k:leading-[60px]  1xxl:mt-10 fullHD:mt-20 2k:mt-28 4k:mt-64">
+              "The White Hart welcomes the return of the Sailorette
+            </h2>
+            <h3 className="bg-darkBlue w-fit mt-1 text-[17px] leading-5 1xxl:text-[19px] fullHD:text-2xl 2k:text-[35px] 2k:leading-9 4k:text-[54px] 4k:leading-[60px]">
+              {" "}
+              and her crew."
+            </h3>
+            <p className=" 1xl:mt-2 text-[12.5px] leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
+              Eight bells has just been struck in the White Hart. It is the end
+              of the afternoon watch (16:00 hours). The bar is starting to fill
+              up with eager customers, animated chatter, all feeling a frisson
+              of excitement and anticipation although the Sailorette is not
+              expected to sail into Bicester for another three or four hours.
+              Rather like a flock of gulls breathlessly awaiting the return of a
+              successful fishing fleet filled to the gunwales with its haul.
+              After casting off in September, the Old Time Sailors had continued
+              their voyage of discovery. Sailing from faraway Edinburgh to
+              Plymouth, Newquay to exotic Matlock Bath, windswept whitby to the
+              wilds of Pontardulais. That morning, the Sailorette had been
+              moored alongside HMS Warrior in Portsmouth before returning to the
+              White Hart. The ship docked just before seven bells on the dog
+              watch. Looking around, the audience had grown much larger,
+              augmented with wives, girlfriends, partners, relatives and those
+              who had heard about the legendary performance.
+            </p>
           </div>
         </article>
         {/*column 2 end*/}

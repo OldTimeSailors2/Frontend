@@ -3,12 +3,64 @@ import Link from "next/link";
 import logo from "../../../public/assets/logo.svg";
 import dynamic from "next/dynamic";
 
-
 import { formatLandingImages } from "@/helpers/formatApiResponses";
 
-const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), { ssr: false });
-const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), { ssr: false });
-const LandingDynamicBg = dynamic(() => import("@/components/LandingDynamicBg"), { ssr: false });
+const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), {
+  ssr: false,
+  loading: () => (
+    <div className="md1:px-3 md:px-14 md2:px-14 lg:px-28 xl:p-0">
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-[5px] xl:gap-4">
+        {/* Four placeholders for images */}
+        <div className="bg-beige animate-pulse aspect-w-1 aspect-h-1 w-full h-full"></div>
+        <div className="bg-beige animate-pulse aspect-w-1 aspect-h-1 w-full h-full"></div>
+        <div className="bg-beige animate-pulse aspect-w-1 aspect-h-1 w-full h-full"></div>
+        <div className="bg-beige animate-pulse aspect-w-1 aspect-h-1 w-full h-full"></div>
+      </div>
+    </div>
+  ),
+});
+const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex justify-between">
+      <div className="flex flex-col items-center justify-center ">
+        {/* Placeholder for logo */}
+        <div className="bg-beige animate-pulse rounded-full w-32 h-32 md1:w-36 md1:h-36 lg:w-40 lg:h-40"></div>
+        {/* Placeholder for the description image */}
+        <div className="mt-4 ml-1 bg-beige animate-pulse rounded-md w-28 h-16 md1:w-36 md1:h-10 lg:w-36 lg:h-16"></div>
+
+        {/* Placeholder for the blurb button*/}
+        <div className="mt-4 bg-beige animate-pulse rounded-md w-12 h-5 lg:w-14 lg:h-6"></div>
+
+        {/* Placeholders for social media icons*/}
+        <div className="grid grid-cols-2 gap-2 mt-16 xl:mt-8">
+          <div className="bg-beige animate-pulse rounded-full w-11 h-11 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-beige animate-pulse rounded-full w-11 h-11 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-beige animate-pulse rounded-full w-11 h-11 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-beige animate-pulse rounded-full w-11 h-11 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+        </div>
+      </div>
+
+      <div
+        className="flex flex-col gap-1 xs:gap-1 md1:gap-3 xl:gap-1.5 2k:gap-3
+       mt-1 min-[375px]:max-xs:mt-2 md1:mt-8 min-[820px]:mt-10 lg:mt-11 xl:mt-1.5 1xxl:mt-3 fullHD:mt-5 4k:mt-7
+        mr-4 min-[375px]:max-xs:mr-8 xs:mr-6 iphone-1:max-[393px]:mr-7 iphone-2:max-[415px]mr-9 iphone-3:mr-9 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-12 fullHD:mr-20 2k:mr-28 4k:mr-36"
+      >
+        {/* Skeleton for each Link*/}
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
+      </div>
+    </div>
+  ),
+});
+const LandingDynamicBg = dynamic(
+  () => import("@/components/LandingDynamicBg"),
+  { ssr: false },
+);
 
 const fetchLandingImages = async () => {
   try {
@@ -20,9 +72,8 @@ const fetchLandingImages = async () => {
         `Failed to fetch landing images: ${res.status} ${res.statusText}`,
       );
     }
-    const landingImages = await res.json()
+    const landingImages = await res.json();
     const formattedLandingImages = await formatLandingImages(landingImages);
-
 
     return formattedLandingImages;
   } catch (error) {
@@ -31,21 +82,16 @@ const fetchLandingImages = async () => {
   }
 };
 
-
-
 const Home = async () => {
   const formattedLandingImages = await fetchLandingImages();
 
   return (
-
-    <main className="w-screen max-md1:min-h-screen md1:h-dvh flex flex-col overflow-auto md1:overflow-hidden relative"> 
+    <main className="w-screen max-md1:min-h-screen md1:h-dvh flex flex-col overflow-auto md1:overflow-hidden relative">
       <LandingDynamicBg />
       <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
-        
-
         <div className="w-full h-full flex flex-col gap-3 md1:justify-between xl:gap-0 relative">
-        <div className="absolute image-border pointer-events-none" />
-        <Image
+          <div className="absolute image-border pointer-events-none" />
+          <Image
             src={logo}
             width={135}
             height={135}
@@ -57,78 +103,14 @@ const Home = async () => {
                    xl:w-[140px] xl:h-[140px] 1xxl:w-[160px] 1xxl:h-[160px]  fullHD:w-[210px] fullHD:h-[210px] 2k:w-[350px] 2k:h-[350px] 4k:w-[430px] 4k:h-[430px]"
           />
 
-          <div className="flex justify-between ">
-            
-            <LandingLeftSide />
-
-          {/* Pages Buttons */}
-          <div className="flex flex-col gap-1 xs:gap-1 md1:gap-3 xl:gap-1.5 2k:gap-3
-           mt-1 min-[375px]:max-xs:mt-2 md1:mt-8 min-[820px]:mt-10 lg:mt-11 xl:mt-1.5 1xxl:mt-3 fullHD:mt-5 4k:mt-7
-            mr-4 min-[375px]:max-xs:mr-8 xs:mr-6 iphone-1:max-[393px]:mr-7 iphone-2:max-[415px]mr-9 iphone-3:mr-9 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-12 fullHD:mr-20 2k:mr-28 4k:mr-36">
-        <Link
-          className="octagon flex items-center justify-center bg-beigePattern bg-contain"
-          href="/media"
-        >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[24px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-6xl font-titles text-darkBlue">
-            media
-          </p>
-        </Link>
-
-        <Link
-          className="octagon flex items-center justify-center bg-bluePattern bg-contain"
-          href="/tickets"
-        >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[24px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-6xl font-titles text-lightRed">
-            tickets
-          </p>
-        </Link>
-        
-        <Link
-          className="octagon flex items-center justify-center bg-redPattern bg-contain"
-          href="https://oldtimesailors.com/" target="_blank"
-        >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[24px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-6xl font-titles text-beige">
-            merch
-          </p>
-        </Link>
-
-        <Link
-          className="octagon flex items-center justify-center bg-bluePattern bg-contain"
-          href="/reviews"
-        >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[24px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-6xl font-titles text-beige">
-            reviews
-          </p>
-        </Link>
-
-        <Link
-          className="octagon flex items-center justify-center bg-beigePattern bg-contain"
-          href="/our-clients"
-        >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[24px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-6xl tracking-wides font-titles font-medium text-lightRed">
-            our clients
-          </p>
-        </Link>
-
-        <Link
-          className="octagon flex items-center justify-center bg-redPattern bg-contain"
-          href="/services"
-        >
-          <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[24px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-6xl font-titles text-beige">
-            services
-          </p>
-        </Link>
-          </div>
-          {/* Pages Buttons End */}
-
-          </div>
+          <LandingLeftSide />
 
           <LandingDisplay images={formattedLandingImages} />
         </div>
       </div>
       <footer className="w-full z-[105] flex justify-center items-center py-1 xl:p-1 2k:py-2">
         <p className="text-beige font-txt text-[9px] md1:text-lg md:text-xl xl:text-base 2k:text-3xl 4k:text-5xl uppercase">
-        OLD TIME SAILORS LTD.®
+          OLD TIME SAILORS LTD.®
         </p>
       </footer>
     </main>

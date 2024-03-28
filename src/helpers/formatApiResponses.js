@@ -1,4 +1,4 @@
-import { getPlaiceholder } from 'plaiceholder';
+import { getPlaiceholder } from "plaiceholder";
 
 const fetchAndConvertToBase64 = async (placeholderUrls) => {
   const promises = placeholderUrls.map(async (url) => {
@@ -9,14 +9,16 @@ const fetchAndConvertToBase64 = async (placeholderUrls) => {
       return base64;
     } catch (error) {
       console.error(`Error fetching or converting image at ${url}:`, error);
-      return ''; // Return an empty string or a default placeholder if the fetch or conversion fails
+      return ""; // Return an empty string or a default placeholder if the fetch or conversion fails
     }
   });
   return Promise.all(promises);
 };
 
 const formatPhotos = async (photosApiResponse) => {
-  const placeholderUrls = photosApiResponse.data.attributes.photos.data.map(photo => photo.attributes.formats.placeholder.url);
+  const placeholderUrls = photosApiResponse.data.attributes.photos.data.map(
+    (photo) => photo.attributes.formats.placeholder.url,
+  );
   const base64Strings = await fetchAndConvertToBase64(placeholderUrls);
 
   return photosApiResponse.data.attributes.photos.data.map((photo, index) => ({
@@ -27,7 +29,10 @@ const formatPhotos = async (photosApiResponse) => {
 };
 
 const formatVideos = async (videosApiResponse) => {
-  const thumbnailUrls = videosApiResponse.data.map(video => video.attributes.thumbnail.data.attributes.formats.placeholder.url);
+  const thumbnailUrls = videosApiResponse.data.map(
+    (video) =>
+      video.attributes.thumbnail.data.attributes.formats.placeholder.url,
+  );
   const base64Thumbnails = await fetchAndConvertToBase64(thumbnailUrls);
 
   return videosApiResponse.data.map((video, index) => ({
@@ -48,56 +53,70 @@ const formatSongs = (songsApiResponse) => {
 };
 
 const formatLandingImages = async (landingImagesApiResponse) => {
-
-
-  const placeholderUrls = landingImagesApiResponse.data.attributes.photos.data.map(photo => photo.attributes.formats.placeholder.url);
+  const placeholderUrls =
+    landingImagesApiResponse.data.attributes.photos.data.map(
+      (photo) => photo.attributes.formats.placeholder.url,
+    );
   const base64Strings = await fetchAndConvertToBase64(placeholderUrls);
 
-  return landingImagesApiResponse.data.attributes.photos.data.map((photo, index) => ({
-    id: photo.id,
-    attributes: photo.attributes,
-    blurDataURL: base64Strings[index],
-  }));
+  return landingImagesApiResponse.data.attributes.photos.data.map(
+    (photo, index) => ({
+      id: photo.id,
+      attributes: photo.attributes,
+      blurDataURL: base64Strings[index],
+    }),
+  );
 };
 
 const formatServices = async (servicesApiResponse) => {
-  const servicesWithBlurredImages = await Promise.all(servicesApiResponse.data.map(async (service) => {
-    // Extract placeholder URLs for conversion to Base64
-    const placeholderUrls = service.attributes.images.data.map(image => image.attributes.formats.placeholder.url);
-    
-    // Fetch and convert these URLs to Base64 strings
-    const base64Strings = await fetchAndConvertToBase64(placeholderUrls);
-    
-    // Reconstruct each image with the blurDataURL directly inside its attributes
-    const imagesWithBlurDataURL = service.attributes.images.data.map((image, index) => ({
-      ...image,
-      blurDataURL: base64Strings[index],
-    }));
+  const servicesWithBlurredImages = await Promise.all(
+    servicesApiResponse.data.map(async (service) => {
+      // Extract placeholder URLs for conversion to Base64
+      const placeholderUrls = service.attributes.images.data.map(
+        (image) => image.attributes.formats.placeholder.url,
+      );
 
-    // Return the service object with updated images array
-    return {
-      id: service.attributes.serviceId,
-      paragraph: service.attributes.paragraph,
-      images: imagesWithBlurDataURL,
-    };
-  }));
+      // Fetch and convert these URLs to Base64 strings
+      const base64Strings = await fetchAndConvertToBase64(placeholderUrls);
+
+      // Reconstruct each image with the blurDataURL directly inside its attributes
+      const imagesWithBlurDataURL = service.attributes.images.data.map(
+        (image, index) => ({
+          ...image,
+          blurDataURL: base64Strings[index],
+        }),
+      );
+
+      // Return the service object with updated images array
+      return {
+        id: service.attributes.serviceId,
+        paragraph: service.attributes.paragraph,
+        images: imagesWithBlurDataURL,
+      };
+    }),
+  );
 
   return servicesWithBlurredImages;
 };
 
 const formatClientsImages = (clientsImagesApiResponse) => {
-
-
   const result = {
-   desktop: {
-     url: clientsImagesApiResponse.data.attributes.desktop.data.attributes.url
+    desktop: {
+      url: clientsImagesApiResponse.data.attributes.desktop.data.attributes.url,
     },
 
-   mobile: {
-    url: clientsImagesApiResponse.data.attributes.mobile.data.attributes.url
-     }
-    };
-  return result
+    mobile: {
+      url: clientsImagesApiResponse.data.attributes.mobile.data.attributes.url,
+    },
+  };
+  return result;
 };
 
-export { formatPhotos, formatVideos, formatSongs, formatLandingImages, formatServices, formatClientsImages }
+export {
+  formatPhotos,
+  formatVideos,
+  formatSongs,
+  formatLandingImages,
+  formatServices,
+  formatClientsImages,
+};

@@ -20,7 +20,7 @@ export const MediaProvider = ({ children, playlist, videoList, photoList }) => {
     /*Photo States*/
   }
   const [isPhotoModalOpen, setIsPhotoModalOpen] = useState(false);
-  const [clickedPhotoIndex, setClickedPhotoIndex] = useState(null)
+  const [clickedPhotoIndex, setClickedPhotoIndex] = useState(null);
 
   {
     /*Carousel*/
@@ -56,11 +56,11 @@ export const MediaProvider = ({ children, playlist, videoList, photoList }) => {
   }
 
   const selectPhoto = (index) => {
-    setClickedPhotoIndex(index)
+    setClickedPhotoIndex(index);
   };
 
   const deselectPhoto = () => {
-    setClickedPhotoIndex(null)
+    setClickedPhotoIndex(null);
   };
 
   const openPhotoModal = () => setIsPhotoModalOpen(true);

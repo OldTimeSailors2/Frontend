@@ -2,52 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
+.splide__slide {
+  @apply flex items-end justify-center;
+}
+
+.splide__arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.splide__arrow svg {
+  filter: invert(1);
+  width: 20px;
+  height: 20px;
+}
+
+.splide__arrow--prev {
+  margin-left: 20px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.splide__arrow--next {
+  margin-right: 20px;
+}
+
+.arrows_modal {
+  height: 75%;
+}
+.splide__arrow.modal_arrow {
+  transition: opacity 0.2s ease-in;
+}
+
+.splide__arrow.modal_arrow:disabled {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.items-overlay {
+  @apply absolute inset-0 flex backdrop-blur-[2px] z-10 ease-in duration-100;
+}
+
+.is-visible .items-overlay {
+  @apply backdrop-filter-none;
+}
+
+.items-overlay-song {
+  @apply text-beige blur-[2px] ease-in duration-100;
+}
+
+.is-visible .items-overlay-song {
+  @apply filter-none;
+}
+
+.items-overlay-video {
+  @apply absolute inset-0 flex backdrop-blur-[2px] z-10 ease-in duration-100;
+}
+
+.is-visible .items-overlay-video {
+  @apply backdrop-filter-none;
+}
+
 .carousel-container {
-    @apply w-full;
-  }
-  
-  .item-carousel {
-    @apply flex items-end justify-center;
-  }
-  
-  .items-overlay {
-    @apply absolute inset-0 flex backdrop-blur-[2px] z-10 ease-in duration-100;
-  }
-  
-  .react-multi-carousel-item--active .items-overlay {
-    @apply backdrop-filter-none;
-  }
-  
-  .items-overlay-song {
-    @apply text-beige blur-[2px] ease-in duration-100;
-  }
-  
-  .react-multi-carousel-item--active .items-overlay-song {
-    @apply filter-none;
-  }
-  
-  .items-overlay-video {
-    @apply absolute inset-0 flex backdrop-blur-[2px] z-10 ease-in duration-100;
-  }
-  
-  .react-multi-carousel-item--active .items-overlay-video {
-    @apply backdrop-filter-none;
-  }
-  
-  .react-multiple-carousel__arrow:hover {
-    background: transparent;
-  }
-  
-  .react-multiple-carousel__arrow {
-    @apply z-40 h-full rounded-none bg-transparent;
-  }
-  
-  .react-multiple-carousel__arrow--left {
-    left: 0;
-    width: calc(5% + 1px);
-  }
-  
-  .react-multiple-carousel__arrow--right {
-    right: 0;
-    width: calc(5% + 1px);
-  }
+  @apply w-full;
+}
+
+.react-multiple-carousel__arrow:hover {
+  background: transparent;
+}
+
+.react-multiple-carousel__arrow {
+  @apply z-40 h-full rounded-none bg-transparent;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 0;
+  width: calc(5% + 1px);
+}
+
+.react-multiple-carousel__arrow--right {
+  right: 0;
+  width: calc(5% + 1px);
+}

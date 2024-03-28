@@ -5,51 +5,57 @@ import Image from "next/image";
 import useMedia from "@/hooks/useMedia";
 
 const PhotosDisplay = () => {
-
-  const { isPhotoModalOpen, closePhotoModal, deselectPhoto, photoList, clickedPhotoIndex } = useMedia();
-  const carouselRef = useRef(null)
+  const {
+    isPhotoModalOpen,
+    closePhotoModal,
+    deselectPhoto,
+    photoList,
+    clickedPhotoIndex,
+  } = useMedia();
 
   const [loaded, setLoaded] = useState(false);
+  const [Splide, setSplide] = useState(null);
+  const [SplideSlide, setSplideSlide] = useState(null);
   const Modal = useRef(null);
   const ModalContent = useRef(null);
-  const Carousel = useRef(null);
 
   //Dynamically import Carousel and Modal when isPhotoModalOpen is true
   useEffect(() => {
     if (isPhotoModalOpen && !loaded) {
       Promise.all([
-        import('@nextui-org/modal').then((mod) => {
+        import("@nextui-org/modal").then((mod) => {
           Modal.current = mod.Modal;
           ModalContent.current = mod.ModalContent;
         }),
-        import('react-multi-carousel').then((module) => {
-          Carousel.current = module.default;
-          import('react-multi-carousel/lib/styles.css');
-          import('./carousel-styles.css');
-        })
+        import("@splidejs/react-splide").then((module) => {
+          const { Splide, SplideSlide } = module;
+          import("@splidejs/splide/css/core");
+          import("./carousel-styles.css");
+          setSplide(() => Splide);
+          setSplideSlide(() => SplideSlide);
+        }),
       ]).then(() => setLoaded(true));
     }
   }, [isPhotoModalOpen, loaded]);
 
-  useEffect(() => {
-    if ( clickedPhotoIndex !== null && carouselRef.current) {
-      
-      carouselRef.current.goToSlide(clickedPhotoIndex);
-    }
-  }, [clickedPhotoIndex]);
-
-
   const handleClose = () => {
     closePhotoModal();
-    deselectPhoto()
+    deselectPhoto();
   };
 
-  const responsive = useMemo(() => ({
-    all: {
-      breakpoint: { max: Infinity, min: 0 },
-      items: 1
+  const options = {
+    type: "fade",
+    perPage: 1,
+    start: clickedPhotoIndex,
+    arrows: true,
+    drag: false,
+    pagination: false,
+
+    classes: {
+      arrows: "splide__arrows arrows_modal",
+      arrow: "splide__arrow modal_arrow",
     },
-  }), []);
+  };
 
   //Component will not render if isn't loaded
   if (!loaded) return null;
@@ -57,8 +63,6 @@ const PhotosDisplay = () => {
   //Ref for the dynamically imported components
   const DynamicModal = Modal.current;
   const DynamicModalContent = ModalContent.current;
-  const DynamicCarousel = Carousel.current;
-
 
   return (
     <DynamicModal
@@ -69,43 +73,36 @@ const PhotosDisplay = () => {
         base: "flex items-center justify-center w-full bg-black max-w-[98vw] xl:max-w-[95dvh]",
         wrapper: "z-[110] overflow-y-hidden",
         backdrop: "z-[109]",
-        closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
+        closeButton:
+          "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
       }}
       backdrop="blur"
     >
       <DynamicModalContent>
-        
-
-            <DynamicCarousel 
-            responsive={responsive} 
-            ref={carouselRef}
-            infinite={false}
-            autoPlay={false}
-            keyBoardControl={true}           
-            containerClass="w-full h-full"
-            itemClass="flex items-center justify-center"
-            >
-
-            {photoList.map((photo) => (
-              <Image key={photo.id}
-                      src={photo.attributes.formats.xl ? photo.attributes.formats.xl.url : photo.attributes.url}
-                       alt={`Slide ${photo.id}`}
+        <Splide options={options}>
+          {photoList.map((photo) => (
+            <SplideSlide key={photo.id}>
+              <Image
+                src={
+                  photo.attributes.formats.xl
+                    ? photo.attributes.formats.xl.url
+                    : photo.attributes.url
+                }
+                alt={`Slide ${photo.id}`}
                 width={500}
-                height={500} 
+                height={500}
                 className="w-[98vw] h-[98vw] xl:h-[95dvh]"
                 sizes="(max-width: 1280px) 95vw, 95dvh"
                 style={{ objectFit: "contain" }}
                 placeholder="blur"
                 blurDataURL={photo.blurDataURL}
-               
-               />
-            ))}
-
-            </DynamicCarousel>
-        
+              />
+            </SplideSlide>
+          ))}
+        </Splide>
       </DynamicModalContent>
     </DynamicModal>
   );
-}
+};
 
-export default PhotosDisplay
+export default PhotosDisplay;

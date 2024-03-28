@@ -2,23 +2,22 @@
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import Image from "next/image";
-import useBrowserDetection from "@/hooks/useBrowserDetection";
-
-
 
 const ServicesDisplay = ({ services }) => {
   const [scaleFactor, setScaleFactor] = useState(1);
   const [isDevice, setIsDevice] = useState();
   const [activeService, setActiveService] = useState("our-show");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [clickedPhotoIndex, setClickedPhotoIndex] = useState(null)
-// Dynamic import states
+  const [clickedPhotoIndex, setClickedPhotoIndex] = useState(null);
+  // Dynamic import states
   const [Modal, setModal] = useState(null);
   const [ModalContent, setModalContent] = useState(null);
-  const [Carousel, setCarousel] = useState(null); 
-  const carouselRef = useRef(null)
-
-  const { isSafari } = useBrowserDetection()
+  const [Splide, setSplide] = useState(null);
+  const [SplideSlide, setSplideSlide] = useState(null);
+  const splideRef = useRef(null);
+  const activeServiceData = services.find(
+    (service) => service.id === activeService,
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,30 +46,31 @@ const ServicesDisplay = ({ services }) => {
     // Cleanup listener
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
 
-  //Dynamically import Carousel based on device type
+  //Dynamically import Splide based on device type
   useEffect(() => {
-    async function loadCarousel() {
-      if (isDevice === "tablet" || isDevice === "mobile" && !Carousel) {
-        const CarouselModule = await import("react-multi-carousel");
-        setCarousel(() => CarouselModule.default);
-        await import("react-multi-carousel/lib/styles.css")
-        await import('./carousel-styles.css');
+    async function loadSplide() {
+      if (isDevice === "tablet" || (isDevice === "mobile" && !Splide)) {
+        // Dynamically import Splide components
+        const { Splide, SplideSlide } = await import("@splidejs/react-splide");
 
+        // Dynamically import Splide and custom CSS
+        await import("@splidejs/splide/css/core");
+        await import("./carousel-styles.css");
+        setSplide(() => Splide);
+        setSplideSlide(() => SplideSlide);
       }
     }
 
-    loadCarousel();
+    loadSplide();
   }, [isDevice]);
 
   useEffect(() => {
-    if ( clickedPhotoIndex !== null && carouselRef.current) {
-      
-      carouselRef.current.goToSlide(clickedPhotoIndex);
+    // Check if the Splide instance is available and reset to the first slide
+    if (splideRef.current) {
+      splideRef.current.go(0); // Go to the first slide
     }
-  }, [clickedPhotoIndex]);
-
+  }, [activeServiceData]); // Depend on activeServiceData to trigger the reset
 
   const dynamicStyle = {
     "--hexagon-width": `${105 * scaleFactor}px`,
@@ -121,46 +121,46 @@ const ServicesDisplay = ({ services }) => {
     "--octagon-height": `${300 * scaleFactor}px`,
   };
 
-  const activeServiceData = services.find(
-    (service) => service.id === activeService,
-  );
+  /*Splide*/
 
-  /*CAROUSEL*/
+  const options = {
+    perPage: 2,
+    gap: 2,
+    arrows: false,
+    drag: true,
+    pagination: false,
+    start: 0,
+    classes: "splide-services",
+    padding: { right: "5%" },
+    mediaQuery: "min",
+    breakpoints: {
+      428: {
+        padding: { right: "6%" },
+      },
+      414: {
+        padding: { right: "8%" },
+      },
+      380: {
+        padding: { right: "5%" },
+      },
+      375: {
+        padding: { right: "8%" },
+      },
+    },
+  };
+  const options2 = {
+    type: "fade",
+    perPage: 1,
+    start: clickedPhotoIndex,
+    arrows: true,
+    drag: false,
+    pagination: false,
 
-  const responsive = useMemo(() => ( {
-    mobile: {
-      breakpoint: { max: 419, min: 0 },
-      items: 2,
-      partialVisibilityGutter: 8,
+    classes: {
+      arrows: "splide__arrows arrows_modal",
+      arrow: "splide__arrow modal_arrow",
     },
-    mobile2: {
-      breakpoint: { max: 599, min: 420 },
-      items: 2,
-      partialVisibilityGutter: 10,
-    },
-    tablet: {
-      breakpoint: { max: 760, min: 600 },
-      items: 2,
-      partialVisibilityGutter: 20,
-    },
-    tablet2: {
-      breakpoint: { max: 1023, min: 768 },
-      items: 2,
-      partialVisibilityGutter: 30,
-    },
-    tablet3: {
-      breakpoint: { max: 1280, min: 1024 },
-      items: 2,
-      partialVisibilityGutter: 40,
-    },
-  }), [])
-
-  const responsive2 = useMemo(() => ({
-    all: {
-      breakpoint: { max: Infinity, min: 0 },
-      items: 1
-    },
-  }), []);
+  };
 
   /*IMAGES DISPLAY */
 
@@ -169,9 +169,8 @@ const ServicesDisplay = ({ services }) => {
   }
 
   const selectImage = useCallback((index) => {
-    setClickedPhotoIndex(index)
+    setClickedPhotoIndex(index);
   }, []);
-
 
   const openModal = useCallback(() => {
     setIsModalOpen(true);
@@ -179,34 +178,42 @@ const ServicesDisplay = ({ services }) => {
 
   const closeModal = useCallback(() => {
     setIsModalOpen(false);
-    setClickedPhotoIndex(null)
+    setClickedPhotoIndex(null);
   }, []);
 
-  const handleClick = useCallback(async (index) => {
-    if (!Modal || !ModalContent) {
-      const modalModule = await import('@nextui-org/modal');
+  const handleClick = useCallback(
+    async (index) => {
+      if (!Modal || !ModalContent) {
+        const modalModule = await import("@nextui-org/modal");
 
-      if(!Carousel){
-        const CarouselModule = await import('react-multi-carousel')
-        setCarousel(() => CarouselModule.default);
-        await import("react-multi-carousel/lib/styles.css")
-        await import('./carousel-styles.css');
+        if (!Splide) {
+          const { Splide, SplideSlide } = await import(
+            "@splidejs/react-splide"
+          );
+          // Dynamically import Splide and custom CSS
+          await import("@splidejs/splide/css/core");
+          await import("./carousel-styles.css");
+          setSplide(() => Splide);
+          setSplideSlide(() => SplideSlide);
+        }
+
+        setModal(() => modalModule.Modal);
+        setModalContent(() => modalModule.ModalContent);
       }
-      
-      setModal(() => modalModule.Modal);
-      setModalContent(() => modalModule.ModalContent);
-    }
 
-    selectImage(index);
-    openModal();
-  }, [Modal, ModalContent, selectImage, openModal]);
-  
+      selectImage(index);
+      openModal();
+    },
+    [Modal, ModalContent, selectImage, openModal, Splide, clickedPhotoIndex],
+  );
+
   /*IMAGES DISPLAY END*/
 
   return (
     <div className="w-full px-0.5 min-[600px]:px-3 xl:px-4 flex xl:flex-col xl:items-center">
       {/*Buttons*/}
-      <div className=" flex flex-col justify-between xl:w-full xl:flex-row xl:justify-evenly xl:px-3 2xl:px-4 fullHD:px-6 2k:px-9 4k:px-16"
+      <div
+        className=" flex flex-col justify-between xl:w-full xl:flex-row xl:justify-evenly xl:px-3 2xl:px-4 fullHD:px-6 2k:px-9 4k:px-16"
         role="Button-group"
       >
         <button
@@ -334,52 +341,52 @@ const ServicesDisplay = ({ services }) => {
         </div>
 
         {isDevice === "mobile" || isDevice === "tablet" ? (
-
-          Carousel && (
-          <div className="w-full h-auto px-1 md:px-2 lg:px-4 pb-4">
-            <Carousel
-              responsive={responsive}
-              removeArrowOnDeviceType={[
-                "tablet",
-                "tablet2",
-                "tablet3",
-                "mobile",
-                "mobile2",
-              ]}
-              draggable={false}
-              infinite={true}
-              partialVisible
-              itemClass="flex justify-end"
-              minimumTouchDrag={isSafari ? 75 : 50}
-            >
-              {activeServiceData.images.map((image, index) => (
-                <div key={index}>
-                  <Image
-                    src={image.attributes.formats.medium ? image.attributes.formats.medium.url : image.attributes.formats.small.url}
-                    width={110}
-                    height={110}
-                    alt={`Image ${index + 1}`}
-                    className="rounded-md
+          Splide && (
+            <div className="w-full h-auto px-1 md:px-2 lg:px-4 pb-4">
+              <Splide
+                options={options}
+                ref={splideRef}
+                onMounted={(splide) => {
+                  splideRef.current = splide;
+                }}
+              >
+                {activeServiceData.images.map((image, index) => (
+                  <SplideSlide key={index}>
+                    <div>
+                      <Image
+                        src={
+                          image.attributes.formats.medium
+                            ? image.attributes.formats.medium.url
+                            : image.attributes.formats.small.url
+                        }
+                        width={110}
+                        height={110}
+                        alt={`Image ${index + 1}`}
+                        className="rounded-md
                     
                     w-[110px] h-[110px] xs:w-[120px] xs:h-[120px] iphone-3:w-[130px] iphone-3:h-[130px]
                     
                     md1:w-[230px] md1:h-[230px] md:w-[230px] md:h-[230px] md2:w-[240px] md2:h-[240px] lg:w-[300px] lg:h-[300px]"
-                    onClick={() => handleClick(index)}
-                    placeholder="blur"
-                    blurDataURL={image.blurDataURL}
-                  />
-                </div>
-              ))}
-            </Carousel>
-          </div>
-
+                        onClick={() => handleClick(index)}
+                        placeholder="blur"
+                        blurDataURL={image.blurDataURL}
+                      />
+                    </div>
+                  </SplideSlide>
+                ))}
+              </Splide>
+            </div>
           )
         ) : (
           <div className="grid grid-cols-4 gap-3">
             {activeServiceData.images.map((image, index) => (
               <div key={index} className="services-images-grid">
                 <Image
-                  src={image.attributes.formats.medium ? image.attributes.formats.medium.url : image.attributes.formats.small.url}
+                  src={
+                    image.attributes.formats.medium
+                      ? image.attributes.formats.medium.url
+                      : image.attributes.formats.small.url
+                  }
                   width={220}
                   height={220}
                   alt={`Image ${index + 1}`}
@@ -395,52 +402,45 @@ const ServicesDisplay = ({ services }) => {
 
         {/*IMAGES DISPLAY */}
 
-        { isModalOpen && Modal && ModalContent &&
-        <Modal
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          placement="center"
-          classNames={{
-            base: "flex items-center justify-center w-full bg-black max-w-[98vw] xl:max-w-[95dvh]",
-            wrapper: "z-[110] overflow-y-hidden",
-            backdrop: "z-[109]",
-            closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
-          }}
-          backdrop="blur"
-        >
-          <ModalContent>
-
-          <Carousel 
-            responsive={responsive2} 
-            ref={carouselRef}
-            infinite={false}
-            autoPlay={false}
-            keyBoardControl={true}           
-            containerClass="w-full h-full"
-            itemClass="flex items-center justify-center"
-            >
-
-            {activeServiceData.images.map((photo) => (
-              <Image key={photo.id}
-                      src={photo.attributes.formats.xl ? photo.attributes.formats.xl.url : photo.attributes.url}
-                       alt={`Slide ${photo.id}`}
-                width={500}
-                height={500} 
-                className="w-[98vw] h-[98vw] xl:h-[95dvh]"
-                sizes="(max-width: 1280px) 95vw, 95dvh"
-                style={{ objectFit: "contain" }}
-                placeholder="blur"
-                blurDataURL={photo.blurDataURL}
-               
-               />
-            ))}
-
-            </Carousel>
-
-          </ModalContent>
-        </Modal>
-
-            }
+        {isModalOpen && Modal && ModalContent && (
+          <Modal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            placement="center"
+            classNames={{
+              base: "flex items-center justify-center w-full bg-black max-w-[98vw] xl:max-w-[95dvh]",
+              wrapper: "z-[110] overflow-y-hidden",
+              backdrop: "z-[109]",
+              closeButton:
+                "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
+            }}
+            backdrop="blur"
+          >
+            <ModalContent>
+              <Splide options={options2}>
+                {activeServiceData.images.map((photo) => (
+                  <SplideSlide key={photo.id}>
+                    <Image
+                      src={
+                        photo.attributes.formats.xl
+                          ? photo.attributes.formats.xl.url
+                          : photo.attributes.url
+                      }
+                      alt={`Slide ${photo.id}`}
+                      width={500}
+                      height={500}
+                      className="w-[98vw] h-[98vw] xl:h-[95dvh]"
+                      sizes="(max-width: 1280px) 95vw, 95dvh"
+                      style={{ objectFit: "contain" }}
+                      placeholder="blur"
+                      blurDataURL={photo.blurDataURL}
+                    />
+                  </SplideSlide>
+                ))}
+              </Splide>
+            </ModalContent>
+          </Modal>
+        )}
       </div>
     </div>
   );

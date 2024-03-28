@@ -20,7 +20,6 @@ export const MusicPlayerProvider = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [isSeeking, setIsSeeking] = useState(false);
 
-
   const HowlRef = useRef(null); // Ref to hold the Howl constructor
 
   const loadHowl = async () => {
@@ -40,6 +39,9 @@ export const MusicPlayerProvider = ({ children }) => {
     if (!HowlRef.current) {
       await loadHowl();
     }
+    console.log("Attempting to play song with ID:", songId);
+    console.log("Current sound object:", sound);
+    console.log("Is something playing?", isPlaying);
 
     // Find the song in the playlist
     const songToPlay = playlist.find((song) => song.id === songId);
@@ -49,8 +51,11 @@ export const MusicPlayerProvider = ({ children }) => {
     }
 
     if (sound && isPlaying) {
+      console.log("Stopping and unloading previous song");
       sound.stop();
       sound.unload();
+    } else {
+      console.log("No song to stop/unload");
     }
 
     // Add the song ID to the playedSongs list
@@ -245,6 +250,7 @@ export const MusicPlayerProvider = ({ children }) => {
     <MusicPlayerContext.Provider
       value={{
         currentSong,
+        sound,
         isPlaying,
         playSong,
         togglePlayPause,

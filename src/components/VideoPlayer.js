@@ -15,7 +15,6 @@ const VideoPlayer = () => {
   const [videoStyle, setVideoStyle] = useState({});
   const [isVerticalVideo, setIsVerticalVideo] = useState(false);
 
-
   const [loaded, setLoaded] = useState(false);
   const Modal = useRef(null);
   const ModalContent = useRef(null);
@@ -24,16 +23,16 @@ const VideoPlayer = () => {
   useEffect(() => {
     if (isVideoModalOpen && !loaded) {
       Promise.all([
-        import("react-player/file").then((mod) => { ReactPlayer.current = mod.default; }),
+        import("react-player/file").then((mod) => {
+          ReactPlayer.current = mod.default;
+        }),
         import("@nextui-org/modal").then((mod) => {
           Modal.current = mod.Modal;
           ModalContent.current = mod.ModalContent;
-        })
+        }),
       ]).then(() => setLoaded(true));
     }
   }, [isVideoModalOpen, loaded]);
-
-
 
   const onVideoLoad = () => {
     // Access the internal player after it's ready
@@ -64,7 +63,6 @@ const VideoPlayer = () => {
     setVideoStyle(styles);
   };
 
-
   if (!loaded) return null;
 
   const DynamicReactPlayer = ReactPlayer.current;
@@ -81,8 +79,9 @@ const VideoPlayer = () => {
         classNames={{
           wrapper: "z-[110]",
           backdrop: "z-[109]",
-          closeButton: "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
-          base: "max-w-[82%] max-h-[58vh] sm:max-w-[70%] sm:max-h-[80vh] w-auto h-auto",
+          closeButton:
+            "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
+          base: "max-w-[82%] max-h-[58vh] sm:max-w-[70%] sm:max-h-[80vh] w-auto h-auto bg-black",
         }}
         backdrop="blur"
       >

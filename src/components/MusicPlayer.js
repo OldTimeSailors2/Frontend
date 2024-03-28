@@ -36,13 +36,11 @@ const MusicPlayer = () => {
   const { isModalOpen, closeModal } = useMedia();
   const [marqueeThreshold, setMarqueeThreshold] = useState(24); // Default to desktop threshold
 
-
   const [loaded, setLoaded] = useState(false);
   const Modal = useRef(null);
   const ModalHeader = useRef(null);
   const ModalContent = useRef(null);
   const Marquee = useRef(null);
-
 
   useEffect(() => {
     if (isModalOpen && !loaded) {
@@ -54,11 +52,10 @@ const MusicPlayer = () => {
         }),
         import("react-fast-marquee").then((mod) => {
           Marquee.current = mod.default;
-        })
+        }),
       ]).then(() => setLoaded(true));
     }
   }, [isModalOpen, loaded]);
-
 
   useEffect(() => {
     const updateThreshold = () => {
@@ -110,8 +107,6 @@ const MusicPlayer = () => {
     }
   };
 
-
-  
   if (!loaded) return null;
 
   const DynamicModal = Modal.current;
@@ -128,20 +123,25 @@ const MusicPlayer = () => {
         base: 'bg-[url("/assets/backgrounds/bg-music-player.webp")] bg-contain min-w-[45%] max-w-[95%] sm:max-w-[70%] lg:max-w-[60%] xl:max-w-[50%] 1xxl:max-w-[45%] 2xl:min-w-[40%] 2xl:max-w-[40%] 2k:min-w-[35%] 2k:max-w-[35%] 4k:min-w-[30%] 4k:max-w-[30%] rounded-[26px]',
         wrapper: "z-[110]",
         backdrop: "z-[109]",
-        closeButton: "text-[25px] text-musicColor font-bold z-[108] hover:bg-[#BFA98C] active:bg-[#B69E7C]",
+        closeButton:
+          "text-[25px] text-musicColor font-bold z-[108] hover:bg-[#BFA98C] active:bg-[#B69E7C]",
       }}
       backdrop="blur"
     >
-      <DynamicModalContent >
+      <DynamicModalContent>
         <DynamicModalHeader className="font-txt text-lightRed text-3xl md:text-4xl 1xl:text-[40px] 2xl:text-5xl 4k:text-6xl font-medium uppercase justify-center mt-4">
           {isMarqueeNeeded ? (
-            <DynamicMarquee  speed={40} pauseOnHover={false} className="music-marquee">
+            <DynamicMarquee
+              speed={40}
+              pauseOnHover={false}
+              className="music-marquee"
+            >
               <h1 className="pr-6">{currentSong?.title}</h1>
-            </DynamicMarquee >
+            </DynamicMarquee>
           ) : (
             <h1>{currentSong?.title}</h1>
           )}
-        </DynamicModalHeader >
+        </DynamicModalHeader>
 
         <div className="w-full flex h-4 gap-2 items-center px-3 sm:px-5">
           <span className="font-numbers text-musicColor font-bold text-base xs2:text-lg md:text-xl xl:text-lg 2xl:text-xl 2k:text-2xl tracking-wide">
@@ -181,14 +181,14 @@ const MusicPlayer = () => {
           </button>
 
           <button onClick={togglePlayPause}>
-              <Image
-                src={ isPlaying ? PauseB : PlayB}
-                width={75}
-                height={75}
-                priority={true}
-                className="text-musicColor sm:w-[95px] sm:h-[95px] lg:w-[100px] lg:h-[100px] 2xl:w-[120px] 2xl:h-[120px]"
-                alt="Play|Pause Button"
-              />
+            <Image
+              src={isPlaying ? PauseB : PlayB}
+              width={75}
+              height={75}
+              priority={true}
+              className="text-musicColor sm:w-[95px] sm:h-[95px] lg:w-[100px] lg:h-[100px] 2xl:w-[120px] 2xl:h-[120px]"
+              alt="Play|Pause Button"
+            />
           </button>
 
           <button onClick={handleNext}>
@@ -197,7 +197,7 @@ const MusicPlayer = () => {
 
           <button onClick={handleRepeat}>{getRepeatModeIcon()}</button>
         </div>
-      </DynamicModalContent >
+      </DynamicModalContent>
     </DynamicModal>
   );
 };

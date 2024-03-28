@@ -3,9 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const ResponsiveImage = ({images}) => {
+const ResponsiveImage = ({ images }) => {
   const [isDesktopOrLaptop, setIsDesktopOrLaptop] = useState(false);
-
 
   useEffect(() => {
     const handleResize = () => {

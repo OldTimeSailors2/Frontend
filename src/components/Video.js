@@ -1,32 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import { FaPlay } from "react-icons/fa6";
-import useMedia from "@/hooks/useMedia";
-import useMusicPlayer from "@/hooks/useMusicPlayer";
 
 const Video = ({ video }) => {
-  const { selectVideo, openVideoModal, isCarouselMoving } = useMedia();
-  const { isPlaying, togglePlayPause } = useMusicPlayer();
-
-  const handleClick = () => {
-    if(isPlaying) { 
-      togglePlayPause()
-     }
-
-    selectVideo(video.url);
-    openVideoModal();
-  };
   return (
     <div
       className={`${video.thumbnailStory ? "w-16 h-32 xs:w-16 xs:h-36 md:w-24 md:h-52 min-[900px]:w-32 min-[900px]:h-72 xl:w-16 xl:h-32 1xxl:w-[75px] 1xxl:h-36  fullHD:w-24 fullHD:h-52 2k:w-28 2k:h-64 4k:w-44 4k:h-96" : "w-44 h-28 2k:w-60 2k:h-36 4k:w-72 4k:h-44"} cursor-pointer relative`}
-      onClick={(e) => {
-        if (isCarouselMoving) {
-          e.preventDefault();
-        } else {
-          handleClick();
-        }
-      }}
+      data-video-url={video.url}
     >
       <div className="items-overlay-video" />
       <Image

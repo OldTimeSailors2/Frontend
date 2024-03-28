@@ -1,9 +1,12 @@
 import MediaWrapper from "@/wrappers/MediaWrapper";
 import Image from "next/image";
-import MediaCarousel from "@/components/MediaCarousel";
 import DynamicDecoMedia from "@/components/DynamicDecoMedia";
-import dynamic from 'next/dynamic';
-import { formatPhotos, formatVideos, formatSongs } from "@/helpers/formatApiResponses";
+import dynamic from "next/dynamic";
+import {
+  formatPhotos,
+  formatVideos,
+  formatSongs,
+} from "@/helpers/formatApiResponses";
 
 export const metadata = {
   title: "Media",
@@ -14,9 +17,27 @@ export const metadata = {
   },
 };
 
-const PhotosDisplay = dynamic(() => import('@/components/PhotosDisplay'), { ssr: false });
-const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), { ssr: false });
-const MusicPlayer = dynamic(() => import('@/components/MusicPlayer'), { ssr: false })
+const PhotosDisplay = dynamic(() => import("@/components/PhotosDisplay"), {
+  ssr: false,
+});
+const VideoPlayer = dynamic(() => import("@/components/VideoPlayer"), {
+  ssr: false,
+});
+const MusicPlayer = dynamic(() => import("@/components/MusicPlayer"), {
+  ssr: false,
+});
+const SplideCarousel = dynamic(() => import("@/components/SplideCarousel"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[12dvh] gap-2 flex ">
+      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+    </div>
+  ),
+});
 
 const fetchMediaData = async () => {
   try {
@@ -38,7 +59,6 @@ const fetchMediaData = async () => {
     const videos = await videosRes.json();
     const songs = await songsRes.json();
 
-   
     const formattedVideos = await formatVideos(videos);
     const formattedPhotos = await formatPhotos(photos);
     const formattedSongs = formatSongs(songs);
@@ -80,7 +100,7 @@ const Media = async () => {
               </h1>
               <DynamicDecoMedia />
             </div>
-            <MediaCarousel mediaType="song" />
+            <SplideCarousel mediaType="song" />
             <MusicPlayer />
           </section>
 
@@ -99,7 +119,7 @@ const Media = async () => {
               <DynamicDecoMedia />
             </div>
 
-            <MediaCarousel mediaType="video" />
+            <SplideCarousel mediaType="video" />
             <VideoPlayer />
           </section>
 
@@ -117,7 +137,7 @@ const Media = async () => {
               </h1>
               <DynamicDecoMedia />
             </div>
-            <MediaCarousel mediaType="photo" />
+            <SplideCarousel mediaType="photo" />
             <PhotosDisplay />
           </section>
         </MediaWrapper>
