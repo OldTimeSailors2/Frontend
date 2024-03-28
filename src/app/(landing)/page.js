@@ -24,20 +24,19 @@ const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
   loading: () => (
     <div className="flex justify-between">
       <div className="flex flex-col items-center justify-center ">
-        {/* Placeholder for logo */}
-        <div className="bg-beige animate-pulse rounded-full w-32 h-32 md1:w-36 md1:h-36 lg:w-40 lg:h-40"></div>
+
         {/* Placeholder for the description image */}
-        <div className="mt-4 ml-1 bg-beige animate-pulse rounded-md w-28 h-16 md1:w-36 md1:h-10 lg:w-36 lg:h-16"></div>
+        <div className="mt-32 ml-0.5 bg-beige animate-pulse rounded-md w-24 h-16 md1:w-36 md1:h-10 lg:w-36 lg:h-16"></div>
 
         {/* Placeholder for the blurb button*/}
         <div className="mt-4 bg-beige animate-pulse rounded-md w-12 h-5 lg:w-14 lg:h-6"></div>
 
         {/* Placeholders for social media icons*/}
-        <div className="grid grid-cols-2 gap-2 mt-16 xl:mt-8">
-          <div className="bg-beige animate-pulse rounded-full w-11 h-11 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
-          <div className="bg-beige animate-pulse rounded-full w-11 h-11 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
-          <div className="bg-beige animate-pulse rounded-full w-11 h-11 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
-          <div className="bg-beige animate-pulse rounded-full w-11 h-11 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+        <div className="grid grid-cols-2 gap-2 mt-10 xl:mt-8">
+          <div className="bg-beige animate-pulse rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-beige animate-pulse rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-beige animate-pulse rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-beige animate-pulse rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
         </div>
       </div>
 
