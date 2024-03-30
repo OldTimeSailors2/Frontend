@@ -45,11 +45,21 @@ const PhotosDisplay = () => {
 
   const options = {
     type: "fade",
+    mediaQuery: "min",
     perPage: 1,
     start: clickedPhotoIndex,
     arrows: true,
-    drag: true,
     pagination: false,
+    breakpoints: {
+      1280:{
+        drag: false,
+        keyboard: "global",
+      },
+      0:{
+        drag: true,
+        keyboard: false
+      }
+    },
 
     classes: {
       arrows: "splide__arrows arrows_modal",

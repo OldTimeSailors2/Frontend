@@ -45,20 +45,18 @@ const SplideCarousel = ({ mediaType }) => {
             gap: "10px",
             arrows: true,
             drag: false,
+            keyboard: "focused",
+            focus: "center",
             padding: "5%",
           },
           1024: {
             perPage: 10,
             gap: "10px",
-            arrows: true,
-            drag: false,
             padding: "5%",
           },
           600: {
             perPage: 4,
             gap: "5px",
-            arrows: false,
-            drag: true,
             padding: "10%",
           },
           0: {
@@ -66,6 +64,7 @@ const SplideCarousel = ({ mediaType }) => {
             gap: "5px",
             arrows: false,
             drag: true,
+            keyboard: false,
             padding: "10%",
           },
         };
@@ -76,20 +75,18 @@ const SplideCarousel = ({ mediaType }) => {
             gap: "10px",
             arrows: true,
             drag: false,
+            keyboard: "focused",
+            focus: "center",
             padding: "5%",
           },
           1024: {
             perPage: 12,
             gap: "10px",
-            arrows: true,
-            drag: false,
             padding: "5%",
           },
           600: {
             perPage: 5,
             gap: "5px",
-            arrows: false,
-            drag: true,
             padding: "10%",
           },
           0: {
@@ -97,6 +94,7 @@ const SplideCarousel = ({ mediaType }) => {
             gap: "5px",
             arrows: false,
             drag: true,
+            keyboard: false,
             padding: "10%",
           },
         };
@@ -105,15 +103,11 @@ const SplideCarousel = ({ mediaType }) => {
           1920: {
             perPage: 7,
             gap: "3px",
-            arrows: true,
-            drag: false,
             padding: "6%",
           },
           1536: {
             perPage: 10,
             gap: "3px",
-            arrows: true,
-            drag: false,
             padding: "4%",
           },
           1440: {
@@ -123,18 +117,18 @@ const SplideCarousel = ({ mediaType }) => {
             perPage: 8,
             padding: "5%",
           },
-          1024: {
+          1280: {
             perPage: 7,
             gap: "3px",
             arrows: true,
             drag: false,
+            keyboard: "focused",
+            focus: "center",
             padding: "8%",
           },
           600: {
             perPage: 3,
             gap: "4px",
-            arrows: false,
-            drag: true,
             padding: "17%",
           },
           380: {
@@ -148,6 +142,7 @@ const SplideCarousel = ({ mediaType }) => {
             gap: "4px",
             arrows: false,
             drag: true,
+            keyboard: false,
             padding: "17%",
           },
         };
