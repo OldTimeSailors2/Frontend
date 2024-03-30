@@ -218,7 +218,7 @@ const LandingLeftSide = () => {
       <div
         className="flex flex-col gap-1 xs:gap-1 md1:gap-3 xl:gap-2 2k:gap-3
            mt-1 min-[375px]:max-xs:mt-2 md1:mt-8 min-[820px]:mt-10 lg:mt-11 xl:mt-1.5 1xxl:mt-3 fullHD:mt-5 4k:mt-7
-            mr-4 min-[375px]:max-xs:mr-8 xs:mr-6 iphone-1:max-[393px]:mr-7 iphone-2:max-[415px]mr-9 iphone-3:mr-9 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-12 fullHD:mr-20 2k:mr-28 4k:mr-36"
+            mr-4 min-[375px]:max-xs:mr-8 xs:mr-6 iphone-1:max-[393px]:mr-7 iphone-2:max-[415px]mr-9 iphone-3:mr-9 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-12 1xxl:mr-14 fullHD:mr-20 2k:mr-28 4k:mr-36"
       >
         <Link
           className="octagon flex items-center justify-center bg-beigePattern bg-contain"

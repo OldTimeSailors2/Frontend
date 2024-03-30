@@ -84,7 +84,7 @@ const Home = async () => {
   const formattedLandingImages = await fetchLandingImages();
 
   return (
-    <main className="w-screen min-h-screen flex flex-col overflow-auto relative">
+    <main className="w-full min-h-screen flex flex-col overflow-auto relative">
       <LandingDynamicBg />
       <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
         <div className="w-full h-full flex flex-col gap-3 md1:justify-between xl:gap-0 relative">
