@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import logo from "../../../public/assets/logo.svg";
 import dynamic from "next/dynamic";
 
@@ -46,12 +45,12 @@ const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
         mr-4 min-[375px]:max-xs:mr-8 xs:mr-6 iphone-1:max-[393px]:mr-7 iphone-2:max-[415px]mr-9 iphone-3:mr-9 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-12 fullHD:mr-20 2k:mr-28 4k:mr-36"
       >
         {/* Skeleton for each Link*/}
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 2xl:w-48 2xl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
       </div>
     </div>
   ),
@@ -85,7 +84,7 @@ const Home = async () => {
   const formattedLandingImages = await fetchLandingImages();
 
   return (
-    <main className="w-screen max-md1:min-h-screen md1:h-dvh flex flex-col overflow-auto md1:overflow-hidden relative">
+    <main className="w-screen min-h-screen flex flex-col overflow-auto relative">
       <LandingDynamicBg />
       <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
         <div className="w-full h-full flex flex-col gap-3 md1:justify-between xl:gap-0 relative">
@@ -96,10 +95,10 @@ const Home = async () => {
             height={135}
             priority={true}
             alt="OTS Logo"
-            className="absolute -top-3.5 -left-3.5 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-2  fullHD:-left-[14px] 2k:-top-12 2k:-left-6 4k:-top-14 4k:-left-2 
+            className="absolute -top-3.5 -left-3.5 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-6   2k:-top-12 2k:-left-11 4k:-top-14 4k:-left-14 
                  xs:w-[145px] xs:h-[145px] xs2:w-[155px] xs2:h-[155px]
                   md1:w-[150px] md1:h-[150px] md:w-[170px] md:h-[170px]  min-[820px]:w-[200px]  min-[820px]:h-[200px] lg:w-[230px] lg:h-[230px]
-                   xl:w-[140px] xl:h-[140px] 1xxl:w-[160px] 1xxl:h-[160px]  fullHD:w-[210px] fullHD:h-[210px] 2k:w-[350px] 2k:h-[350px] 4k:w-[430px] 4k:h-[430px]"
+                   xl:w-[190px] xl:h-[190px] 1xxl:w-[210px] 1xxl:h-[210px]  fullHD:w-[290px] fullHD:h-[290px] 2k:w-[420px] 2k:h-[420px] 4k:w-[580px] 4k:h-[580px]"
           />
 
           <LandingLeftSide />

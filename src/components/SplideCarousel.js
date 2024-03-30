@@ -159,7 +159,7 @@ const SplideCarousel = ({ mediaType }) => {
 
   const options = {
     type: "loop",
-    start: 7,
+    start: 0,
     updateOnMove: true,
     mediaQuery: "min",
     pagination: false,
@@ -202,7 +202,7 @@ const SplideCarousel = ({ mediaType }) => {
           const photoIndex = Number(
             photoTarget.getAttribute("data-photo-index"),
           );
-          if (photoIndex) {
+          if (photoIndex || photoIndex === 0) {
             selectPhoto(photoIndex);
             openPhotoModal();
           }

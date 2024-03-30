@@ -15,6 +15,16 @@
   display: flex;
   justify-content: space-between;
   z-index: 100;
+  pointer-events: none;
+  height: 100%;
+}
+
+.splide__arrows.arrows_modal{
+  height: auto;
+}
+
+.splide__arrow{
+  pointer-events: all;
 }
 
 .splide__arrow svg {
@@ -33,9 +43,7 @@
   margin-right: 20px;
 }
 
-.arrows_modal {
-  height: 75%;
-}
+
 .splide__arrow.modal_arrow {
   transition: opacity 0.2s ease-in;
 }

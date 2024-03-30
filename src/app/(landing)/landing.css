@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+
 /*Animation*/
 
 @keyframes rotate-spring {
@@ -175,22 +179,24 @@
 
 @media (min-width: 1280px) {
   .octagon {
-    width: 120%;
-    height: 10%;
+    width: 125%;
+    height: 7%;
   }
 }
+
+
 
 @media (min-width: 2560px) {
   .octagon {
     width: 125%;
-    height: 8.5%;
+    height: 8%;
   }
 }
 
 @media (min-width: 3840px) {
   .octagon {
     width: 125%;
-    height: 8.5%;
+    height: 7%;
   }
 }
 

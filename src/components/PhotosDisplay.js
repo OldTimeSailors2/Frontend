@@ -48,7 +48,7 @@ const PhotosDisplay = () => {
     perPage: 1,
     start: clickedPhotoIndex,
     arrows: true,
-    drag: false,
+    drag: true,
     pagination: false,
 
     classes: {
