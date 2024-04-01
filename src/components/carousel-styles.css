@@ -58,7 +58,7 @@
 }
 
 .is-visible .items-overlay {
-  @apply backdrop-filter-none;
+  @apply !backdrop-filter-none;
 }
 
 .items-overlay-song {
@@ -66,7 +66,7 @@
 }
 
 .is-visible .items-overlay-song {
-  @apply filter-none;
+  @apply !filter-none;
 }
 
 .items-overlay-video {
@@ -74,7 +74,7 @@
 }
 
 .is-visible .items-overlay-video {
-  @apply backdrop-filter-none;
+  @apply !backdrop-filter-none;
 }
 
 .carousel-container {

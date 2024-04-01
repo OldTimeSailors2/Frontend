@@ -150,6 +150,7 @@ const ServicesDisplay = ({ services }) => {
   };
   const options2 = {
     type: "fade",
+    mediaQuery: "min",
     perPage: 1,
     start: clickedPhotoIndex,
     arrows: true,

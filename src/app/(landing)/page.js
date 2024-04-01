@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logo from "../../../public/assets/logo.svg";
 import dynamic from "next/dynamic";
+import LandingDynamicBg from "@/components/LandingDynamicBg";
 
 import { formatLandingImages } from "@/helpers/formatApiResponses";
 
@@ -55,10 +56,7 @@ const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
     </div>
   ),
 });
-const LandingDynamicBg = dynamic(
-  () => import("@/components/LandingDynamicBg"),
-  { ssr: false },
-);
+
 
 const fetchLandingImages = async () => {
   try {

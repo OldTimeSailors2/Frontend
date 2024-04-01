@@ -2,10 +2,12 @@
 
 import { useState, useRef, useEffect } from "react";
 import useMedia from "@/hooks/useMedia";
+import useBrowserDetection from "@/hooks/useBrowserDetection";
+
 
 const VideoPlayer = () => {
-  const { currentVideo, deselectVideo, isVideoModalOpen, closeVideoModal } =
-    useMedia();
+  const { currentVideo, deselectVideo, isVideoModalOpen, closeVideoModal } = useMedia();
+  const { isSafari } = useBrowserDetection()
 
   const handleClose = () => {
     closeVideoModal();
@@ -75,13 +77,13 @@ const VideoPlayer = () => {
         isOpen={isVideoModalOpen}
         onClose={handleClose}
         placement="center"
-        className=""
+        className={`${isSafari ? "max-h-[77vh]" : "max-h-[58vh]"}`}
         classNames={{
           wrapper: "z-[110]",
           backdrop: "z-[109]",
           closeButton:
             "z-[108] text-musicColor hover:bg-[#BFA98C] active:bg-[#B69E7C]",
-          base: "max-w-[82%] max-h-[58vh] sm:max-w-[70%] sm:max-h-[80vh] w-auto h-auto bg-black",
+          base: "max-w-[82%]  sm:max-w-[70%] sm:max-h-[80vh] w-auto h-auto bg-black",
         }}
         backdrop="blur"
       >
