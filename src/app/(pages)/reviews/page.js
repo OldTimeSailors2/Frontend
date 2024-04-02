@@ -40,7 +40,7 @@ const Reviews = () => {
             <h2 className="hidden min-[370px]:block bg-darkBlue w-fit text-[15px] xs2:text-[17px] md1:text-3xl md2:text-4xl lg:text-5xl xl:text-[17px] xl:leading-5 1xl:text-base 1xxl:text-[19px] fullHD:text-2xl 2k:text-4xl 4k:text-[54px] 4k:leading-snug">
               The Old Time Sailors - Sunday 26th September 2021
             </h2>
-            <p className=" my-1 text-[14px] leading-[18px] xs2:text-[17px] xs2:leading-5 md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:text-[12.5px] xl:leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
+            <p className=" my-1 text-[14px] leading-[18px] xs2:text-[17px] xs2:leading-5 md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:text-[12.5px] xl:leading-[16px] 1xl:text-[13px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
               "It was the best of times, it was the worst of times,". For me,
               Dickens' immortal words describe Sundays perfectly. For many
               Sunday is a day of rest yet we end up following a set pattern,
@@ -62,7 +62,7 @@ const Reviews = () => {
               />
             </div>
 
-            <p className="hidden xl:block xl:mt-1 md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:text-[12.5px] xl:leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
+            <p className="hidden xl:block xl:mt-1 md1:text-lg md:text-xl md2:text-2xl lg:text-3xl xl:text-[12.5px] xl:leading-[16px] 1xl:text-[13px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
               That Sunday afternoon, the pub sailed back into the 19th century
               and was treated to over three hours of outstanding traditional
               seafaring music played and sung by a seventeen piece band, all
@@ -189,7 +189,7 @@ const Reviews = () => {
         {/*column 2*/}
         <article className="hidden xl:flex-grow xl:flex xl:flex-col xl:justify-between xl:w-1/3 xl:pt-4">
           <div className="flex flex-col">
-            <p className="text-[12.5px] leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
+            <p className="text-[12.5px] leading-[16px] 1xl:text-[13px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
               Everyone in the audience recognised that they had witnessed an
               extraordinary and unexpected event that had transformed a Sunday
               afternoon. Especially the pub landlord; he was the guest tin
@@ -206,14 +206,14 @@ const Reviews = () => {
           </div>
 
           <div className="flex flex-col">
-            <h2 className="bg-darkBlue w-fit mt-1 xl:mt-14 1xl:mt-28 text-[17px] leading-5 1xxl:text-[19px] fullHD:text-2xl 2k:text-[35px] 2k:leading-9 4k:text-[54px] 4k:leading-[60px]  1xxl:mt-10 fullHD:mt-20 2k:mt-28 4k:mt-64">
+            <h2 className="bg-darkBlue w-fit mt-1 xl:mt-14 1xl:mt-10 text-[17px] leading-5 1xxl:text-[19px] fullHD:text-2xl 2k:text-[35px] 2k:leading-9 4k:text-[54px] 4k:leading-[60px]  1xxl:mt-10 fullHD:mt-20 2k:mt-28 4k:mt-64">
               "The White Hart welcomes the return of the Sailorette
             </h2>
             <h3 className="bg-darkBlue w-fit mt-1 text-[17px] leading-5 1xxl:text-[19px] fullHD:text-2xl 2k:text-[35px] 2k:leading-9 4k:text-[54px] 4k:leading-[60px]">
               {" "}
               and her crew."
             </h3>
-            <p className=" 1xl:mt-2 text-[12.5px] leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
+            <p className=" 1xl:mt-2 text-[12.5px] leading-[16px] 1xl:text-[13px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
               Eight bells has just been struck in the White Hart. It is the end
               of the afternoon watch (16:00 hours). The bar is starting to fill
               up with eager customers, animated chatter, all feeling a frisson
@@ -248,7 +248,7 @@ const Reviews = () => {
 
         {/*column 3*/}
         <article className="hidden xl:flex-grow xl:flex xl:flex-col xl:w-1/3 xl:pt-4 xl:relative">
-          <p className="text-[12.5px] leading-[16px] 1xl:text-[12px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
+          <p className="text-[12.5px] leading-[16px] 1xl:text-[13px] 1xl:leading-[14px] 1xxl:text-[16px] 1xxl:leading-4 fullHD:text-[18px] fullHD:leading-6 2k:text-[29px] 2k:leading-9 4k:text-[43px] 4k:leading-[53px]">
             By now the sun was well over the yardarm, consequently the expectant
             masses exuded a warm, cordial, inviting atmosphere. The sight of the
             seventeen crew of the Sailorette caused the buzz in the pub to

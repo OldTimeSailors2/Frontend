@@ -235,7 +235,7 @@ const ServicesDisplay = ({ services }) => {
                 ? dynamicStyleTablet
                 : dynamicStyle
           }
-          className={`services-hexagon transition-all ease-in duration-300 xl:max-1xl:mr-3 fullHD:max-2k:mr-3 ${activeService === "our-show" ? "before:bg-redPattern text-beige" : "before:bg-beigePattern text-darkBlue"} before:bg-contain z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px] 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
+          className={`services-hexagon transition-all ease-in duration-300 xl:max-1xl:mr-3 fullHD:max-2k:mr-3 ${activeService === "our-show" ? "before:bg-redPattern text-beige" : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px] 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
         >
           <p className="z-[20]">our show</p>
         </button>
@@ -248,7 +248,7 @@ const ServicesDisplay = ({ services }) => {
                 ? dynamicStyleTablet
                 : dynamicStyle
           }
-          className={`services-hexagon-2 transition-all ease-in duration-300 ${activeService === "festival-and-event-organization" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5  md1:text-[22px] md1:leading-5 md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:leading-7 xl:text-[27px] 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl  font-titles text-center`}
+          className={`services-hexagon-2 transition-all ease-in duration-300 ${activeService === "festival-and-event-organization" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5  md1:text-[22px] md1:leading-5 md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:leading-7 xl:text-[27px] 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl  font-titles text-center`}
         >
           <p className="z-[20]">festival and event organization</p>
         </button>
@@ -261,7 +261,7 @@ const ServicesDisplay = ({ services }) => {
                 ? dynamicStyleTablet
                 : dynamicStyle
           }
-          className={`services-hexagon transition-all ease-in duration-300 ${activeService === "the-beast" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px]  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
+          className={`services-hexagon transition-all ease-in duration-300 ${activeService === "the-beast" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px]  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
         >
           <p className="z-[20]">hms warrior</p>
         </button>
@@ -274,7 +274,7 @@ const ServicesDisplay = ({ services }) => {
                 ? dynamicStyleTablet
                 : dynamicStyle
           }
-          className={`services-hexagon transition-all ease-in duration-300 ${activeService === "music-agency" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px] xl:leading-7  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
+          className={`services-hexagon transition-all ease-in duration-300 ${activeService === "music-agency" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px] xl:leading-7  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
         >
           <p className="z-[20]">music agency</p>
         </button>
@@ -287,7 +287,7 @@ const ServicesDisplay = ({ services }) => {
                 ? dynamicStyleTablet
                 : dynamicStyle
           }
-          className={`services-hexagon-2 transition-all ease-in duration-300 ${activeService === "festival-within-a-festival" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5   md1:text-[22px] md1:leading-6 md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:text-[27px] xl:leading-7  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
+          className={`services-hexagon-2 transition-all ease-in duration-300 ${activeService === "festival-within-a-festival" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5   md1:text-[22px] md1:leading-6 md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:text-[27px] xl:leading-7  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
         >
           <p className="z-[20]">festival within a festival</p>
         </button>
@@ -300,7 +300,7 @@ const ServicesDisplay = ({ services }) => {
                 ? dynamicStyleTablet
                 : dynamicStyle
           }
-          className={`services-hexagon-3 transition-all ease-in duration-300 1xxl:max-2xl:mr-0.5 fullHD:max-2k:mr-0.5 ${activeService === "pirate-props-and-games" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5  md1:text-[22px]  md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:text-[27px] xl:leading-7   1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
+          className={`services-hexagon-3 transition-all ease-in duration-300 1xxl:max-2xl:mr-0.5 fullHD:max-2k:mr-0.5 ${activeService === "pirate-props-and-games" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5  md1:text-[22px]  md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:text-[27px] xl:leading-7   1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
         >
           <p className="z-[20]">pirate props and games</p>
         </button>

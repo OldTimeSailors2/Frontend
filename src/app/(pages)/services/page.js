@@ -69,6 +69,7 @@ const Services = async () => {
           <Link
             href="mailto:captainnicholasmoffat@oldtimesailors.com"
             target="_blank"
+            className="xl:max-2xl:mr-2"
           >
             <h2
               className="services-octagon-link bg-bluePattern bg-contain underline underline-offset-2 text-beige  text-2xl leading-[39px]
