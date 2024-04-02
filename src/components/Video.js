@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa6";
 const Video = ({ video }) => {
   return (
     <div
-      className={`${video.thumbnailStory ? "w-16 h-32 xs:w-16 xs:h-36 md:w-24 md:h-52 min-[900px]:w-32 min-[900px]:h-72 xl:w-16 xl:h-32 1xxl:w-[75px] 1xxl:h-36  fullHD:w-24 fullHD:h-52 2k:w-28 2k:h-64 4k:w-44 4k:h-96" : "w-44 h-28 2k:w-60 2k:h-36 4k:w-72 4k:h-44"} cursor-pointer relative`}
+      className={`${video.thumbnailStory ? "w-16 h-32 xs:w-16 xs:h-28 md:w-24 md:h-44 min-[900px]:w-32 min-[900px]:h-72 xl:w-16 xl:h-32 1xxl:w-[75px] 1xxl:h-36  fullHD:w-24 fullHD:h-52 2k:w-28 2k:h-50 4k:w-44 4k:h-96" : "w-44 h-28 2k:w-60 2k:h-36 4k:w-72 4k:h-44"} cursor-pointer relative`}
       data-video-url={video.url}
     >
       <div className="items-overlay-video" />

@@ -90,7 +90,7 @@ const SplideCarousel = ({ mediaType }) => {
             padding: "10%",
           },
           0: {
-            perPage: 4,
+            perPage: 3,
             gap: "5px",
             arrows: false,
             drag: true,
