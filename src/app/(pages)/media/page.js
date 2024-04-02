@@ -30,11 +30,11 @@ const SplideCarousel = dynamic(() => import("@/components/SplideCarousel"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-[12dvh] gap-2 flex ">
-      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
-      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
-      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
-      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
-      <div className="bg-beige animate-pulse flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-transparent flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-transparent flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-transparent flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-transparent flex-shrink-0 w-1/4 h-full rounded-lg"></div>
+      <div className="bg-transparent flex-shrink-0 w-1/4 h-full rounded-lg"></div>
     </div>
   ),
 });

@@ -16,15 +16,15 @@ const ServicesDisplay = dynamic(() => import("@/components/ServicesDisplay"), {
   loading: () => (
     <div className="w-full px-0.5 min-[600px]:px-3 xl:px-4 flex max-xl:justify-center xl:flex-col xl:items-center">
       <div className="flex flex-col justify-between xl:w-full xl:flex-row xl:justify-evenly xl:px-3 2xl:px-4 fullHD:px-6 2k:px-9 4k:px-16">
-        <div className="services-hexagon bg-lightRed animate-pulse"></div>
-        <div className="services-hexagon bg-lightRed animate-pulse"></div>
-        <div className="services-hexagon bg-lightRed animate-pulse"></div>
-        <div className="services-hexagon bg-lightRed animate-pulse"></div>
-        <div className="services-hexagon bg-lightRed animate-pulse"></div>
-        <div className="services-hexagon bg-lightRed animate-pulse"></div>
+        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
       </div>
 
-      <div className="services-octagon bg-lightRed animate-pulse"></div>
+      <div className="services-octagon !bg-transparent"></div>
     </div>
   ),
 });

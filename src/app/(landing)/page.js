@@ -11,10 +11,10 @@ const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), {
     <div className="md1:px-3 md:px-14 md2:px-14 lg:px-28 xl:p-0">
       <div className="grid grid-cols-2 xl:grid-cols-4 gap-[5px] xl:gap-4">
         {/* Four placeholders for images */}
-        <div className="bg-beige animate-pulse aspect-w-1 aspect-h-1 w-full h-full"></div>
-        <div className="bg-beige animate-pulse aspect-w-1 aspect-h-1 w-full h-full"></div>
-        <div className="bg-beige animate-pulse aspect-w-1 aspect-h-1 w-full h-full"></div>
-        <div className="bg-beige animate-pulse aspect-w-1 aspect-h-1 w-full h-full"></div>
+        <div className="bg-transparent aspect-w-1 aspect-h-1 w-full h-full"></div>
+        <div className="bg-transparent aspect-w-1 aspect-h-1 w-full h-full"></div>
+        <div className="bg-transparent aspect-w-1 aspect-h-1 w-full h-full"></div>
+        <div className="bg-transparent aspect-w-1 aspect-h-1 w-full h-full"></div>
       </div>
     </div>
   ),
@@ -26,17 +26,17 @@ const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
       <div className="flex flex-col items-center justify-center ">
 
         {/* Placeholder for the description image */}
-        <div className="mt-32 ml-0.5 bg-beige animate-pulse rounded-md w-24 h-16 md1:w-36 md1:h-10 lg:w-36 lg:h-16"></div>
+        <div className="mt-32 ml-0.5 bg-transparent rounded-md w-24 h-16 md1:w-36 md1:h-10 lg:w-36 lg:h-16"></div>
 
         {/* Placeholder for the blurb button*/}
-        <div className="mt-4 bg-beige animate-pulse rounded-md w-12 h-5 lg:w-14 lg:h-6"></div>
+        <div className="mt-4 bg-transparent rounded-md w-12 h-5 lg:w-14 lg:h-6"></div>
 
         {/* Placeholders for social media icons*/}
         <div className="grid grid-cols-2 gap-2 mt-10 xl:mt-8">
-          <div className="bg-beige animate-pulse rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
-          <div className="bg-beige animate-pulse rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
-          <div className="bg-beige animate-pulse rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
-          <div className="bg-beige animate-pulse rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-transparent rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-transparent rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-transparent rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
+          <div className="bg-transparent rounded-full w-9 h-9 md1:w-16 md1:h-16 xl:w-11 xl:h-11"></div>
         </div>
       </div>
 
@@ -46,12 +46,12 @@ const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
         mr-4 min-[375px]:max-xs:mr-8 xs:mr-6 iphone-1:max-[393px]:mr-7 iphone-2:max-[415px]mr-9 iphone-3:mr-9 md1:mr-6 min-[820px]:mr-10 lg:mr-11 xl:mr-12 fullHD:mr-20 2k:mr-28 4k:mr-36"
       >
         {/* Skeleton for each Link*/}
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
-        <div className="octagon bg-beige animate-pulse xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-transparent xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-transparent xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-transparent xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-transparent xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-transparent xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
+        <div className="octagon bg-transparent xl:w-40 xl:h-8 1xxl:w-48 1xxl:h-10"></div>
       </div>
     </div>
   ),
