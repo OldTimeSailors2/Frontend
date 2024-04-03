@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import ServicesDeco from "@/components/ServicesDeco";
 import { formatServices } from "@/helpers/formatApiResponses";
 
 export const metadata = {
@@ -16,22 +17,19 @@ const ServicesDisplay = dynamic(() => import("@/components/ServicesDisplay"), {
   loading: () => (
     <div className="w-full px-0.5 min-[600px]:px-3 xl:px-4 flex max-xl:justify-center xl:flex-col xl:items-center">
       <div className="flex flex-col justify-between xl:w-full xl:flex-row xl:justify-evenly xl:px-3 2xl:px-4 fullHD:px-6 2k:px-9 4k:px-16">
-        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
-        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
-        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
-        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
-        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
-        <div className="services-hexagon !bg-transparent before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent !before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent !before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent !before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent !before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent !before:!bg-transparent"></div>
+        <div className="services-hexagon !bg-transparent !before:!bg-transparent"></div>
       </div>
 
-      <div className="services-octagon !bg-transparent"></div>
+      <div className="services-octagon !bg-transparent !before:!bg-transparent"></div>
     </div>
   ),
 });
 
-const ServicesDeco = dynamic(() => import('@/components/ServicesDeco'), {
-  ssr: false, // Assuming client-side rendering is preferred; adjust as needed
-});
 
 const fetchServices = async () => {
   try {

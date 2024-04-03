@@ -15,9 +15,8 @@ const ServicesDisplay = ({ services }) => {
   const [Splide, setSplide] = useState(null);
   const [SplideSlide, setSplideSlide] = useState(null);
   const splideRef = useRef(null);
-  const activeServiceData = services.find(
-    (service) => service.id === activeService,
-  );
+  const activeServiceData = useMemo(() => services.find(service => service.id === activeService), [services, activeService]);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,7 +71,9 @@ const ServicesDisplay = ({ services }) => {
     }
   }, [activeServiceData]); // Depend on activeServiceData to trigger the reset
 
-  const dynamicStyle = {
+//Octagon and Hexagons styles
+
+  const dynamicStyle = useMemo(() => ({
     "--hexagon-width": `${105 * scaleFactor}px`,
     "--hexagon-height": `${70.5 * scaleFactor}px`,
     "--hexagon-before-width": `${103 * scaleFactor}px`,
@@ -87,8 +88,10 @@ const ServicesDisplay = ({ services }) => {
     "--hexagon-3-before-height": `${69 * scaleFactor}px`,
     "--octagon-width": `${250 * scaleFactor}px`,
     "--octagon-height": `${450 * scaleFactor}px`,
-  };
-  const dynamicStyleTablet = {
+  }), [scaleFactor]);
+
+  
+  const dynamicStyleTablet = useMemo(() => ({
     "--hexagon-width": `${140 * scaleFactor}px`,
     "--hexagon-height": `${80 * scaleFactor}px`,
     "--hexagon-before-width": `${138.5 * scaleFactor}px`,
@@ -103,8 +106,10 @@ const ServicesDisplay = ({ services }) => {
     "--hexagon-3-before-height": `${78 * scaleFactor}px`,
     "--octagon-width": `${435 * scaleFactor}px`,
     "--octagon-height": `${550 * scaleFactor}px`,
-  };
-  const dynamicStyleDesktop = {
+  }), [scaleFactor]);
+
+  
+  const dynamicStyleDesktop = useMemo(() => ({
     "--hexagon-width": `${126 * scaleFactor}px`,
     "--hexagon-height": `${69.3 * scaleFactor}px`,
     "--hexagon-before-width": `${124 * scaleFactor}px`,
@@ -119,11 +124,22 @@ const ServicesDisplay = ({ services }) => {
     "--hexagon-3-before-height": `${68.3 * scaleFactor}px`,
     "--octagon-width": `${1240 * scaleFactor}px`,
     "--octagon-height": `${300 * scaleFactor}px`,
-  };
+  }), [scaleFactor]);
+
+  const currentStyle = useMemo(() => {
+    switch (isDevice) {
+      case 'desktop':
+        return dynamicStyleDesktop;
+      case 'tablet':
+        return dynamicStyleTablet;
+      default:
+        return dynamicStyle;
+    }
+  }, [isDevice, dynamicStyle, dynamicStyleTablet, dynamicStyleDesktop]);
 
   /*Splide*/
 
-  const options = {
+  const options = useMemo(() => ({
     perPage: 2,
     gap: 2,
     arrows: false,
@@ -147,8 +163,8 @@ const ServicesDisplay = ({ services }) => {
         padding: { right: "8%" },
       },
     },
-  };
-  const options2 = {
+  }),[]);
+  const options2 = useMemo(() => ({
     type: "fade",
     mediaQuery: "min",
     perPage: 1,
@@ -170,7 +186,7 @@ const ServicesDisplay = ({ services }) => {
       arrows: "splide__arrows arrows_modal",
       arrow: "splide__arrow modal_arrow",
     },
-  };
+  }),[]);
 
   /*IMAGES DISPLAY */
 
@@ -228,26 +244,14 @@ const ServicesDisplay = ({ services }) => {
       >
         <button
           onClick={() => setActiveService("our-show")}
-          style={
-            isDevice === "desktop"
-              ? dynamicStyleDesktop
-              : isDevice === "tablet"
-                ? dynamicStyleTablet
-                : dynamicStyle
-          }
+          style={currentStyle}
           className={`services-hexagon transition-all ease-in duration-300 xl:max-1xl:mr-3 fullHD:max-2k:mr-3 ${activeService === "our-show" ? "before:bg-redPattern text-beige" : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px] 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
         >
           <p className="z-[20]">our show</p>
         </button>
         <button
           onClick={() => setActiveService("festival-and-event-organization")}
-          style={
-            isDevice === "desktop"
-              ? dynamicStyleDesktop
-              : isDevice === "tablet"
-                ? dynamicStyleTablet
-                : dynamicStyle
-          }
+          style={currentStyle}
           className={`services-hexagon-2 transition-all ease-in duration-300 ${activeService === "festival-and-event-organization" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5  md1:text-[22px] md1:leading-5 md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:leading-7 xl:text-[27px] 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl  font-titles text-center`}
         >
           <p className="z-[20]">festival and event organization</p>
@@ -267,39 +271,21 @@ const ServicesDisplay = ({ services }) => {
         </button>
         <button
           onClick={() => setActiveService("music-agency")}
-          style={
-            isDevice === "desktop"
-              ? dynamicStyleDesktop
-              : isDevice === "tablet"
-                ? dynamicStyleTablet
-                : dynamicStyle
-          }
+          style={currentStyle}
           className={`services-hexagon transition-all ease-in duration-300 ${activeService === "music-agency" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px] xl:leading-7  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
         >
           <p className="z-[20]">music agency</p>
         </button>
         <button
           onClick={() => setActiveService("festival-within-a-festival")}
-          style={
-            isDevice === "desktop"
-              ? dynamicStyleDesktop
-              : isDevice === "tablet"
-                ? dynamicStyleTablet
-                : dynamicStyle
-          }
+          style={currentStyle}
           className={`services-hexagon-2 transition-all ease-in duration-300 ${activeService === "festival-within-a-festival" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5   md1:text-[22px] md1:leading-6 md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:text-[27px] xl:leading-7  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
         >
           <p className="z-[20]">festival within a festival</p>
         </button>
         <button
           onClick={() => setActiveService("pirate-props-and-games")}
-          style={
-            isDevice === "desktop"
-              ? dynamicStyleDesktop
-              : isDevice === "tablet"
-                ? dynamicStyleTablet
-                : dynamicStyle
-          }
+          style={currentStyle}
           className={`services-hexagon-3 transition-all ease-in duration-300 1xxl:max-2xl:mr-0.5 fullHD:max-2k:mr-0.5 ${activeService === "pirate-props-and-games" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5  md1:text-[22px]  md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:text-[27px] xl:leading-7   1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
         >
           <p className="z-[20]">pirate props and games</p>
@@ -308,14 +294,8 @@ const ServicesDisplay = ({ services }) => {
 
       {/*Red Octagon*/}
       <div
-        style={
-          isDevice === "desktop"
-            ? dynamicStyleDesktop
-            : isDevice === "tablet"
-              ? dynamicStyleTablet
-              : dynamicStyle
-        }
-        className="services-octagon bg-redPattern bg-contain flex flex-col justify-between py-2 xl:flex-row xl:items-center 1xl:gap-3 xl:px-4 4k:px-10  "
+        style={currentStyle}
+        className="services-octagon bg-redPattern bg-contain transition-all ease-in duration-300 flex flex-col justify-between py-2 xl:flex-row xl:items-center 1xl:gap-3 xl:px-4 4k:px-10  "
       >
         <div className="h-full max-xl:pb-4 max-xl:pt-2 xl:max-w-[400px] fullHD:max-w-[500px] 2k:max-w-[750px] 4k:max-w-[1100px] flex items-start xl:items-center">
           <div className="flex flex-col w-full px-4 md:px-6 lg:px-8 xl:px-1.5 fullHD:px-8">
