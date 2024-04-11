@@ -73,7 +73,7 @@ const Services = async () => {
               className="services-octagon-link bg-bluePattern bg-contain underline underline-offset-2 text-beige  text-2xl leading-[39px]
              xs2:text-3xl xs2:leading-[43px] font-medium tracking-wide  pl-[3.8px]
               md1:text-[38px] md1:tracking-wide md1:max-xl:pt-1.5 md1:max-xl:pl-1.5 md:text-[44px] md:leading-[48px] lg:text-[55px] lg:leading-[66px]
-               xl:text-3xl  xl:tracking-normal  1xl:text-[27px] 2xl:text-4xl fullHD:text-5xl  2k:text-6xl 4k:text-8xl font-titles flex justify-center  xl:items-start  xl:pt-1 2xl:pt-2 fullHD:pt-3 2k:pt-4 4k:pt-6"
+               xl:text-3xl  xl:tracking-normal  1xl:text-[27px] 2xl:text-4xl fullHD:text-5xl  2k:text-6xl 4k:text-8xl font-titles flex justify-center  xl:items-start  xl:pt-1 2xl:pt-2 4xl:max-fullHD:pl-3 fullHD:pt-3 2k:pt-4 4k:pt-6"
             >
               hire our services!
             </h2>

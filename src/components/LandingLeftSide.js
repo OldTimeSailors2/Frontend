@@ -37,7 +37,7 @@ const LandingLeftSide = () => {
   return (
     <div className="flex justify-between ">
       <div
-        className={`flex flex-col items-center justify-center   xl:ml-1 1xl:ml-1.5 1xxl:ml-1 fullHD:ml-4 2k:ml-6    xl:mt-[170px] 1xxl:mt-[190px]  fullHD:mt-[270px] 2k:mt-[380px] 4k:mt-[540px]  ${
+        className={`flex flex-col items-center justify-center   xl:ml-1 1xl:ml-1.5 1xxl:ml-1 fullHD:ml-4 2k:ml-6    xl:mt-[170px] 1xxl:mt-[190px] 4xl:mt-[210px]  fullHD:mt-[270px] 2k:mt-[380px] 4k:mt-[540px]  ${
           isSafari
             ? " ml-1  md1:ml-1.5  min-[810px]:ml-[1.15rem] min-[820px]:ml-6 lg:ml-7         mt-[7.75rem] iphone-1:mt-[8.35rem] iphone-2:mt-[9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[220px]"
             : "ml-0.5 xs:ml-1 md:ml-3.5 min-[810px]:ml-2 min-[820px]:ml-2.5 lg:ml-[18px]     mt-[7.75rem] xs:mt-[8.35rem] xs2:mt-[9rem] md1:mt-[135px] md:mt-[160px] min-[820px]:mt-[195px] lg:mt-[250px] "
@@ -48,7 +48,7 @@ const LandingLeftSide = () => {
           width={100}
           height={100}
           alt="Text image"
-          className={`self-center xl:w-[130px] xl:h-auto 1xxl:w-[150px] fullHD:w-[200px] 2k:w-[280px] 4k:w-[400px] ${
+          className={`self-center xl:w-[130px] xl:h-auto 1xxl:w-[150px] 4xl:w-[170px] fullHD:w-[200px] 2k:w-[280px] 4k:w-[400px] ${
             isSafari
               ? " iphone-1:w-[105px] iphone-2:w-[115px] md1:w-[110px]  min-[810px]:w-[100px] min-[820px]:w-[120px] lg:w-[140px]"
               : "xs:w-[105px] xs2:w-[115px] md1:w-[105px] min-[810px]:w-[125px] min-[820px]:w-[150px] lg:w-[190px] "
@@ -92,7 +92,7 @@ const LandingLeftSide = () => {
         {/* Social Media Icons */}
 
         <div
-          className={`grid grid-cols-2 gap-2 xs2:gap-2.5 min-[820px]:gap-3.5 xl:gap-2 fullHD:gap-4 2k:gap-6 4k:gap-9  xl:mt-10 xl:mb-6 1xl:mt-14 1xl:mb-10  fullHD:mt-16 2k:mt-20 2k:mb-14 4k:mt-32 4k:mb-20
+          className={`grid grid-cols-2 gap-2 xs2:gap-2.5 min-[820px]:gap-3.5 xl:gap-2 4xl:gap-4 2k:gap-6 4k:gap-9  xl:mt-10 xl:mb-6 1xl:mt-14 1xl:mb-10  fullHD:mt-16 2k:mt-20 2k:mb-14 4k:mt-32 4k:mb-20
       
       ${
         isSafari
@@ -102,7 +102,7 @@ const LandingLeftSide = () => {
          `}
         >
           <Link
-            className={`bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
+            className={`bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
           
           ${
             isSafari
@@ -115,7 +115,7 @@ const LandingLeftSide = () => {
             <FaInstagram />
           </Link>
           <Link
-            className={`bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
+            className={`bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
           
           ${
             isSafari
@@ -128,7 +128,7 @@ const LandingLeftSide = () => {
             <FaFacebookF />
           </Link>
           <Link
-            className={`bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
+            className={`bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
           
           ${
             isSafari
@@ -141,7 +141,7 @@ const LandingLeftSide = () => {
             <FaWhatsapp />
           </Link>
           <Link
-            className={`bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
+            className={`bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
           
           ${
             isSafari

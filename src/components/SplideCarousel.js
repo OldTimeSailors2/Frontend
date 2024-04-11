@@ -47,7 +47,7 @@ const SplideCarousel = ({ mediaType }) => {
             drag: false,
             keyboard: "focused",
             focus: "center",
-            padding: "5%",
+            padding: "1%",
           },
           1024: {
             perPage: 10,
@@ -90,12 +90,12 @@ const SplideCarousel = ({ mediaType }) => {
             padding: "10%",
           },
           0: {
-            perPage: 3,
+            perPage: 4,
             gap: "5px",
             arrows: false,
             drag: true,
             keyboard: false,
-            padding: "10%",
+            padding: "6%",
           },
         };
       case "photo":
@@ -105,17 +105,20 @@ const SplideCarousel = ({ mediaType }) => {
             gap: "3px",
             padding: "6%",
           },
+          1680: {
+            padding: "0%",
+          },
           1536: {
             perPage: 10,
             gap: "3px",
-            padding: "4%",
+            padding: "0%",
           },
           1440: {
-            padding: "6%",
+            padding: "0%",
           },
           1366: {
             perPage: 8,
-            padding: "5%",
+            padding: "0%",
           },
           1280: {
             perPage: 7,
@@ -124,7 +127,7 @@ const SplideCarousel = ({ mediaType }) => {
             drag: false,
             keyboard: "focused",
             focus: "center",
-            padding: "8%",
+            padding: "6%",
           },
           600: {
             perPage: 3,
@@ -132,18 +135,19 @@ const SplideCarousel = ({ mediaType }) => {
             padding: "17%",
           },
           380: {
-            padding: "17%",
+            padding: "3%",
           },
           375: {
-            padding: "18%",
+            padding: "4%",
+
           },
           0: {
-            perPage: 2,
+            perPage: 3,
             gap: "4px",
             arrows: false,
             drag: true,
             keyboard: false,
-            padding: "17%",
+            padding: "3%",
           },
         };
     }

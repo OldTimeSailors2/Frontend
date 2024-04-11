@@ -96,7 +96,7 @@ const Home = async () => {
             className="absolute -top-3.5 -left-3.5 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-6   2k:-top-12 2k:-left-11 4k:-top-14 4k:-left-14 
                  xs:w-[145px] xs:h-[145px] xs2:w-[155px] xs2:h-[155px]
                   md1:w-[150px] md1:h-[150px] md:w-[170px] md:h-[170px]  min-[820px]:w-[200px]  min-[820px]:h-[200px] lg:w-[230px] lg:h-[230px]
-                   xl:w-[190px] xl:h-[190px] 1xxl:w-[210px] 1xxl:h-[210px]  fullHD:w-[290px] fullHD:h-[290px] 2k:w-[420px] 2k:h-[420px] 4k:w-[580px] 4k:h-[580px]"
+                   xl:w-[190px] xl:h-[190px] 1xxl:w-[210px] 1xxl:h-[210px] 4xl:w-[230px] 4xl:h-[230px]  fullHD:w-[290px] fullHD:h-[290px] 2k:w-[420px] 2k:h-[420px] 4k:w-[580px] 4k:h-[580px]"
           />
 
           <LandingLeftSide />

@@ -245,7 +245,7 @@ const ServicesDisplay = ({ services }) => {
         <button
           onClick={() => setActiveService("our-show")}
           style={currentStyle}
-          className={`services-hexagon transition-all ease-in duration-300 xl:max-1xl:mr-3 fullHD:max-2k:mr-3 ${activeService === "our-show" ? "before:bg-redPattern text-beige" : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px] 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
+          className={`services-hexagon transition-all ease-in duration-300 xl:max-1xl:mr-3 4xl:max-fullHD:ml-0.5 fullHD:max-2k:mr-3 ${activeService === "our-show" ? "before:bg-redPattern text-beige" : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px] 1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
         >
           <p className="z-[20]">our show</p>
         </button>
@@ -286,7 +286,7 @@ const ServicesDisplay = ({ services }) => {
         <button
           onClick={() => setActiveService("pirate-props-and-games")}
           style={currentStyle}
-          className={`services-hexagon-3 transition-all ease-in duration-300 1xxl:max-2xl:mr-0.5 fullHD:max-2k:mr-0.5 ${activeService === "pirate-props-and-games" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5  md1:text-[22px]  md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:text-[27px] xl:leading-7   1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
+          className={`services-hexagon-3 transition-all ease-in duration-300 1xxl:max-2xl:mr-0.5 4xl:max-fullHD:mr-1 fullHD:max-2k:mr-0.5 ${activeService === "pirate-props-and-games" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs:leading-5 xs2:text-xl xs2:leading-5  md1:text-[22px]  md:text-3xl md:leading-[25px] md3:leading-7 lg:text-4xl xl:text-[27px] xl:leading-7   1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl 1xl:leading-7 font-titles text-center`}
         >
           <p className="z-[20]">pirate props and games</p>
         </button>
@@ -295,9 +295,9 @@ const ServicesDisplay = ({ services }) => {
       {/*Red Octagon*/}
       <div
         style={currentStyle}
-        className="services-octagon bg-redPattern bg-contain transition-all ease-in duration-300 flex flex-col justify-between py-2 xl:flex-row xl:items-center 1xl:gap-3 xl:px-4 4k:px-10  "
+        className="services-octagon bg-redPattern bg-contain transition-all ease-in duration-300 flex flex-col justify-between py-2 xl:flex-row xl:items-center 1xl:gap-3 xl:px-4 4xl:max-fullHD:px-6 4k:px-10  "
       >
-        <div className="h-full max-xl:pb-4 max-xl:pt-2 xl:max-w-[400px] fullHD:max-w-[500px] 2k:max-w-[750px] 4k:max-w-[1100px] flex items-start xl:items-center">
+        <div className="h-full max-xl:pb-4 max-xl:pt-2 xl:max-w-[400px] 4xl:max-w-[470px] fullHD:max-w-[500px] 2k:max-w-[750px] 4k:max-w-[1100px] flex items-start xl:items-center">
           <div className="flex flex-col w-full px-4 md:px-6 lg:px-8 xl:px-1.5 fullHD:px-8">
             <Image
               src="/assets/deco-services-4.svg"
@@ -314,7 +314,7 @@ const ServicesDisplay = ({ services }) => {
                 
                 md1:max-h-[310px] md1:text-3xl md:max-h-[320px] md:text:4xl md2:max-h-[340px] lg:text-5xl lg:max-h-[420px]
                 
-                xl:text-lg xl:max-h-[200px] 1xl:max-h-[220px] 1xxl:max-h-[240px] fullHD:text-2xl fullHD:max-h-[320px] 2k:text-3xl 2k:max-h-[410px] 4k:text-5xl 4k:max-h-[650px] font-txt overflow-y-auto overflow-x-hidden"
+                xl:text-lg xl:max-h-[200px] 1xl:max-h-[220px] 1xxl:max-h-[240px] 4xl:text-xl 4xl:max-h-[280px] fullHD:text-2xl fullHD:max-h-[320px] 2k:text-3xl 2k:max-h-[410px] 4k:text-5xl 4k:max-h-[650px] font-txt overflow-y-auto overflow-x-hidden"
                 id="paragraph-scrollbar"
               >
                 {activeServiceData.paragraph}
@@ -380,7 +380,7 @@ const ServicesDisplay = ({ services }) => {
                   width={220}
                   height={220}
                   alt={`Image ${index + 1}`}
-                  className="rounded-sm cursor-pointer  1xxl:w-[240px] 1xxl:h-[240px] fullHD:w-[330px] fullHD:h-[330px] 2k:w-[440px] 2k:h-[440px] 4k:w-[630px] 4k:h-[630px]"
+                  className="rounded-sm cursor-pointer  1xxl:w-[240px] 1xxl:h-[240px] 4xl:w-[265px] 4xl:h-[265px] fullHD:w-[330px] fullHD:h-[330px] 2k:w-[440px] 2k:h-[440px] 4k:w-[630px] 4k:h-[630px]"
                   onClick={() => handleClick(index)}
                   placeholder="blur"
                   blurDataURL={image.blurDataURL}

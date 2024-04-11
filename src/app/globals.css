@@ -55,6 +55,13 @@
     0% 25%
   );
 }
+@media (min-width: 384px) {
+  @media not all and (min-width: 390px) {
+      .octagon-navbar{
+        width: 130px;
+      }
+  }
+}
 
 @media (min-width: 400px) {
   .octagon-navbar {
