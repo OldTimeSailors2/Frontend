@@ -298,7 +298,7 @@ const ServicesDisplay = ({ services }) => {
         className="services-octagon bg-redPattern bg-contain transition-all ease-in duration-300 flex flex-col justify-between py-2 xl:flex-row xl:items-center 1xl:gap-3 xl:px-4 4xl:max-fullHD:px-6 4k:px-10  "
       >
         <div className="h-full max-xl:pb-4 max-xl:pt-2 xl:max-w-[400px] 4xl:max-w-[470px] fullHD:max-w-[500px] 2k:max-w-[750px] 4k:max-w-[1100px] flex items-start xl:items-center">
-          <div className="flex flex-col w-full px-4 md:px-6 lg:px-8 xl:px-1.5 fullHD:px-8">
+          <div className="flex flex-col w-full px-4 md:px-6 lg:px-8 xl:px-1.5 fullHD:px-8 gap-1">
             <Image
               src="/assets/deco-services-4.svg"
               width={110}

@@ -78,7 +78,7 @@ const Navbar = () => {
   return (
     <div
       style={navStyle}
-      className="fixed w-screen z-[100] flex justify-between pt-3 px-1 sm:px-4 "
+      className={`fixed w-screen z-[100] flex justify-between pt-3 px-1 sm:px-4 ${pathname === "/tickets" ? 'pointer-events-none' : ''}`}
     >
       <div className="flex gap-1.5 sm:gap-4 items-center">
         <Link href="/" className="inline-block">
@@ -88,11 +88,13 @@ const Navbar = () => {
             height={65}
             priority={true}
             alt="OTS Logo"
-            className="xs:w-[80px] xs:h-[80px] sm:w-32 sm:h-32 fullHD:w-40 fullHD:h-40 2k:w-48 2k:h-48 4k:w-64 4k:h-64"
+            className="xs:w-[80px] xs:h-[80px] sm:w-32 sm:h-32 fullHD:w-40 fullHD:h-40 2k:w-48 2k:h-48 4k:w-64 4k:h-64 pointer-events-auto"
           />
         </Link>
         <h1
-          className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles text-2xl xs2:text-[26px] sm:text-[40px] fullHD:text-5xl 2k:text-7xl 4k:text-8xl flex items-center justify-center`}
+          className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles
+           text-2xl xs2:text-[26px] sm:text-[40px] fullHD:text-5xl 2k:text-7xl 4k:text-8xl
+            flex items-center justify-center fullHD:pb-0.5 fullHD:pl-2`}
         >
           {title}
         </h1>
@@ -101,7 +103,7 @@ const Navbar = () => {
       <div className="flex gap-1.5 xs:gap-2 sm:gap-4 items-center">
         <Link
           className={`${pathname === "/tickets" || pathname === "/services" ? "bg-redPattern text-beige" : "bg-beigePattern text-lightRed"}
-                                bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5`}
+                                bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
           href="mailto:captainnicholasmoffat@oldtimesailors.com"
           target="_blank"
         >
@@ -113,7 +115,7 @@ const Navbar = () => {
 
         <Link
           className={`${pathname === "/tickets" || pathname === "/services" ? "bg-bluePattern text-beige" : "bg-beigePattern text-darkBlue"}
-                                bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5`}
+                                bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
           href="https://wa.me/447539045312"
           target="_blank"
         >
@@ -125,7 +127,7 @@ const Navbar = () => {
 
         <Link
           className={`${pathname === "/tickets" || pathname === "/services" ? "bg-redPattern text-beige" : "bg-beigePattern text-lightRed"}
-                                bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5`}
+                                bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
           href="https://www.instagram.com/oldtimesailors"
           target="_blank"
         >
@@ -137,7 +139,7 @@ const Navbar = () => {
 
         <Link
           className={`${pathname === "/tickets" || pathname === "/services" ? "bg-bluePattern text-beige" : "bg-beigePattern text-darkBlue"}
-                                bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5`}
+                                bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
           href="https://www.facebook.com/oldtimesailors/"
           target="_blank"
         >

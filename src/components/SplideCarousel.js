@@ -102,19 +102,10 @@ const SplideCarousel = ({ mediaType }) => {
         return {
           1920: {
             perPage: 7,
-            gap: "3px",
             padding: "6%",
-          },
-          1680: {
-            padding: "0%",
           },
           1536: {
             perPage: 10,
-            gap: "3px",
-            padding: "0%",
-          },
-          1440: {
-            padding: "0%",
           },
           1366: {
             perPage: 8,
@@ -155,10 +146,11 @@ const SplideCarousel = ({ mediaType }) => {
 
   // Usage within your MediaCarousel component:
   const breakpoints = getBreakpoints(mediaType);
+  const start = window.innerWidth >= 1280 ? 3 : 0;
 
   const options = {
     type: "loop",
-    start: 0,
+    start: start,
     updateOnMove: true,
     mediaQuery: "min",
     pagination: false,
