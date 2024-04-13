@@ -144,9 +144,13 @@ const SplideCarousel = ({ mediaType }) => {
     }
   };
 
-  // Usage within your MediaCarousel component:
   const breakpoints = getBreakpoints(mediaType);
-  const start = window.innerWidth >= 1280 ? 3 : 0;
+  //Define carousel start based on window's width
+  const start = window.innerWidth >= 1280 ? 
+  (window.innerWidth >= 1536 ?
+     (window.innerWidth >= 1920 ? 3 : 4)
+      : 3)
+  : 0;
 
   const options = {
     type: "loop",
