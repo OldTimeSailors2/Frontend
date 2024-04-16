@@ -159,7 +159,7 @@ const LandingLeftSide = () => {
 
         {/* Modal */}
 
-        {isModalOpen && ModalComponent && (
+        { ModalComponent && (
           <ModalComponent.Modal
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
@@ -180,7 +180,7 @@ const LandingLeftSide = () => {
                 <Image
                   src={BlurbTitle}
                   width={130}
-                  height={130}
+                  height={20}
                   alt="Blurb title"
                   className="h-auto"
                   placeholder="blur"
