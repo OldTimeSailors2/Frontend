@@ -5,10 +5,10 @@ import { formatServices } from "@/helpers/formatApiResponses";
 
 export const metadata = {
   title: "Services",
-  description: "What we do & offer",
+  description: "Here you'll find all the services we provide!",
   openGraph: {
     title: "Services",
-    description: "What we do & offer",
+    description: "Here you'll find all the services we provide!",
   },
 };
 

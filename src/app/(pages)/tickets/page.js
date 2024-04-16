@@ -3,10 +3,10 @@ import MapsWrapper from "@/wrappers/MapsWrapper";
 
 export const metadata = {
   title: "Tickets",
-  description: "Come listen us!",
+  description: "Find out where are we playing next",
   openGraph: {
     title: "Tickets",
-    description: "Come listen us!",
+    description: "Find out where are we playing next",
   },
 };
 

@@ -10,10 +10,10 @@ import {
 
 export const metadata = {
   title: "Media",
-  description: "Get to know us",
+  description: "Check some of our music, photos and videos",
   openGraph: {
     title: "Media",
-    description: "Get to know us",
+    description: "Check some of our music, photos and videos",
   },
 };
 

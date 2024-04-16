@@ -8,7 +8,7 @@ import { formatLandingImages } from "@/helpers/formatApiResponses";
 const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), {
   ssr: false,
   loading: () => (
-    <div className="md1:px-3 md:px-14 md2:px-14 lg:px-28 xl:p-0">
+    <div className="md1:px-3 md:px-14 md2:px-14 lg:px-28 xl:p-0 1xl:mt-4 1xxl:mt-14 2xl:mt-20 3xl:mt-24 fullHD:mt-48 2k:mt-64 4k:mt-96">
       <div className="grid grid-cols-2 xl:grid-cols-4 gap-[5px] xl:gap-4">
         {/* Four placeholders for images */}
         <div className="bg-transparent aspect-w-1 aspect-h-1 w-full h-full"></div>

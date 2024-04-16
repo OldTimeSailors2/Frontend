@@ -186,7 +186,7 @@ const ServicesDisplay = ({ services }) => {
       arrows: "splide__arrows arrows_modal",
       arrow: "splide__arrow modal_arrow",
     },
-  }),[]);
+  }),[clickedPhotoIndex]);
 
   /*IMAGES DISPLAY */
 
@@ -257,7 +257,7 @@ const ServicesDisplay = ({ services }) => {
           <p className="z-[20]">festival and event organization</p>
         </button>
         <button
-          onClick={() => setActiveService("the-beast")}
+          onClick={() => setActiveService("hms-warrior")}
           style={
             isDevice === "desktop"
               ? dynamicStyleDesktop
@@ -265,7 +265,7 @@ const ServicesDisplay = ({ services }) => {
                 ? dynamicStyleTablet
                 : dynamicStyle
           }
-          className={`services-hexagon transition-all ease-in duration-300 ${activeService === "the-beast" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px]  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
+          className={`services-hexagon transition-all ease-in duration-300 ${activeService === "hms-warrior" ? "before:bg-redPattern text-beige " : "before:bg-beigePattern text-darkBlue"} before:bg-contain xl:before:bg-cover z-[10] flex justify-center items-center text-lg leading-4 xs2:text-xl xs2:leading-5  md1:text-[22px] md:text-3xl lg:text-4xl xl:text-[27px]  1xxl:text-3xl fullHD:text-4xl 2k:text-5xl 4k:text-7xl font-titles text-center`}
         >
           <p className="z-[20]">hms warrior</p>
         </button>

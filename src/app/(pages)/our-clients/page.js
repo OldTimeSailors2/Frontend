@@ -3,10 +3,10 @@ import { formatClientsImages } from "@/helpers/formatApiResponses";
 
 export const metadata = {
   title: "Our Clients",
-  description: "Who we work with",
+  description: "Some of our clients",
   openGraph: {
     title: "Our Clients",
-    description: "Who we work with",
+    description: "Some of our clients",
   },
 };
 

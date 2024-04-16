@@ -4,10 +4,10 @@ import MobileSeparator from "@/components/MobileSeparator";
 
 export const metadata = {
   title: "Reviews",
-  description: "Opinions about the band",
+  description: "Read reviews of our show and share your experience",
   openGraph: {
     title: "Reviews",
-    description: "Opinions about the band",
+    description: "Read reviews of our show and share your experience",
   },
 };
 
