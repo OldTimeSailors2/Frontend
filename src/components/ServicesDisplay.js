@@ -392,7 +392,7 @@ const ServicesDisplay = ({ services }) => {
 
         {/*IMAGES DISPLAY */}
 
-        {isModalOpen && Modal && ModalContent && (
+        { Modal && ModalContent && (
           <Modal
             isOpen={isModalOpen}
             onClose={closeModal}
