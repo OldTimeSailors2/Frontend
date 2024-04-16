@@ -180,7 +180,7 @@ const LandingLeftSide = () => {
                 <Image
                   src={BlurbTitle}
                   width={130}
-                  height={20}
+                  height={44}
                   alt="Blurb title"
                   className="h-auto"
                   placeholder="blur"
