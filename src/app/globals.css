@@ -386,7 +386,7 @@
     background-color: #dd3254;
     width: var(--hexagon-width, 126px); /* Fallback to 126px */
     height: var(--hexagon-height, 69.3px); /* Fallback to 69.3px */
-    top: 1px;
+    
   }
 }
 
@@ -408,7 +408,7 @@
     background-color: #dd3254;
     width: var(--hexagon-2-width, 235.2px); /* Fallback to  235.2px */
     height: var(--hexagon-2-height, 69.3px); /* Fallback to 69.3px */
-    top: 1px;
+    
   }
 }
 
@@ -430,7 +430,7 @@
     background-color: #dd3254;
     width: var(--hexagon-3-width, 168px); /* Fallback to 168px */
     height: var(--hexagon-3-height, 69.3px); /* Fallback to 69.3px */
-    top: 1px;
+    
   }
 }
 
@@ -480,6 +480,11 @@
   background-color: rgba(218, 213, 203, 0.85);
 
   border-radius: 9999px;
+}
+
+#paragraph-scrollbar ul{
+  list-style: disc;
+  padding-left: 1.4rem;
 }
 
 .services-images-grid:nth-child(4n) {

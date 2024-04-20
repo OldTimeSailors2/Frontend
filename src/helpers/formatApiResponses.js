@@ -1,4 +1,6 @@
 import { getPlaiceholder } from "plaiceholder";
+import { marked } from 'marked';
+import DOMPurify from 'isomorphic-dompurify';
 
 const fetchAndConvertToBase64 = async (placeholderUrls) => {
   const promises = placeholderUrls.map(async (url) => {
@@ -39,7 +41,6 @@ const formatVideos = async (videosApiResponse) => {
     id: video.id,
     url: video.attributes.video.data.attributes.url,
     thumbnail: video.attributes.thumbnail.data.attributes.formats.thumbnail.url,
-    thumbnailStory: video.attributes.thumbnailStory,
     blurDataURL: base64Thumbnails[index],
   }));
 };
@@ -69,11 +70,12 @@ const formatLandingImages = async (landingImagesApiResponse) => {
 };
 
 const formatServices = async (servicesApiResponse) => {
-  const servicesWithBlurredImages = await Promise.all(
+
+  const servicesWithBlurredImagesAndSanitizedContent = await Promise.all(
     servicesApiResponse.data.map(async (service) => {
       // Extract placeholder URLs for conversion to Base64
       const placeholderUrls = service.attributes.images.data.map(
-        (image) => image.attributes.formats.placeholder.url,
+        (image) => image.attributes.formats.placeholder.url
       );
 
       // Fetch and convert these URLs to Base64 strings
@@ -84,19 +86,23 @@ const formatServices = async (servicesApiResponse) => {
         (image, index) => ({
           ...image,
           blurDataURL: base64Strings[index],
-        }),
+        })
       );
 
-      // Return the service object with updated images array
+      // Convert Markdown to HTML and sanitize it
+      const rawHtml = marked(service.attributes.paragraph);
+      const safeHtmlParagraph = DOMPurify.sanitize(rawHtml);
+
+      // Return the service object with updated images array and sanitized paragraph
       return {
         id: service.attributes.serviceId,
-        paragraph: service.attributes.paragraph,
+        paragraph: safeHtmlParagraph,
         images: imagesWithBlurDataURL,
       };
-    }),
+    })
   );
 
-  return servicesWithBlurredImages;
+  return servicesWithBlurredImagesAndSanitizedContent;
 };
 
 const formatClientsImages = (clientsImagesApiResponse) => {
