@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./landing.css";
 import LandingWrapper from "@/wrappers/LandingWrapper";
+import { Analytics } from '@vercel/analytics/react';
 
 const khmer_mn = localFont({
   src: "../../../public/fonts/Times-Sans-Serif.ttf",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${khmer_mn.variable} ${royale_signage.variable}`}>
         <LandingWrapper>{children}</LandingWrapper>
+        <Analytics />
       </body>
     </html>
   );
