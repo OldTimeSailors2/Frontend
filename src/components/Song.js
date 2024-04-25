@@ -5,7 +5,7 @@ const Song = ({ song }) => {
     <>
       <div
         key={song.id}
-        className="flex flex-col items-center gap-2 max-w-[120px]"
+        className="flex flex-col items-center gap-2 max-w-[120px] cursor-pointer"
         data-song-id={song.id}
       >
         <h2 className="font-txt items-overlay-song text-[13px] sm:text-lg min-[900px]:text-[19px] xl:text-base 1xl:max-1xxl:text-[13px] 1xl:max-1xxl:leading-5 fullHD:text-xl 2k:text-[25px] 4k:text-3xl 2k:leading-8 text-center font-light uppercase tracking-tighter break-words">

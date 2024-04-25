@@ -80,21 +80,3 @@
 .carousel-container {
   @apply w-full;
 }
-
-.react-multiple-carousel__arrow:hover {
-  background: transparent;
-}
-
-.react-multiple-carousel__arrow {
-  @apply z-40 h-full rounded-none bg-transparent;
-}
-
-.react-multiple-carousel__arrow--left {
-  left: 0;
-  width: calc(5% + 1px);
-}
-
-.react-multiple-carousel__arrow--right {
-  right: 0;
-  width: calc(5% + 1px);
-}
