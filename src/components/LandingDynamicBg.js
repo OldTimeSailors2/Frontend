@@ -41,7 +41,7 @@ const LandingDynamicBg = () => {
         className={`absolute inset-0
           bg-cover
           md1:scale-150 lg:scale-[1.75] xl:scale-y-[1] xl:scale-x-[1] 1xl:scale-y-[1] 1xl:scale-x-[1] 1xxl:scale-[1]
-          md1:-translate-y-60 lg:-translate-y-[30%] xl:-translate-y-12 2xl:max-fullHD:-translate-y-20 fullHD:-translate-y-16 4k:-translate-y-28
+          md1:-translate-y-60 lg:-translate-y-[30%] xl:-translate-y-12 2xl:max-fullHD:-translate-y-20 4xl:-translate-y-28 fullHD:-translate-y-16 4k:-translate-y-28
           md1:-translate-x-14 lg:-translate-x-24 xl:-translate-x-0 1xxl:-translate-x-0
           ${
             isSafari

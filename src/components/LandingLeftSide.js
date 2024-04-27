@@ -6,8 +6,9 @@ import Image from "next/image";
 import wing from "../../public/assets/wing.svg";
 import descriptionImage from "../../public/assets/description.svg";
 import BlurbTitle from "../../public/assets/blurb-title.webp";
-import { TfiEmail } from "react-icons/tfi";
-import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
+import Facebook from "../../public/assets/facebook.svg"
+import Mail from "../../public/assets/mail.svg"
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import useBrowserDetection from "@/hooks/useBrowserDetection";
 
 const LandingLeftSide = () => {
@@ -101,8 +102,9 @@ const LandingLeftSide = () => {
       }
          `}
         >
+          
           <Link
-            className={`bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
+            className={`bg-beigePattern  bg-contain text-lightRed rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
           
           ${
             isSafari
@@ -114,7 +116,65 @@ const LandingLeftSide = () => {
           >
             <FaInstagram />
           </Link>
+
+
           <Link
+            className="bg-beigePattern bg-contain text-lightRed rounded-full flex justify-center items-center"
+            href="https://www.facebook.com/oldtimesailors/"
+            target="_blank"
+          >
+
+            
+            <Image src={Facebook} width={20} height={20} alt="Facebook icon" className={`
+            ${
+              isSafari
+                ? "w-[18px] h-[18px] iphone-1:w-[20px] iphone-1:h-[20px] iphone-2:w-[22px] iphone-2:h-[22px] iphone-3:w-[23px] iphone-3:h-[23px] min-[430px]:w-[22px] min-[430px]:h-[22px] md1:w-[32px] md1:h-[32px] min-[810px]:w-[25px] min-[810px]:h-[25px] min-[820px]:w-[33px] min-[820px]:h-[33px] lg:w-[40px] lg:h-[40px] "
+                : "w-[23px] h-[23px] md1:w-[28px] md1:h-[28px] min-[810px]:w-[25px] min-[810px]:h-[25px] min-[820px]:w-[33px] min-[820px]:h-[33px] lg:w-[40px] lg:h-[40px] "
+            }
+            xl:w-[26px] xl:h-[26px] 1xxl:w-[28px] 1xxl:h-[28px] 4xl:w-[34px] 4xl:h-[34px] fullHD:w-[40px] fullHD:h-[40px] 2k:w-[62px] 2k:h-[62px] 4k:w-[78px] 4k:h-[78px]
+          `} />
+
+
+
+            
+          </Link>
+
+          <Link
+            className={`bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
+          
+          ${
+            isSafari
+              ? "text-[20px] p-1.5 iphone-1:text-[22px] iphone-1:p-1.5 iphone-2:text-[24px] iphone-3:text-[25px] min-[430px]:text-[24px] md1:text-[35px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+              : "text-[25px] p-1.5 md1:text-[30px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
+          }`}
+            href="https://wa.me/447539045312"
+            target="_blank"
+          >
+            <FaWhatsapp />
+          </Link>
+          <Link
+            className="bg-beigePattern bg-contain text-lightRed rounded-full flex justify-center items-center"
+            href="mailto:captainnicholasmoffat@oldtimesailors.com"
+            target="_blank"
+          >
+
+            
+            <Image src={Mail} width={20} height={20} alt="Mail icon" className={`
+            ${
+              isSafari
+                ? "w-[20px] h-[20px] iphone-1:w-[22px] iphone-1:h-[22px] iphone-2:w-[24px] iphone-2:h-[24px] iphone-3:w-[25px] iphone-3:h-[25px] min-[430px]:w-[24px] min-[430px]:h-[24px] md1:w-[35px] md1:h-[35px] min-[810px]:w-[27px] min-[810px]:h-[27px] min-[820px]:w-[35px] min-[820px]:h-[35px] lg:w-[42px] lg:h-[42px] "
+                : "w-[25px] h-[25px] md1:w-[30px] md1:h-[30px] min-[810px]:w-[27px] min-[810px]:h-[27px] min-[820px]:w-[35px] min-[820px]:h-[35px] lg:w-[42px] lg:h-[42px] "
+            }
+            xl:w-[28px] xl:h-[28px] 1xxl:w-[30px] 1xxl:h-[30px] 4xl:w-[36px] 4xl:h-[36px] fullHD:w-[42px] fullHD:h-[42px] 2k:w-[65px] 2k:h-[65px] 4k:w-[80px] 4k:h-[80px]
+          `} />
+
+
+
+            
+          </Link>
+
+          {/* Iconos viejos */}
+          {/* <Link
             className={`bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
           
           ${
@@ -152,7 +212,7 @@ const LandingLeftSide = () => {
             target="_blank"
           >
             <TfiEmail />
-          </Link>
+          </Link> */}
         </div>
 
         {/* Social Media Icons End */}
