@@ -20,9 +20,14 @@ const royale_signage = localFont({
 export const metadata = {
   title: "Old Time Sailors",
   description: "Old Time Sailors Website",
+  metadataBase: "https://www.oldtimesailors.com/",
   openGraph: {
     title: "Old Time Sailors",
     description: "Our Band",
+    images: [{
+      url: "/assets/opengraph-image.png",
+      alt: "Old Time Sailors"
+    }]
   },
 };
 

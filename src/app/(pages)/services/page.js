@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import ServicesDeco from "@/components/ServicesDeco";
+import MainDiv from "@/components/MainDiv";
 import { formatServices } from "@/helpers/formatApiResponses";
 
 export const metadata = {
@@ -53,7 +54,7 @@ const Services = async () => {
   const services = await fetchServices();
 
   return (
-    <main
+    <MainDiv
       className="w-screen h-dvh max-xl:fixed bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain xl:bg-cover flex flex-col justify-center
      gap-4 min-[390px]:max-xs2:gap-2 md1:max-xl:gap-24 md:gap-8 1xl:max-1xxl:gap-2  1xl:items-center 1xl:justify-evenly
       pt-[77px] xs:pt-[92px] sm:pt-[140px] fullHD:pt-[172px] 2k:pt-[204px] 4k:pt-[268px]
@@ -80,7 +81,7 @@ const Services = async () => {
           </Link>
         </div>
       </div>
-    </main>
+    </MainDiv>
   );
 };
 

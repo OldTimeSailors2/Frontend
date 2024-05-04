@@ -2,7 +2,7 @@ import Image from "next/image";
 import logo from "../../../public/assets/logo.svg";
 import dynamic from "next/dynamic";
 import LandingDynamicBg from "@/components/LandingDynamicBg";
-
+import MainDiv from "@/components/MainDiv";
 import { formatLandingImages } from "@/helpers/formatApiResponses";
 
 const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), {
@@ -82,7 +82,7 @@ const Home = async () => {
   const formattedLandingImages = await fetchLandingImages();
 
   return (
-    <main className="w-full min-h-screen flex flex-col overflow-auto relative">
+    <MainDiv className="w-full min-h-screen flex flex-col overflow-auto relative">
       <LandingDynamicBg />
       <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
         <div className="w-full h-full flex flex-col gap-3 md1:justify-between xl:gap-0 relative">
@@ -109,7 +109,7 @@ const Home = async () => {
           OLD TIME SAILORS LTD.®
         </p>
       </footer>
-    </main>
+    </MainDiv>
   );
 };
 

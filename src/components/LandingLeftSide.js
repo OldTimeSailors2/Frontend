@@ -172,47 +172,6 @@ const LandingLeftSide = () => {
 
             
           </Link>
-
-          {/* Iconos viejos */}
-          {/* <Link
-            className={`bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
-          
-          ${
-            isSafari
-              ? "text-[20px] p-1.5 iphone-1:text-[22px] iphone-1:p-1.5 iphone-2:text-[24px] iphone-3:text-[25px] min-[430px]:text-[24px] md1:text-[35px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
-              : "text-[25px] p-1.5 md1:text-[30px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
-          }`}
-            href="https://www.facebook.com/oldtimesailors/"
-            target="_blank"
-          >
-            <FaFacebookF />
-          </Link>
-          <Link
-            className={`bg-beigePattern  bg-contain text-darkBlue rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
-          
-          ${
-            isSafari
-              ? "text-[20px] p-1.5 iphone-1:text-[22px] iphone-1:p-1.5 iphone-2:text-[24px] iphone-3:text-[25px] min-[430px]:text-[24px] md1:text-[35px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
-              : "text-[25px] p-1.5 md1:text-[30px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
-          }`}
-            href="https://wa.me/447539045312"
-            target="_blank"
-          >
-            <FaWhatsapp />
-          </Link>
-          <Link
-            className={`bg-beigePattern   bg-contain text-lightRed rounded-full flex justify-center items-center xl:p-1.5 xl:text-[28px]  1xxl:text-[30px] 1xxl:p-2 4xl:text-[36px] fullHD:text-[42px] 2k:text-[65px] 2k:p-3.5 4k:text-[80px] 4k:p-5
-          
-          ${
-            isSafari
-              ? "text-[20px] p-1.5 iphone-1:text-[22px] iphone-1:p-1.5 iphone-2:text-[24px] iphone-3:text-[25px] min-[430px]:text-[24px] md1:text-[35px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
-              : "text-[25px] p-1.5 md1:text-[30px]  min-[810px]:text-[27px] min-[820px]:text-[35px] min-[820px]:p-2 lg:text-[42px] lg:p-2.5 "
-          }`}
-            href="mailto:captainnicholasmoffat@oldtimesailors.com"
-            target="_blank"
-          >
-            <TfiEmail />
-          </Link> */}
         </div>
 
         {/* Social Media Icons End */}
@@ -300,7 +259,7 @@ const LandingLeftSide = () => {
 
         <Link
           className="octagon flex items-center justify-center bg-redPattern bg-contain"
-          href="https://oldtimesailors.com/"
+          href="https://oldtimesailors.co.uk/"
           target="_blank"
         >
           <p className="text-center text-xl pb-[1px] min-[375px]:max-xs:text-lg xs:pb-0 xs2:text-[24px] min-[390px]:max-xs2:text-xl min-[414px]:max-[420px]:text-xl min-[428px]:text-xl  md1:text-3xl min-[810px]:text-[32px] min-[820px]:text-4xl lg:text-5xl xl:text-2xl 1xxl:text-3xl fullHD:text-4xl 2k:text-6xl 4k:text-7xl font-titles text-beige">

@@ -28,6 +28,13 @@ export const metadata = {
     template: "%s | OTS",
     default: "OTS",
   },
+  metadataBase: "https://www.oldtimesailors.com/",
+  openGraph: {
+    images: [{
+      url: "/assets/opengraph-image.png",
+      alt: "Old Time Sailors"
+    }]
+  },
 };
 
 export default function RootLayout({ children }) {

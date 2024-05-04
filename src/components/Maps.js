@@ -10,6 +10,7 @@ import {
   useMapsLibrary,
   Marker,
 } from "@vis.gl/react-google-maps";
+import MainDiv from "./MainDiv";
 import windowLogo from "../../public/assets/logo-badge.svg";
 import CustomPopup from "./CustomPopup";
 import { CgClose } from "react-icons/cg";
@@ -359,7 +360,7 @@ const Maps = ({ markersList }) => {
   );
 
   return (
-    <div className="h-dvh">
+    <MainDiv className="h-dvh">
       <Map
         zoom={5}
         maxZoom={9}
@@ -395,7 +396,7 @@ const Maps = ({ markersList }) => {
             </Fragment>
           ))}
       </Map>
-    </div>
+    </MainDiv>
   );
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useLoader } from "@/context/LoaderContext";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +12,8 @@ import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const defaultSettings = { loader: 1, photos: true };
+  const settings = useLoader() || defaultSettings;
   const [title, setTitle] = useState("");
   const [titleBg, setTitleBg] = useState("");
   const [titleColor, setTitleColor] = useState("");
@@ -81,7 +84,7 @@ const Navbar = () => {
       className={`fixed w-screen z-[100] flex justify-between pt-3 px-1 sm:px-4 ${pathname === "/tickets" ? 'pointer-events-none' : ''}`}
     >
       <div className="flex gap-1.5 sm:gap-4 items-center">
-        <Link href="/" className="inline-block">
+        <Link href="/" className="inline-block" style={{ opacity: settings?.loader, pointerEvents: settings?.photos ? 'auto' : 'none' }}>
           <Image
             src={!["/services", "/tickets"].includes(pathname) ? logo : logo2}
             width={65}
@@ -95,6 +98,7 @@ const Navbar = () => {
           className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles
            text-2xl xs2:text-[26px] sm:text-[40px] fullHD:text-5xl 2k:text-7xl 4k:text-8xl
             flex items-center justify-center fullHD:pb-0.5 fullHD:pl-2`}
+            style={{ opacity: settings?.loader, pointerEvents: settings?.photos ? 'auto' : 'none' }}
         >
           {title}
         </h1>
@@ -104,6 +108,7 @@ const Navbar = () => {
         <Link
           className={`${pathname === "/tickets" || pathname === "/services" ? "bg-redPattern text-beige" : "bg-beigePattern text-lightRed"}
                                 bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
+          style={{ opacity: settings?.loader, pointerEvents: settings?.photos ? 'auto' : 'none' }}
           href="mailto:captainnicholasmoffat@oldtimesailors.com"
           target="_blank"
         >
@@ -116,6 +121,7 @@ const Navbar = () => {
         <Link
           className={`${pathname === "/tickets" || pathname === "/services" ? "bg-bluePattern text-beige" : "bg-beigePattern text-darkBlue"}
                                 bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
+          style={{ opacity: settings?.loader, pointerEvents: settings?.photos ? 'auto' : 'none' }}
           href="https://wa.me/447539045312"
           target="_blank"
         >
@@ -128,6 +134,7 @@ const Navbar = () => {
         <Link
           className={`${pathname === "/tickets" || pathname === "/services" ? "bg-redPattern text-beige" : "bg-beigePattern text-lightRed"}
                                 bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
+          style={{ opacity: settings?.loader, pointerEvents: settings?.photos ? 'auto' : 'none' }}
           href="https://www.instagram.com/oldtimesailors"
           target="_blank"
         >
@@ -140,6 +147,7 @@ const Navbar = () => {
         <Link
           className={`${pathname === "/tickets" || pathname === "/services" ? "bg-bluePattern text-beige" : "bg-beigePattern text-darkBlue"}
                                 bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
+          style={{ opacity: settings?.loader, pointerEvents: settings?.photos ? 'auto' : 'none' }}
           href="https://www.facebook.com/oldtimesailors/"
           target="_blank"
         >
