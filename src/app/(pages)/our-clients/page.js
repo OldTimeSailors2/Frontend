@@ -8,6 +8,10 @@ export const metadata = {
   openGraph: {
     title: "Our Clients",
     description: "Some of our clients",
+    images: [{
+      url: "/assets/opengraph-image.png",
+      alt: "Old Time Sailors"
+    }]
   },
 };
 

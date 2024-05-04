@@ -15,6 +15,10 @@ export const metadata = {
   openGraph: {
     title: "Media",
     description: "Check some of our music, photos and videos",
+    images: [{
+      url: "/assets/opengraph-image.png",
+      alt: "Old Time Sailors"
+    }]
   },
 };
 

@@ -7,6 +7,10 @@ export const metadata = {
   openGraph: {
     title: "Tickets",
     description: "Find out where are we playing next",
+    images: [{
+      url: "/assets/opengraph-image.png",
+      alt: "Old Time Sailors"
+    }]
   },
 };
 
