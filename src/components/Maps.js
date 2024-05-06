@@ -324,22 +324,22 @@ const Maps = ({ markersList }) => {
             <CgClose className=" text-[15px] md1:text-[20px] text-[#232f3f] " />
           </button>
 
-          <ul className="self-start -space-y-1">
-            <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
+          <ul className="flex flex-col self-start max-xl:gap-1 -space-y-1">
+            <li className="text-xl leading-5 md:text-3xl text-lightRed font-titles font-medium flex items-start max-xl:mb-0.5">
               event:
-              <p className="text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">
                 {markerData.event}
               </p>
             </li>
-            <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
+            <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-start">
               location:
-              <p className="text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">
                 {markerData.location}
               </p>
             </li>
-            <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-end">
+            <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-start">
               date:
-              <p className="text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 whitespace-nowrap">
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">
                 {markerData.date}
               </p>
             </li>
