@@ -1,7 +1,7 @@
 import "../globals.css";
 import localFont from "next/font/local";
 import PagesWrapper from "@/wrappers/PagesWrapper";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 const khmer_mn = localFont({
   src: "../../../public/fonts/Times-Sans-Serif.ttf",

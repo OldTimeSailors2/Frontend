@@ -1,6 +1,6 @@
 import { getPlaiceholder } from "plaiceholder";
-import { marked } from 'marked';
-import DOMPurify from 'isomorphic-dompurify';
+import { marked } from "marked";
+import DOMPurify from "isomorphic-dompurify";
 
 const fetchAndConvertToBase64 = async (placeholderUrls) => {
   const promises = placeholderUrls.map(async (url) => {
@@ -70,12 +70,11 @@ const formatLandingImages = async (landingImagesApiResponse) => {
 };
 
 const formatServices = async (servicesApiResponse) => {
-
   const servicesWithBlurredImagesAndSanitizedContent = await Promise.all(
     servicesApiResponse.data.map(async (service) => {
       // Extract placeholder URLs for conversion to Base64
       const placeholderUrls = service.attributes.images.data.map(
-        (image) => image.attributes.formats.placeholder.url
+        (image) => image.attributes.formats.placeholder.url,
       );
 
       // Fetch and convert these URLs to Base64 strings
@@ -86,7 +85,7 @@ const formatServices = async (servicesApiResponse) => {
         (image, index) => ({
           ...image,
           blurDataURL: base64Strings[index],
-        })
+        }),
       );
 
       // Convert Markdown to HTML and sanitize it
@@ -99,7 +98,7 @@ const formatServices = async (servicesApiResponse) => {
         paragraph: safeHtmlParagraph,
         images: imagesWithBlurDataURL,
       };
-    })
+    }),
   );
 
   return servicesWithBlurredImagesAndSanitizedContent;

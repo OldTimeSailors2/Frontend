@@ -1,38 +1,37 @@
-"use client"
+"use client";
 
-import { createContext, useContext, useEffect, useRef } from 'react';
-import useSWR from 'swr';
+import { createContext, useContext, useEffect, useRef } from "react";
+import useSWR from "swr";
 
-const fetcher = url => fetch(url).then(res => res.json());
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const LoaderContext = createContext({});
 
 export const LoaderProvider = ({ children }) => {
-
-  const loaderAPI = process.env.NEXT_PUBLIC_LOADER_API
+  const loaderAPI = process.env.NEXT_PUBLIC_LOADER_API;
   const warm = 180000;
-  const interval = 172800000; 
+  const interval = 172800000;
   const warmTimer = useRef(null);
   let a = 0;
   const maxA = 3;
 
-
   const setWarm = () => {
-    fetch(loaderAPI).then(response => {
-      if (!response.ok) {
-        console.error(`Warm error ${response.status}`);
-        if (a < maxA) {
-          setTimeout(setWarm, 60000);
-          a++;
+    fetch(loaderAPI)
+      .then((response) => {
+        if (!response.ok) {
+          console.error(`Warm error ${response.status}`);
+          if (a < maxA) {
+            setTimeout(setWarm, 60000);
+            a++;
+          }
+        } else {
+          console.log("Warm");
         }
-      } else {
-        console.log('Warm');
-      }
-    }).catch(error => {
-      console.error('Warm error:', error);
-    });
+      })
+      .catch((error) => {
+        console.error("Warm error:", error);
+      });
   };
-
 
   const enhancedFetcher = async (url) => {
     if (warmTimer.current) {
@@ -44,7 +43,7 @@ export const LoaderProvider = ({ children }) => {
   };
 
   const { data, error } = useSWR(loaderAPI, enhancedFetcher, {
-    refreshInterval: interval
+    refreshInterval: interval,
   });
 
   useEffect(() => {
@@ -52,9 +51,7 @@ export const LoaderProvider = ({ children }) => {
   }, [error]);
 
   return (
-    <LoaderContext.Provider value={data}>
-      {children}
-    </LoaderContext.Provider>
+    <LoaderContext.Provider value={data}>{children}</LoaderContext.Provider>
   );
 };
 

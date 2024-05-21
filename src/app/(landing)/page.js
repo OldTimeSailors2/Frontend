@@ -24,7 +24,6 @@ const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
   loading: () => (
     <div className="flex justify-between">
       <div className="flex flex-col items-center justify-center ">
-
         {/* Placeholder for the description image */}
         <div className="mt-32 ml-0.5 bg-transparent rounded-md w-24 h-16 md1:w-36 md1:h-10 lg:w-36 lg:h-16"></div>
 
@@ -56,7 +55,6 @@ const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
     </div>
   ),
 });
-
 
 const fetchLandingImages = async () => {
   try {

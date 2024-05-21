@@ -8,10 +8,10 @@ import { LoaderProvider } from "@/context/LoaderContext";
 const PagesWrapper = ({ children }) => {
   return (
     <NextUIProvider>
-       <LoaderProvider>
-      <Navbar />
-      {children}
-      <Footer />
+      <LoaderProvider>
+        <Navbar />
+        {children}
+        <Footer />
       </LoaderProvider>
     </NextUIProvider>
   );

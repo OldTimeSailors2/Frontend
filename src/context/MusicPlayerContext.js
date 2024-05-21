@@ -39,9 +39,6 @@ export const MusicPlayerProvider = ({ children }) => {
     if (!HowlRef.current) {
       await loadHowl();
     }
-    console.log("Attempting to play song with ID:", songId);
-    console.log("Current sound object:", sound);
-    console.log("Is something playing?", isPlaying);
 
     // Find the song in the playlist
     const songToPlay = playlist.find((song) => song.id === songId);
@@ -51,7 +48,6 @@ export const MusicPlayerProvider = ({ children }) => {
     }
 
     if (sound && isPlaying) {
-      console.log("Stopping and unloading previous song");
       sound.stop();
       sound.unload();
     } else {

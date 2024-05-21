@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./landing.css";
 import LandingWrapper from "@/wrappers/LandingWrapper";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 const khmer_mn = localFont({
   src: "../../../public/fonts/Times-Sans-Serif.ttf",
@@ -24,10 +24,12 @@ export const metadata = {
   openGraph: {
     title: "Old Time Sailors",
     description: "Our Band",
-    images: [{
-      url: "/assets/opengraph-image.png",
-      alt: "Old Time Sailors"
-    }]
+    images: [
+      {
+        url: "/assets/opengraph-image.png",
+        alt: "Old Time Sailors",
+      },
+    ],
   },
 };
 

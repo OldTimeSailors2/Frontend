@@ -130,7 +130,6 @@ const SplideCarousel = ({ mediaType }) => {
           },
           375: {
             padding: "4%",
-
           },
           0: {
             perPage: 3,
@@ -146,11 +145,14 @@ const SplideCarousel = ({ mediaType }) => {
 
   const breakpoints = getBreakpoints(mediaType);
   //Define carousel start based on window's width
-  const start = window.innerWidth >= 1280 ? 
-  (window.innerWidth >= 1536 ?
-     (window.innerWidth >= 1920 ? 3 : 4)
-      : 3)
-  : 0;
+  const start =
+    window.innerWidth >= 1280
+      ? window.innerWidth >= 1536
+        ? window.innerWidth >= 1920
+          ? 3
+          : 4
+        : 3
+      : 0;
 
   const options = {
     type: "loop",

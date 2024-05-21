@@ -10,10 +10,12 @@ export const metadata = {
   openGraph: {
     title: "Services",
     description: "Here you'll find all the services we provide!",
-    images: [{
-      url: "/assets/opengraph-image.png",
-      alt: "Old Time Sailors"
-    }]
+    images: [
+      {
+        url: "/assets/opengraph-image.png",
+        alt: "Old Time Sailors",
+      },
+    ],
   },
 };
 
@@ -34,7 +36,6 @@ const ServicesDisplay = dynamic(() => import("@/components/ServicesDisplay"), {
     </div>
   ),
 });
-
 
 const fetchServices = async () => {
   try {

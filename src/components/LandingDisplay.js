@@ -84,7 +84,7 @@ const LandingDisplay = ({ images }) => {
 
       {/*PHOTOS DISPLAY */}
 
-      { Modal && ModalContent && (
+      {Modal && ModalContent && (
         <Modal
           isOpen={isModalOpen}
           onClose={handleClose}

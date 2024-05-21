@@ -9,10 +9,12 @@ export const metadata = {
   openGraph: {
     title: "Reviews",
     description: "Read reviews of our show and share your experience",
-    images: [{
-      url: "/assets/opengraph-image.png",
-      alt: "Old Time Sailors"
-    }]
+    images: [
+      {
+        url: "/assets/opengraph-image.png",
+        alt: "Old Time Sailors",
+      },
+    ],
   },
 };
 
@@ -76,7 +78,7 @@ const Reviews = () => {
               unplanned, totally impromptu performance was a tour de force of
               professional musicianship executed by a band clearly showing its
               collective passion for its musical A genre. Three hour long sets
-              of exuberant entertaining left 
+              of exuberant entertaining left
             </p>
             {/*Mobile/Tablet content */}
 
@@ -193,16 +195,16 @@ const Reviews = () => {
         <article className="hidden xl:flex-grow xl:flex xl:flex-col xl:justify-between xl:w-1/3 xl:pt-4">
           <div className="flex flex-col">
             <p className="text-[14px] leading-[16px] 1xl:text-[14px] 1xl:leading-[14px] 1xxl:text-[17px] 1xxl:leading-4 4xl:text-[18px] 4xl:leading-5 fullHD:text-[20px] fullHD:leading-6 2k:text-[32px] 2k:leading-9 4k:text-[45px] 4k:leading-[53px]">
-              the pub locals exhausted and
-              musically fulfilled. Sadly the band weighed anchor and sailed back
-              to North wales. Everyone in the audience recognised that they had witnessed an
-              extraordinary and unexpected event that had transformed a Sunday
-              afternoon. Especially the pub landlord; he was the guest tin
-              whistler! It is now Tuesday 28th September, and a warm euphoria
-              pervades the pub as the locals continue to reminisce and share
-              mobile video clips, continue to talk in wonder about the
-              unforgettable Sunday when the Old Time Sailors moored up to the
-              White Hart in Bicester, Oxfordshire."
+              the pub locals exhausted and musically fulfilled. Sadly the band
+              weighed anchor and sailed back to North wales. Everyone in the
+              audience recognised that they had witnessed an extraordinary and
+              unexpected event that had transformed a Sunday afternoon.
+              Especially the pub landlord; he was the guest tin whistler! It is
+              now Tuesday 28th September, and a warm euphoria pervades the pub
+              as the locals continue to reminisce and share mobile video clips,
+              continue to talk in wonder about the unforgettable Sunday when the
+              Old Time Sailors moored up to the White Hart in Bicester,
+              Oxfordshire."
             </p>
 
             <address className="text-darkBlue 1xxl:text-lg fullHD:text-xl 2k:text-3xl 4k:text-5xl 4k:leading-[50px] self-end not-italic">

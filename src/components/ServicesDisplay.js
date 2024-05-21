@@ -15,8 +15,10 @@ const ServicesDisplay = ({ services }) => {
   const [Splide, setSplide] = useState(null);
   const [SplideSlide, setSplideSlide] = useState(null);
   const splideRef = useRef(null);
-  const activeServiceData = useMemo(() => services.find(service => service.id === activeService), [services, activeService]);
-
+  const activeServiceData = useMemo(
+    () => services.find((service) => service.id === activeService),
+    [services, activeService],
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -71,66 +73,73 @@ const ServicesDisplay = ({ services }) => {
     }
   }, [activeServiceData]); // Depend on activeServiceData to trigger the reset
 
-//Octagon and Hexagons styles
+  //Octagon and Hexagons styles
 
-  const dynamicStyle = useMemo(() => ({
-    "--hexagon-width": `${105 * scaleFactor}px`,
-    "--hexagon-height": `${70.5 * scaleFactor}px`,
-    "--hexagon-before-width": `${103 * scaleFactor}px`,
-    "--hexagon-before-height": `${69 * scaleFactor}px`,
-    "--hexagon-2-width": `${105 * scaleFactor}px`,
-    "--hexagon-2-height": `${70.5 * scaleFactor}px`,
-    "--hexagon-2-before-width": `${103 * scaleFactor}px`,
-    "--hexagon-2-before-height": `${69 * scaleFactor}px`,
-    "--hexagon-3-width": `${105 * scaleFactor}px`,
-    "--hexagon-3-height": `${70.5 * scaleFactor}px`,
-    "--hexagon-3-before-width": `${103 * scaleFactor}px`,
-    "--hexagon-3-before-height": `${69 * scaleFactor}px`,
-    "--octagon-width": `${250 * scaleFactor}px`,
-    "--octagon-height": `${450 * scaleFactor}px`,
-  }), [scaleFactor]);
+  const dynamicStyle = useMemo(
+    () => ({
+      "--hexagon-width": `${105 * scaleFactor}px`,
+      "--hexagon-height": `${70.5 * scaleFactor}px`,
+      "--hexagon-before-width": `${103 * scaleFactor}px`,
+      "--hexagon-before-height": `${69 * scaleFactor}px`,
+      "--hexagon-2-width": `${105 * scaleFactor}px`,
+      "--hexagon-2-height": `${70.5 * scaleFactor}px`,
+      "--hexagon-2-before-width": `${103 * scaleFactor}px`,
+      "--hexagon-2-before-height": `${69 * scaleFactor}px`,
+      "--hexagon-3-width": `${105 * scaleFactor}px`,
+      "--hexagon-3-height": `${70.5 * scaleFactor}px`,
+      "--hexagon-3-before-width": `${103 * scaleFactor}px`,
+      "--hexagon-3-before-height": `${69 * scaleFactor}px`,
+      "--octagon-width": `${250 * scaleFactor}px`,
+      "--octagon-height": `${450 * scaleFactor}px`,
+    }),
+    [scaleFactor],
+  );
 
-  
-  const dynamicStyleTablet = useMemo(() => ({
-    "--hexagon-width": `${140 * scaleFactor}px`,
-    "--hexagon-height": `${80 * scaleFactor}px`,
-    "--hexagon-before-width": `${138.5 * scaleFactor}px`,
-    "--hexagon-before-height": `${78 * scaleFactor}px`,
-    "--hexagon-2-width": `${140 * scaleFactor}px`,
-    "--hexagon-2-height": `${80 * scaleFactor}px`,
-    "--hexagon-2-before-width": `${138.5 * scaleFactor}px`,
-    "--hexagon-2-before-height": `${78 * scaleFactor}px`,
-    "--hexagon-3-width": `${140 * scaleFactor}px`,
-    "--hexagon-3-height": `${80 * scaleFactor}px`,
-    "--hexagon-3-before-width": `${138.5 * scaleFactor}px`,
-    "--hexagon-3-before-height": `${78 * scaleFactor}px`,
-    "--octagon-width": `${435 * scaleFactor}px`,
-    "--octagon-height": `${550 * scaleFactor}px`,
-  }), [scaleFactor]);
+  const dynamicStyleTablet = useMemo(
+    () => ({
+      "--hexagon-width": `${140 * scaleFactor}px`,
+      "--hexagon-height": `${80 * scaleFactor}px`,
+      "--hexagon-before-width": `${138.5 * scaleFactor}px`,
+      "--hexagon-before-height": `${78 * scaleFactor}px`,
+      "--hexagon-2-width": `${140 * scaleFactor}px`,
+      "--hexagon-2-height": `${80 * scaleFactor}px`,
+      "--hexagon-2-before-width": `${138.5 * scaleFactor}px`,
+      "--hexagon-2-before-height": `${78 * scaleFactor}px`,
+      "--hexagon-3-width": `${140 * scaleFactor}px`,
+      "--hexagon-3-height": `${80 * scaleFactor}px`,
+      "--hexagon-3-before-width": `${138.5 * scaleFactor}px`,
+      "--hexagon-3-before-height": `${78 * scaleFactor}px`,
+      "--octagon-width": `${435 * scaleFactor}px`,
+      "--octagon-height": `${550 * scaleFactor}px`,
+    }),
+    [scaleFactor],
+  );
 
-  
-  const dynamicStyleDesktop = useMemo(() => ({
-    "--hexagon-width": `${126 * scaleFactor}px`,
-    "--hexagon-height": `${69.3 * scaleFactor}px`,
-    "--hexagon-before-width": `${124 * scaleFactor}px`,
-    "--hexagon-before-height": `${68.3 * scaleFactor}px`,
-    "--hexagon-2-width": `${235.2 * scaleFactor}px`,
-    "--hexagon-2-height": `${69.3 * scaleFactor}px`,
-    "--hexagon-2-before-width": `${233.2 * scaleFactor}px`,
-    "--hexagon-2-before-height": `${68.3 * scaleFactor}px`,
-    "--hexagon-3-width": `${168 * scaleFactor}px`,
-    "--hexagon-3-height": `${69.3 * scaleFactor}px`,
-    "--hexagon-3-before-width": `${166 * scaleFactor}px`,
-    "--hexagon-3-before-height": `${68.3 * scaleFactor}px`,
-    "--octagon-width": `${1240 * scaleFactor}px`,
-    "--octagon-height": `${300 * scaleFactor}px`,
-  }), [scaleFactor]);
+  const dynamicStyleDesktop = useMemo(
+    () => ({
+      "--hexagon-width": `${126 * scaleFactor}px`,
+      "--hexagon-height": `${69.3 * scaleFactor}px`,
+      "--hexagon-before-width": `${124 * scaleFactor}px`,
+      "--hexagon-before-height": `${68.3 * scaleFactor}px`,
+      "--hexagon-2-width": `${235.2 * scaleFactor}px`,
+      "--hexagon-2-height": `${69.3 * scaleFactor}px`,
+      "--hexagon-2-before-width": `${233.2 * scaleFactor}px`,
+      "--hexagon-2-before-height": `${68.3 * scaleFactor}px`,
+      "--hexagon-3-width": `${168 * scaleFactor}px`,
+      "--hexagon-3-height": `${69.3 * scaleFactor}px`,
+      "--hexagon-3-before-width": `${166 * scaleFactor}px`,
+      "--hexagon-3-before-height": `${68.3 * scaleFactor}px`,
+      "--octagon-width": `${1240 * scaleFactor}px`,
+      "--octagon-height": `${300 * scaleFactor}px`,
+    }),
+    [scaleFactor],
+  );
 
   const currentStyle = useMemo(() => {
     switch (isDevice) {
-      case 'desktop':
+      case "desktop":
         return dynamicStyleDesktop;
-      case 'tablet':
+      case "tablet":
         return dynamicStyleTablet;
       default:
         return dynamicStyle;
@@ -139,54 +148,60 @@ const ServicesDisplay = ({ services }) => {
 
   /*Splide*/
 
-  const options = useMemo(() => ({
-    perPage: 2,
-    gap: 2,
-    arrows: false,
-    drag: true,
-    pagination: false,
-    start: 0,
-    classes: "splide-services",
-    padding: { right: "5%" },
-    mediaQuery: "min",
-    breakpoints: {
-      428: {
-        padding: { right: "6%" },
+  const options = useMemo(
+    () => ({
+      perPage: 2,
+      gap: 2,
+      arrows: false,
+      drag: true,
+      pagination: false,
+      start: 0,
+      classes: "splide-services",
+      padding: { right: "5%" },
+      mediaQuery: "min",
+      breakpoints: {
+        428: {
+          padding: { right: "6%" },
+        },
+        414: {
+          padding: { right: "8%" },
+        },
+        380: {
+          padding: { right: "5%" },
+        },
+        375: {
+          padding: { right: "8%" },
+        },
       },
-      414: {
-        padding: { right: "8%" },
+    }),
+    [],
+  );
+  const options2 = useMemo(
+    () => ({
+      type: "fade",
+      mediaQuery: "min",
+      perPage: 1,
+      start: clickedPhotoIndex,
+      arrows: true,
+      pagination: false,
+      breakpoints: {
+        1280: {
+          drag: false,
+          keyboard: "global",
+        },
+        0: {
+          drag: true,
+          keyboard: false,
+        },
       },
-      380: {
-        padding: { right: "5%" },
-      },
-      375: {
-        padding: { right: "8%" },
-      },
-    },
-  }),[]);
-  const options2 = useMemo(() => ({
-    type: "fade",
-    mediaQuery: "min",
-    perPage: 1,
-    start: clickedPhotoIndex,
-    arrows: true,
-    pagination: false,
-    breakpoints: {
-      1280:{
-        drag: false,
-        keyboard: "global",
-      },
-      0:{
-        drag: true,
-        keyboard: false
-      }
-    },
 
-    classes: {
-      arrows: "splide__arrows arrows_modal",
-      arrow: "splide__arrow modal_arrow",
-    },
-  }),[clickedPhotoIndex]);
+      classes: {
+        arrows: "splide__arrows arrows_modal",
+        arrow: "splide__arrow modal_arrow",
+      },
+    }),
+    [clickedPhotoIndex],
+  );
 
   /*IMAGES DISPLAY */
 
@@ -307,23 +322,23 @@ const ServicesDisplay = ({ services }) => {
               className="xs2:w-[140px] md:w-[180px] md2:w-[210px] lg:w-[240px]  xl:w-[150px] 1xl:w-[160px] 1xxl:w-[149px] fullHD:w-[230px] 2k:w-[310px] 4k:w-[430px]"
             />
 
-          <div>
-            {activeServiceData && (
-              <div
-                className="text-justify text-beige list-disc pr-1
+            <div>
+              {activeServiceData && (
+                <div
+                  className="text-justify text-beige list-disc pr-1
                 
                 text-base leading-5 xs2:text-lg xs2:leading-6  max-h-[230px] min-[375px]:max-h-[240px] xs:max-h-[240px] iphone-1:max-h-[260px] xs2:max-h-[250px] iphone-2:max-h-[270px] iphone-3:max-h-[280px]
                 
                 md1:max-h-[310px] md1:text-3xl md:max-h-[320px] md:text:4xl md2:max-h-[340px] lg:text-5xl lg:max-h-[420px]
                 
                 xl:text-lg xl:max-h-[180px] 1xxl:max-h-[200px] 4xl:text-xl 4xl:max-h-[250px] fullHD:text-2xl fullHD:max-h-[260px] 2k:text-3xl 2k:max-h-[350px] 4k:text-5xl 4k:max-h-[550px] font-txt overflow-y-auto overflow-x-hidden"
-                id="paragraph-scrollbar"
-                dangerouslySetInnerHTML={{ __html: activeServiceData.paragraph}}
-              />
-                
-            )}
+                  id="paragraph-scrollbar"
+                  dangerouslySetInnerHTML={{
+                    __html: activeServiceData.paragraph,
+                  }}
+                />
+              )}
             </div>
-
 
             <Image
               src="/assets/deco-services-3.svg"
@@ -397,7 +412,7 @@ const ServicesDisplay = ({ services }) => {
 
         {/*IMAGES DISPLAY */}
 
-        { Modal && ModalContent && (
+        {Modal && ModalContent && (
           <Modal
             isOpen={isModalOpen}
             onClose={closeModal}

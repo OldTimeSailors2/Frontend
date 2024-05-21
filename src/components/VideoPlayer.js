@@ -4,10 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import useMedia from "@/hooks/useMedia";
 import useBrowserDetection from "@/hooks/useBrowserDetection";
 
-
 const VideoPlayer = () => {
-  const { currentVideo, deselectVideo, isVideoModalOpen, closeVideoModal } = useMedia();
-  const { isSafari } = useBrowserDetection()
+  const { currentVideo, deselectVideo, isVideoModalOpen, closeVideoModal } =
+    useMedia();
+  const { isSafari } = useBrowserDetection();
 
   const handleClose = () => {
     closeVideoModal();

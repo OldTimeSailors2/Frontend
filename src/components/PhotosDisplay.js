@@ -51,14 +51,14 @@ const PhotosDisplay = () => {
     arrows: true,
     pagination: false,
     breakpoints: {
-      1280:{
+      1280: {
         drag: false,
         keyboard: "global",
       },
-      0:{
+      0: {
         drag: true,
-        keyboard: false
-      }
+        keyboard: false,
+      },
     },
 
     classes: {
