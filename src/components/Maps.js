@@ -3,6 +3,7 @@
 import { useEffect, useState, useMemo, useCallback, Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
+<<<<<<< HEAD
 import {
   useApiIsLoaded,
   Map,
@@ -10,6 +11,9 @@ import {
   useMapsLibrary,
   Marker,
 } from "@vis.gl/react-google-maps";
+=======
+import { useApiIsLoaded, Map, useMap, useMapsLibrary, Marker } from "@vis.gl/react-google-maps";
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
 import MainDiv from "./MainDiv";
 import windowLogo from "../../public/assets/logo-badge.svg";
 import CustomPopup from "./CustomPopup";
@@ -29,7 +33,11 @@ const Maps = ({ markersList }) => {
         ne: { lat: 63.41423162170996, lng: 18.06478665006712 }, // NE coordinates B
       },
     }),
+<<<<<<< HEAD
     [],
+=======
+    []
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
   );
 
   const [currentOverlay, setCurrentOverlay] = useState(overlayData.mobile);
@@ -47,8 +55,12 @@ const Maps = ({ markersList }) => {
 
   //Overlay useEffect
   useEffect(() => {
+<<<<<<< HEAD
     if (!apiIsLoaded || !map || !coreLibrary || !mapsLibrary || overlayLoaded)
       return;
+=======
+    if (!apiIsLoaded || !map || !coreLibrary || !mapsLibrary || overlayLoaded) return;
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
 
     // Solid color map type to avoid showing map
     const solidColorMapType = new mapsLibrary.ImageMapType({
@@ -64,6 +76,7 @@ const Maps = ({ markersList }) => {
     map.mapTypes.set("solidColor", solidColorMapType);
     map.setMapTypeId("solidColor");
 
+<<<<<<< HEAD
     const southWestLatLng = new coreLibrary.LatLng(
       currentOverlay.sw.lat,
       currentOverlay.sw.lng,
@@ -94,6 +107,18 @@ const Maps = ({ markersList }) => {
     currentOverlay,
     overlayLoaded,
   ]);
+=======
+    const southWestLatLng = new coreLibrary.LatLng(currentOverlay.sw.lat, currentOverlay.sw.lng);
+    const northEastLatLng = new coreLibrary.LatLng(currentOverlay.ne.lat, currentOverlay.ne.lng);
+    const bounds = new coreLibrary.LatLngBounds(southWestLatLng, northEastLatLng);
+
+    const overlayOptions = { clickable: false };
+    const overlay = new mapsLibrary.GroundOverlay(currentOverlay.imageUrl, bounds, overlayOptions);
+    overlay.setMap(map);
+
+    setOverlayLoaded(true);
+  }, [apiIsLoaded, map, coreLibrary, mapsLibrary, currentOverlay, overlayLoaded]);
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
 
   const restrictions = useMemo(
     () => ({
@@ -105,7 +130,11 @@ const Maps = ({ markersList }) => {
       },
       strictBounds: true,
     }),
+<<<<<<< HEAD
     [currentOverlay],
+=======
+    [currentOverlay]
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
   );
 
   const breakpoints = useMemo(
@@ -262,7 +291,11 @@ const Maps = ({ markersList }) => {
 
       // Add more breakpoints as needed
     ],
+<<<<<<< HEAD
     [],
+=======
+    []
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
   );
 
   // Set up resize listener and initial settings
@@ -272,6 +305,7 @@ const Maps = ({ markersList }) => {
       const isMobile = window.matchMedia("(max-width: 1279px)").matches;
 
       // Determine current overlay based on device type
+<<<<<<< HEAD
       const currentOverlay = isMobile
         ? overlayData.mobile
         : overlayData.desktop;
@@ -281,6 +315,13 @@ const Maps = ({ markersList }) => {
       const breakpoint = breakpoints.find(
         (bp) => width >= bp.min && width <= bp.max,
       );
+=======
+      const currentOverlay = isMobile ? overlayData.mobile : overlayData.desktop;
+      setCurrentOverlay(currentOverlay);
+
+      // Find and apply the appropriate breakpoint action
+      const breakpoint = breakpoints.find((bp) => width >= bp.min && width <= bp.max);
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
       if (breakpoint) breakpoint.action();
     };
 
@@ -307,6 +348,7 @@ const Maps = ({ markersList }) => {
     (markerData) => (
       <div className="popup-bubble">
         <div className="flex items-center justify-center px-2 border-r-3 border-dashed border-[#354557]">
+<<<<<<< HEAD
           <Image
             src={windowLogo}
             height={50}
@@ -321,12 +363,20 @@ const Maps = ({ markersList }) => {
             className="absolute top-0 right-0 pt-0.5 pr-0.5"
             onClick={() => setActiveMarkerId(null)}
           >
+=======
+          <Image src={windowLogo} height={50} width={50} alt="Old Time Sailors Tickets Logo" className="md:w-[70px]" />
+        </div>
+
+        <div className="flex flex-col mt-2.5 md1:mt-3 mb-2 px-2 md1:px-4 items-center gap-1.5 md1:gap-3 w-full">
+          <button className="absolute top-0 right-0 pt-0.5 pr-0.5" onClick={() => setActiveMarkerId(null)}>
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
             <CgClose className=" text-[15px] md1:text-[20px] text-[#232f3f] " />
           </button>
 
           <ul className="flex flex-col self-start max-xl:gap-1 -space-y-1">
             <li className="text-xl leading-5 md:text-3xl text-lightRed font-titles font-medium flex items-start max-xl:mb-0.5">
               event:
+<<<<<<< HEAD
               <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">
                 {markerData.event}
               </p>
@@ -342,20 +392,38 @@ const Maps = ({ markersList }) => {
               <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">
                 {markerData.date}
               </p>
+=======
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">{markerData.event}</p>
+            </li>
+            <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-start">
+              location:
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">{markerData.location}</p>
+            </li>
+            <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-start">
+              date:
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">{markerData.date}</p>
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
             </li>
           </ul>
           <Link
             className="octagon-tickets flex items-center justify-center bg-darkBlue"
+<<<<<<< HEAD
             href={markerData.ticketsURL}
             target="_blank"
           >
             <p className="text-center text-3xl md:text-[42px] font-titles text-lightRed">
               tickets
             </p>
+=======
+            href={`/tickets/${markerData.event.replace(/\s+/g, "-").toLowerCase()}`}
+          >
+            <p className="text-center text-3xl md:text-[42px] font-titles text-lightRed">+ info</p>
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
           </Link>
         </div>
       </div>
     ),
+<<<<<<< HEAD
     [],
   );
 
@@ -370,6 +438,14 @@ const Maps = ({ markersList }) => {
         id={"MapOTS"}
         restriction={restrictions}
       >
+=======
+    []
+  );
+
+  return (
+    <MainDiv className={"h-dvh"}>
+      <Map zoom={5} maxZoom={9} center={mapCenter} gestureHandling={"greedy"} disableDefaultUI={true} id={"MapOTS"} restriction={restrictions}>
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
         {coreLibrary &&
           markersList.map((m) => (
             <Fragment key={m.id}>
@@ -386,11 +462,15 @@ const Maps = ({ markersList }) => {
                 }}
               />
 
+<<<<<<< HEAD
               <CustomPopup
                 position={m.markerPosition}
                 isVisible={activeMarkerId === m.id}
                 isTransitioning={isTransitioning}
               >
+=======
+              <CustomPopup position={m.markerPosition} isVisible={activeMarkerId === m.id} isTransitioning={isTransitioning}>
+>>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
                 {createPopupContent(m)}
               </CustomPopup>
             </Fragment>

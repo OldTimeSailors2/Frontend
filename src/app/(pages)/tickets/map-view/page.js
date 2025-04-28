@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-import Maps from "@/components/Maps";
-import MapsWrapper from "@/wrappers/MapsWrapper";
-=======
-import TicketsComponent from "@/components/tickets-client";
-import ViewSelector from "@/components/ViewSelector";
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
+import MapViewComponent from "@/components/MapViewComponent";
 
 export const metadata = {
   title: "Tickets",
@@ -21,7 +15,6 @@ export const metadata = {
   },
 };
 
-<<<<<<< HEAD
 const formatMarkers = (markersApiResponse) => {
   return markersApiResponse.data.map((marker) => ({
     id: marker.id,
@@ -30,6 +23,10 @@ const formatMarkers = (markersApiResponse) => {
     location: marker.attributes.location,
     date: marker.attributes.date,
     ticketsURL: marker.attributes.ticketsURL,
+    venueInfo: marker.attributes.venueInfo,
+    gigStartTime: marker.attributes.gigStartTime,
+    gigFinishTime: marker.attributes.gigFinishTime,
+    typeOfShow: marker.attributes.typeOfShow,
   }));
 };
 
@@ -37,9 +34,7 @@ const fetchMarkers = async () => {
   try {
     const res = await fetch(`${process.env.BACKEND_API}/markers?populate=*`);
     if (!res.ok) {
-      throw new Error(
-        `Failed to fetch markers: ${res.status} ${res.statusText}`,
-      );
+      throw new Error(`Failed to fetch markers: ${res.status} ${res.statusText}`);
     }
     const markers = await res.json();
     const formattedMarkers = formatMarkers(markers);
@@ -51,20 +46,10 @@ const fetchMarkers = async () => {
   }
 };
 
-const Tickets = async () => {
+const MapView = async () => {
   const markersList = await fetchMarkers();
 
-  return (
-    <MapsWrapper>
-      <Maps markersList={markersList} />
-    </MapsWrapper>
-=======
-const Tickets = () => {
-  return (
-    <ViewSelector />
-    // <TicketsComponent/>
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
-  );
+  return <MapViewComponent markersList={markersList} />;
 };
 
-export default Tickets;
+export default MapView;
