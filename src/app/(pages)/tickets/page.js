@@ -17,6 +17,7 @@ export const metadata = {
     ],
   },
 };
+
 const formatMarkers = (markersApiResponse) => {
   return markersApiResponse.data.map((marker) => ({
     id: marker.id,
@@ -27,13 +28,12 @@ const formatMarkers = (markersApiResponse) => {
     ticketsURL: marker.attributes.ticketsURL,
   }));
 };
+
 const fetchMarkers = async () => {
   try {
     const res = await fetch(`${process.env.BACKEND_API}/markers?populate=*`);
     if (!res.ok) {
-      throw new Error(
-        `Failed to fetch markers: ${res.status} ${res.statusText}`,
-      );
+      throw new Error(`Failed to fetch markers: ${res.status} ${res.statusText}`);
     }
     const markers = await res.json();
     const formattedMarkers = formatMarkers(markers);
@@ -44,18 +44,19 @@ const fetchMarkers = async () => {
     throw error;
   }
 };
+
 const Tickets = async () => {
   const markersList = await fetchMarkers();
 
   return (
-    <MapsWrapper>
-      <Maps markersList={markersList} />
-    </MapsWrapper>
-const Tickets = () => {
-  return (
-    <ViewSelector />
-    // <TicketsComponent/>
-
+    <div>
+      <ViewSelector />
+      <MapsWrapper>
+        <Maps markersList={markersList} />
+      </MapsWrapper>
+      {/* Descomenta la siguiente línea si deseas renderizar TicketsComponent */}
+      {/* <TicketsComponent /> */}
+    </div>
   );
 };
 
