@@ -19,6 +19,7 @@ const LandingDisplay = dynamic(() => import("@/components/LandingDisplay"), {
     </div>
   ),
 });
+
 const LandingLeftSide = dynamic(() => import("@/components/LandingLeftSide"), {
   ssr: false,
   loading: () => (
@@ -81,33 +82,32 @@ const Home = async () => {
 
   return (
     <MainDiv className="w-full min-h-screen flex flex-col overflow-auto relative">
-    <MainDiv className="w-full min-h-screen flex flex-col relative">
-      <LandingDynamicBg />
-      <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
-        <div className="w-full h-full flex flex-col gap-3 md1:justify-between xl:gap-0 relative">
-          <div className="absolute image-border pointer-events-none" />
-          <Image
-            src={logo}
-            width={135}
-            height={135}
-            priority={true}
-            alt="OTS Logo"
-            className="absolute -top-3.5 -left-3.5 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-6   2k:-top-12 2k:-left-11 4k:-top-14 4k:-left-14 
-                 xs:w-[145px] xs:h-[145px] xs2:w-[155px] xs2:h-[155px]
-                  md1:w-[150px] md1:h-[150px] md:w-[170px] md:h-[170px]  min-[820px]:w-[200px]  min-[820px]:h-[200px] lg:w-[230px] lg:h-[230px]
-                   xl:w-[190px] xl:h-[190px] 1xxl:w-[210px] 1xxl:h-[210px] 4xl:w-[230px] 4xl:h-[230px]  fullHD:w-[290px] fullHD:h-[290px] 2k:w-[420px] 2k:h-[420px] 4k:w-[580px] 4k:h-[580px]"
-          />
-
-          <LandingLeftSide />
-
-          <LandingDisplay images={formattedLandingImages} />
+      <MainDiv className="w-full min-h-screen flex flex-col relative">
+        <LandingDynamicBg />
+        <div className="w-full h-full px-[17.5px] pt-[17.5px] xl:px-[28px] xl:pt-[28px] 2k:px-[52px] 2k:pt-[52px] 4k:px-[64px] 4k:pt-[64px] relative">
+          <div className="w-full h-full flex flex-col gap-3 md1:justify-between xl:gap-0 relative">
+            <div className="absolute image-border pointer-events-none" />
+            <Image
+              src={logo}
+              width={135}
+              height={135}
+              priority={true}
+              alt="OTS Logo"
+              className="absolute -top-3.5 -left-3.5 xs2:-top-4 md1:-left-3.5  xl:-top-7 xl:-left-6   2k:-top-12 2k:-left-11 4k:-top-14 4k:-left-14 
+                       xs:w-[145px] xs:h-[145px] xs2:w-[155px] xs2:h-[155px]
+                        md1:w-[150px] md1:h-[150px] md:w-[170px] md:h-[170px]  min-[820px]:w-[200px]  min-[820px]:h-[200px] lg:w-[230px] lg:h-[230px]
+                         xl:w-[190px] xl:h-[190px] 1xxl:w-[210px] 1xxl:h-[210px] 4xl:w-[230px] 4xl:h-[230px]  fullHD:w-[290px] fullHD:h-[290px] 2k:w-[420px] 2k:h-[420px] 4k:w-[580px] 4k:h-[580px]"
+            />
+            <LandingLeftSide />
+            <LandingDisplay images={formattedLandingImages} />
+          </div>
         </div>
-      </div>
-      <footer className="w-full z-[105] flex justify-center items-center py-1 xl:p-1 2k:py-2">
-        <p className="text-beige font-txt text-[9px] md1:text-lg md:text-xl xl:text-base 2k:text-3xl 4k:text-5xl uppercase">
-          OLD TIME SAILORS LTD.®
-        </p>
-      </footer>
+        <footer className="w-full z-[105] flex justify-center items-center py-1 xl:p-1 2k:py-2">
+          <p className="text-beige font-txt text-[9px] md1:text-lg md:text-xl xl:text-base 2k:text-3xl 4k:text-5xl uppercase">
+            OLD TIME SAILORS LTD.®
+          </p>
+        </footer>
+      </MainDiv>
     </MainDiv>
   );
 };

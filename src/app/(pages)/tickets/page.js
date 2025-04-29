@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import Maps from "@/components/Maps";
 import MapsWrapper from "@/wrappers/MapsWrapper";
-=======
 import TicketsComponent from "@/components/tickets-client";
 import ViewSelector from "@/components/ViewSelector";
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
 
 export const metadata = {
   title: "Tickets",
@@ -20,8 +17,6 @@ export const metadata = {
     ],
   },
 };
-
-<<<<<<< HEAD
 const formatMarkers = (markersApiResponse) => {
   return markersApiResponse.data.map((marker) => ({
     id: marker.id,
@@ -32,7 +27,6 @@ const formatMarkers = (markersApiResponse) => {
     ticketsURL: marker.attributes.ticketsURL,
   }));
 };
-
 const fetchMarkers = async () => {
   try {
     const res = await fetch(`${process.env.BACKEND_API}/markers?populate=*`);
@@ -50,7 +44,6 @@ const fetchMarkers = async () => {
     throw error;
   }
 };
-
 const Tickets = async () => {
   const markersList = await fetchMarkers();
 
@@ -58,12 +51,11 @@ const Tickets = async () => {
     <MapsWrapper>
       <Maps markersList={markersList} />
     </MapsWrapper>
-=======
 const Tickets = () => {
   return (
     <ViewSelector />
     // <TicketsComponent/>
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
+
   );
 };
 
