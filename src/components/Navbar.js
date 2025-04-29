@@ -22,7 +22,7 @@ const Navbar = () => {
   const [titleColor, setTitleColor] = useState("");
   const [navStyle, setNavStyle] = useState({});
   const [viewSelector, setViewSelector] = useState(false);
-  const { navbarColor } = useNavbarColor();
+  const { navbarColor = "light" } = useNavbarColor(); // Proporciona un valor por defecto
   const fixedRoutes = [
     "/tickets",
     "/tickets/map-view",
