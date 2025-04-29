@@ -1,8 +1,4 @@
 "use client";
-<<<<<<< HEAD
-
-=======
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
 import { useState, useEffect } from "react";
 import { useLoader } from "@/context/LoaderContext";
 import { usePathname } from "next/navigation";
@@ -12,13 +8,9 @@ import logo from "../../public/assets/logo.svg";
 import logo2 from "../../public/assets/logo-services.svg";
 import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
-<<<<<<< HEAD
-=======
 import ViewSwitch from "./ViewSelectorSwitch";
 import { useNavbarColor } from "@/context/NavbarColorProvider";
 import useScrollTrigger from "@/hooks/useScrollTrigger";
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
-
 const Navbar = () => {
   const pathname = usePathname();
   const defaultSettings = { loader: 1, photos: true };
@@ -27,11 +19,8 @@ const Navbar = () => {
   const [titleBg, setTitleBg] = useState("");
   const [titleColor, setTitleColor] = useState("");
   const [navStyle, setNavStyle] = useState({});
-<<<<<<< HEAD
-=======
   const [viewSelector, setViewSelector] = useState(false);
   const { navbarColor } = useNavbarColor();
-
   const fixedRoutes = [
     "/tickets",
     "/tickets/map-view",
@@ -41,11 +30,8 @@ const Navbar = () => {
     "/our-clients",
     "/services",
   ];
-
   const isDynamicRoute =
     pathname.startsWith("/tickets/") && !fixedRoutes.includes(pathname);
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
-
   const getBackgroundColor = (path) => {
     if (path === "/media") {
       return "rgba(35, 48, 64, 0.8)";
@@ -53,14 +39,10 @@ const Navbar = () => {
       return "rgba(221, 50, 84, 0.8)";
     } else return "transparent";
   };
-
   useEffect(() => {
     const handleScroll = () => {
-<<<<<<< HEAD
       if (window.scrollY > 0) {
-=======
       if (window.scrollY > 1) {
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
         setNavStyle({
           boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           backgroundColor: getBackgroundColor(pathname),
@@ -81,8 +63,6 @@ const Navbar = () => {
         setTitle("tickets");
         setTitleBg("bluePattern");
         setTitleColor("lightRed");
-<<<<<<< HEAD
-=======
         setViewSelector(false);
         break;
       case "/tickets/map-view":
@@ -96,40 +76,29 @@ const Navbar = () => {
         setTitleBg("bluePattern");
         setTitleColor("lightRed");
         setViewSelector(true);
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
         break;
       case "/reviews":
         setTitle("reviews");
         setTitleBg("bluePattern");
         setTitleColor("beige");
-<<<<<<< HEAD
-=======
         setViewSelector(false);
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
         break;
       case "/media":
         setTitle("media");
         setTitleBg("beigePattern");
         setTitleColor("darkBlue");
-<<<<<<< HEAD
-=======
         setViewSelector(false);
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
         break;
       case "/our-clients":
         setTitle("our clients");
         setTitleBg("beigePattern");
         setTitleColor("lightRed");
-<<<<<<< HEAD
-=======
         setViewSelector(false);
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
         break;
       case "/services":
         setTitle("services");
         setTitleBg("redPattern");
         setTitleColor("beige");
-<<<<<<< HEAD
         break;
       default:
         setTitle("reviews");
@@ -239,7 +208,6 @@ const Navbar = () => {
           />
         </Link>
       </div>
-=======
         setViewSelector(false);
         break;
       default:
@@ -423,7 +391,6 @@ const Navbar = () => {
         </div>
       </div>
       {viewSelector === true ? <ViewSwitch /> : false}
->>>>>>> 94d6d9c (Integracion de pixel, correccion de diseño y landing de eventos)
     </div>
   );
 };
